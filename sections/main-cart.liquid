@@ -87,7 +87,7 @@
                             {%- endif -%}
                             <div style="background-color: #F9F9F9; padding: 20px; margin-top: 16px;">
                               <h1 style="color: #232323; font-weight: 500; font-size: 18px; padding-bottom: 4px;">Free Shipping just for you</h1>
-                              <h1 style="color: #4F4F4F; font-weight: 400; font-size: 14px; padding-top: 4px;">Your order is worth more than £150 and therefore qualifies for <u>Free Shipping</u>.</h1>
+                              <h1 style="color: #4F4F4F; font-weight: 400; font-size: 14px; padding-top: 4px;">Your order is worth more than £150 and therefore qualifies for <span style="color: #232323"><u>Free Shipping</u></span>.</h1>
                             </div>
                                 <div class="cart-list">
                                     {%- for item in cart.items -%}
@@ -292,8 +292,8 @@
                                 <ul class="cart-totals list-unstyled">
                                     <div style="padding-top: 20px; padding-bottom: 20px;"><h1 style="font-size: 24px; font-weight: 500; font-color: #222222">Summary</h1></div>
                                     <li class="cart-total cart-total-subtotal">
-                                        <div class="cart-total-label"><span class="text">Original price</span></div>
-                                        <div><span class="text" style="font-size: 14px; font-weight: 400; font-color: #222222">
+                                        <div class="cart-total-label"><span class="text" style="font-size: 14px; font-weight: 400; font-color: #4F4F4F">Original price</span></div>
+                                        <div><span class="text" style="font-size: 14px; font-weight: 400; font-color: #4F4F4F">
                                         {% assign total_original_price = 0 %}
                                         {% for item in cart.items %}
                                         {% assign original_price = item.variant.compare_at_price | times: item.quantity %}
