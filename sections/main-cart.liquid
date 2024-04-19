@@ -367,7 +367,7 @@
                                         </div>
                                     {%- endif -%}
                                     <div class="action-group">
-                                        <button class="button button-1 button-checkout" {% if settings.show_global_checkbox %} disabled="disabled" {% endif %} id="cart-checkout" data-href="{{ routes.cart_url | split: '/cart' | first }}/checkout"><span style="float: left;">Proceed to secure Checkout</span><span style="float: right;">-</span></button>
+                                        <button class="button button-1 button-checkout" {% if settings.show_global_checkbox %} disabled="disabled" {% endif %} id="cart-checkout" data-href="{{ routes.cart_url | split: '/cart' | first }}/checkout"><span style="float: left!important;">Proceed to secure Checkout</span><span style="float: right;">-</span></button>
                                     </div> 
                                   <div style="padding-top: 10px; padding-bottom: 10px; margin-top: 15px;">
                                     <h1 style="font-size: 14px; font-color: #222222; font-weight: 500">Accepted payment methods</h1>
