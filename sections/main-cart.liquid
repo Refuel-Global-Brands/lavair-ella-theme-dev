@@ -369,11 +369,6 @@
                                     {%- endif -%}
                                     <div class="action-group">
                                         <button class="button button-1 button-checkout" {% if settings.show_global_checkbox %} disabled="disabled" {% endif %} id="cart-checkout" data-href="{{ routes.cart_url | split: '/cart' | first }}/checkout">{{ 'sections.cart.proceed_to_checkout' | t }}</button>
-                                        {%- if continue_button_action == "1" -%}
-                                            <a class="button button-2 button-continue"{% if custom_button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ custom_button_link }}"{% endif %} role="button">{{ 'general.continue_shopping' | t }}</a>
-                                        {%- else -%}
-                                            <a class="button button-2 button-continue" role="link" aria-disabled="true" onclick="window.history.back();" role="button" id="cart-previous-page-btn">{{ 'general.back_to_previous_page' | t }}</a>
-                                        {%- endif -%}
                                     </div> 
                                   <div style="padding-top: 10px; padding-bottom: 10px; margin-top: 15px;">
                                     <h1 style="font-size: 14px; font-color: #222222; font-weight: 500">Accepted payment methods</h1>
