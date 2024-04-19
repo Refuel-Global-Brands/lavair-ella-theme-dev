@@ -147,7 +147,6 @@
 
 .cart-total-grandtotal .cart-total-label {
     font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
 }
 
 .cart-total-grandtotal .cart-total-value {
