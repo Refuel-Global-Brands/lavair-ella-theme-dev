@@ -448,7 +448,7 @@ option.soldout {
 
     .button.button-1 svg,
     .button.button--primary svg{
-        fill: var(--btn-1-color);
+        color: var(--btn-1-color);
     }
 
     .button.button-2,
@@ -5702,7 +5702,6 @@ summary::-webkit-details-marker {
         .button.button-1:hover svg,
         .button.button--primary:hover svg,
         .button.button--primary:focus svg{
-            fill: var(--btn-1-color-hover);
             color: var(--btn-1-color-hover);
         }
 
