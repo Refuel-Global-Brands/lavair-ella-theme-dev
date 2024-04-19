@@ -323,7 +323,6 @@
     padding-top: 11px;
     padding-bottom: 11px;
     border: none;
-    box-shadow: 0 0 0 .1rem var(--form-input-border)!important;
 }
 
 .cart-shipping .button {
