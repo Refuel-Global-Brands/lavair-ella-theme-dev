@@ -5703,6 +5703,7 @@ summary::-webkit-details-marker {
         .button.button--primary:hover svg,
         .button.button--primary:focus svg{
             fill: var(--btn-1-color-hover);
+            color: var(--btn-1-color-hover);
         }
 
         .button.button-2:hover,
