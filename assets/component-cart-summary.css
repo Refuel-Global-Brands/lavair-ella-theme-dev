@@ -101,13 +101,14 @@
 
 .cart-total-label,
 .cart-total-value {
-    font-weight: var(--font-weight-semibold);
     line-height: var(--body-line-height);
     letter-spacing: var(--body-letter-spacing);
 }
 
 .cart-total-label {
-    font-size: var(--font-body-size);
+    font-size: 18px;
+    font-weight: 600;
+    color: #222222;
 }
 
 .cart-total-value {
