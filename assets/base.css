@@ -5696,7 +5696,7 @@ summary::-webkit-details-marker {
         .button.button--primary:focus{
             color: var(--btn-1-color-hover);
             background: var(--btn-1-bg-hover);
-            border-color: var(--btn-1-border-hover);
+            border-color: #222222;
         }
 
         .button.button-1:hover svg,
