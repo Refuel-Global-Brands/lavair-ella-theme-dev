@@ -367,7 +367,16 @@
                                         </div>
                                     {%- endif -%}
                                     <div class="action-group">
-                                        <button class="button button-1 button-checkout" {% if settings.show_global_checkbox %} disabled="disabled" {% endif %} id="cart-checkout" data-href="{{ routes.cart_url | split: '/cart' | first }}/checkout"><span style="float: left!important;">Proceed to secure Checkout</span><span style="float: right;"><svg src="https://cdn.shopify.com/s/files/1/0047/5588/2033/files/arrow-right.svg?v=1713529781"></span></button>
+                                        <button class="button button-1 button-checkout" {% if settings.show_global_checkbox %} disabled="disabled" {% endif %} id="cart-checkout" data-href="{{ routes.cart_url | split: '/cart' | first }}/checkout">
+                                            <span style="float: left!important;">
+                                                Proceed to secure Checkout
+                                            </span>
+                                            <span style="float: right;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">
+                                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="white" d="M5 12H19"></path>
+                                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="white" d="M12 5L19 12L12 19"></path>
+                                                </svg>
+                                            </span></button>
                                     </div> 
                                   <div style="padding-top: 10px; padding-bottom: 10px; margin-top: 15px;">
                                     <h1 style="font-size: 14px; font-color: #222222; font-weight: 500">Accepted payment methods</h1>
