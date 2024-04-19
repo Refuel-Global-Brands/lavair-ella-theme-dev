@@ -303,12 +303,12 @@
                                         </span></div>
                                     </li>
                                     <li class="cart-total cart-tax-included">
-                                        <div class="cart-total-label"><span class="text">Tax</span></div>
+                                        <div class="cart-total-label"><span class="text" style="font-weight: 400; color: #4F4F4F">Tax</span></div>
                                         <div><span class="text" style="font-size: 14px; font-weight: 400; color: #4F4F4F">Included</span></div>
                                     </li>
                                     <li class="cart-total cart-saved-amount">
-                                        <div class="cart-total-label"><span class="text" style="font-weight: 600; color: #4F4F4F">Saved</span></div>
-                                        <div class="cart-total-label"><span class="text" style="font-weight: 400; color: #8E8E8E">
+                                        <div class="cart-total-label"><span class="text" style="font-weight: 400; color: #4F4F4F">Saved</span></div>
+                                        <div class="cart-total-label"><span class="text" style="font-weight: 400; color: #4F4F4F">
                                         {% assign total_saving = 0 %}
                                         {% for item in cart.items %}
                                         {% if item.variant.compare_at_price > item.variant.price %}
