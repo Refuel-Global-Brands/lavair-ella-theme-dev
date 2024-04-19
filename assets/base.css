@@ -5705,12 +5705,6 @@ summary::-webkit-details-marker {
             fill: var(--btn-1-color-hover);
         }
 
-        .button.button-1:hover img,
-        .button.button--primary:hover img,
-        .button.button--primary:focus img{
-            fill: var(--btn-1-color-hover);
-        }
-
         .button.button-2:hover,
         .button.button--secondary:hover,
         .button.button--secondary:focus{
