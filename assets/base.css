@@ -5699,11 +5699,15 @@ summary::-webkit-details-marker {
             border-color: var(--btn-1-border-hover);
         }
 
-
-
         .button.button-1:hover svg,
         .button.button--primary:hover svg,
         .button.button--primary:focus svg{
+            fill: var(--btn-1-color-hover);
+        }
+
+        .button.button-1:hover img,
+        .button.button--primary:hover img,
+        .button.button--primary:focus img{
             fill: var(--btn-1-color-hover);
         }
 
