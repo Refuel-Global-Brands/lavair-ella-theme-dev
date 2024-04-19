@@ -443,7 +443,7 @@ option.soldout {
     .button.button--primary{
         background: #222222;
         border-color: #222222;
-        color: var(--btn-1-color);
+        color: #222222;
     }
 
     .button.button-1 svg,
