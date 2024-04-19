@@ -383,6 +383,10 @@
     padding: 10px 0;
 }
 
+.cart-actions {
+    margin: 20px 0 0 0;
+}
+
 .cart-checkbox {
     margin: 0 0 18px 0;
 }
