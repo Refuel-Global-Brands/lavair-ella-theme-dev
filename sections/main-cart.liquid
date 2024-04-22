@@ -94,8 +94,8 @@
                                         <div class="cart-item" data-item-row {% if item.product.variants.size != 0 %}{% unless item.variant.title contains 'Default' %}data-cart-edit-productItem{% endunless %}{% endif %} data-line="{{ item.key }}">
                                             <div class="cart-item-block cart-item-info">
                                                 <div class="cart-item-wrapper">
-                                                    <div class="cart-item-block-left" style="background-color: #F9F9F9">
-                                                        <a class="cart-item-image image-{{ media_size }}" href="{{ item.url }}"{% if media_size == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: item.image.aspect_ratio | times: 100 }}%"{% elsif media_size == 'square' %} style="padding-bottom: 100%"{% elsif media_size == 'portrait' %}{% if portrait_aspect_ratio != blank %} style="padding-bottom: {{ portrait_aspect_ratio }}"{% endif %}{% elsif media_size == 'circle'%} style="padding-bottom: 100%"{% endif %}>
+                                                    <div class="cart-item-block-left">
+                                                        <a style="background-color: #F9F9F9" class="cart-item-image image-{{ media_size }}" href="{{ item.url }}"{% if media_size == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: item.image.aspect_ratio | times: 100 }}%"{% elsif media_size == 'square' %} style="padding-bottom: 100%"{% elsif media_size == 'portrait' %}{% if portrait_aspect_ratio != blank %} style="padding-bottom: {{ portrait_aspect_ratio }}"{% endif %}{% elsif media_size == 'circle'%} style="padding-bottom: 100%"{% endif %}>
                                                             {% render 'icon-external-link' %}
                                                             <img srcset="{{ item.image | img_url: '160x' }}" src="{{ item.image | img_url: '160x' }}" alt="{{ item.title | escape }}" sizes="auto" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}">
                                                         </a>
