@@ -311,7 +311,7 @@
 }
 
 .cart-item-qty {
-  display: flex;
+  display: block;
   vertical-align: middle;
   width: 110px;
   position: relative;
