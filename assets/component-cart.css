@@ -417,6 +417,8 @@
 }
 
 .cart-item-block.cart-item-quantity {
+  display: block;
+  position: relative;
   padding-top: 0;
   text-align: center;
 }
