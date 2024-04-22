@@ -417,6 +417,8 @@
 }
 
 .cart-item-block.cart-item-quantity {
+  width: 110px;
+  padding-top: 60px;
   display: block;
   position: relative;
   padding-top: 0;
@@ -576,10 +578,6 @@
 .cart-item-block,
 .cart-item-block.cart-item-price, {
   width: 144px;
-}
-
-.cart-item-block.cart-item-quantity {
-  width: 110px;
 }
 
 .cart-header-item:not(.cart-header-info){
