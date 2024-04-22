@@ -109,7 +109,7 @@
 
 .cart-item-block {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: left;
   padding: 0;
 }
 
