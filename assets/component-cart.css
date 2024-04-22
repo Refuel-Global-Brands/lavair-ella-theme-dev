@@ -110,7 +110,7 @@
 .cart-item-block {
   display: inline-block;
   vertical-align: top;
-  padding: 0;
+  padding-top: 2px;
 }
 
 .cart-item-wrapper {
