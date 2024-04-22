@@ -109,8 +109,8 @@
 
 .cart-item-block {
   display: inline-block;
-  vertical-align: top;
-  padding-top: 2px;
+  vertical-align: middle;
+  padding: 0;
 }
 
 .cart-item-wrapper {
@@ -415,6 +415,7 @@
 
 .cart-item-block.cart-item-price {
   padding-top: 0;
+  vertical-align: top!important;
 }
 
 .cart-item-block.cart-item-quantity {
