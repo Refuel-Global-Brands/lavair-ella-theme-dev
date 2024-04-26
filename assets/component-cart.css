@@ -434,6 +434,11 @@
   vertical-align: bottom!important;
 }
 
+.remove-button-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .cart-remove svg {
   width: 15px;
   height: 15px;
