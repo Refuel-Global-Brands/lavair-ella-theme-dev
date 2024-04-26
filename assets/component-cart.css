@@ -416,6 +416,7 @@
 .cart-item-block.cart-item-price {
   padding-top: 0;
   vertical-align: top!important;
+  position: relative;
 }
 
 .cart-item-block.cart-item-quantity {
