@@ -203,7 +203,7 @@
                                                                 <div class="cart-item-block cart-item-quantity small-screen-visible">
                                                                     <cart-update-quantity class="cart-item-qty">
                                                                         <label class="form-label hiddenLabels" for="upsell-update-{{ item.id }}">{{ 'products.product.quantity.label' | t }}</label>
-                                                                        <a href="javascript:void(0)" data-minus-quantity-cart="" class="minus btn-quantity"></a>
+                                                                        <a href="javascript:void(0)" data-minus-quantity-cart="" class="minus btn- quantity"></a>
                                                                         <input class="form-input quantity cart-item-qty-input" name="quantity" id="upsell-update-{{ item.id }}" data-qtt-id1="quantity{{ item.id }}" value="{{ item.quantity }}" type="number"{% if item.variant.inventory_management != null and item.variant.inventory_quantity > 0 %} data-inventory-quantity="{{ item.variant.inventory_quantity }}"{% endif %} data-cart-quantity data-cart-quantity-id="{{ item.id }}" data-line="{{ item.key }}" />
                                                                         <a href="javascript:void(0)" data-plus-quantity-cart="" class="plus btn-quantity"></a>
                                                                     </cart-update-quantity>
@@ -251,7 +251,7 @@
                                                 </div>
                                             </div>
                                             <div class="cart-item-block cart-item-remove">
-                                                <a class="cart-remove" href="javascript:void(0)" data-cart-remove data-cart-remove-id="{{ item.id }}" data-line="{{ item.key }}" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">{% render 'icon-close' %}</a>
+                                                <a class="cart-remove" href="javascript:void(0)" data-cart-remove data-cart-remove-id="{{ item.id }}" data-line="{{ item.key }}" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">Remove</a>
                                             </div>
                                         </div>
                                     {%- endfor -%}
