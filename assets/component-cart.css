@@ -400,7 +400,7 @@
 
 .cart-remove {
   display: inline-block;
-  vertical-align: bottom!important;
+  vertical-align: middle;
 }
 
 .cart-remove .icon {
@@ -431,6 +431,7 @@
   width: 45px;
   height: 36px;
   text-align: center;
+  vertical-align: bottom!important;
 }
 
 .cart-remove svg {
