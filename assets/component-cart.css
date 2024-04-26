@@ -97,7 +97,7 @@
 
 .cart-list,
 .cart-item{
-  display: inline-block;
+  display: block;
 }
 
 .cart-item {
