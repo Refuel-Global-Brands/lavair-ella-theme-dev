@@ -433,7 +433,8 @@
   height: auto;
   text-align: center;
   vertical-align: bottom!important;
-  position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .remove-button-text {
@@ -945,7 +946,7 @@
   }
 
   .cart-item-block.cart-item-remove {
-    width: 45px;
+    width: auto;
   }
 
   .cart-item-block-left {
