@@ -975,10 +975,6 @@
       top: 4.5px;
   }
 
-  .cart-content-item[data-cart-total] {
-      padding-top: 11px;
-  }
-
   .cart-header-item.cart-header-quantity {
       text-align: center;
   }
