@@ -433,6 +433,7 @@
   height: auto;
   text-align: center;
   vertical-align: bottom!important;
+  position: relative;
 }
 
 .remove-button-text {
