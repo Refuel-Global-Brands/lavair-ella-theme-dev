@@ -400,7 +400,7 @@
 
 .cart-remove {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 
 .cart-remove .icon {
