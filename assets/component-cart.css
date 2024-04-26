@@ -435,8 +435,8 @@
 }
 
 .cart-item-block.cart-item-price-actions {
+  width: calc(100% - 450px);
   padding-right: 20px;
-  width: 50%;
 }
 
 .remove-button-text {
