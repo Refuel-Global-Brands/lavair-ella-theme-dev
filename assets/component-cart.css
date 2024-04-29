@@ -103,8 +103,8 @@
 .cart-item {
   border: 1px solid #e6e6e6;
   margin-top: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
@@ -345,11 +345,12 @@
 
 .cart-item-qty .btn-quantity {
   width: 32px;
-  height: 45px;
+  height: 20px;
   display: block;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .cart-item-qty .btn-quantity:before {
@@ -431,7 +432,7 @@
 }
 
 .cart-item-block.cart-item-remove {
-  padding-bottom: 32.50px;
+  padding-bottom: 20px;
   padding-right: 20px;
   width: auto;
   height: auto;
