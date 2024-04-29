@@ -423,6 +423,14 @@
     align-items: center;
 }
 
+.cart-actions .button-right {
+    float: right!important;
+}
+
+.cart-actions .button-left {
+    float: left!important;
+}
+
 .cart-actions .button + .button {
     margin-top: 15px;
 }
