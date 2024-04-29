@@ -345,7 +345,7 @@
 
 .cart-item-qty .btn-quantity {
   width: 32px;
-  height: 45px;
+  height: auto;
   display: block;
   position: absolute;
   left: 0;
