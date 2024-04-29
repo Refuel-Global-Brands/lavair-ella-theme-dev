@@ -2,6 +2,23 @@
 <link rel="stylesheet" href="{{ 'component-cart-summary.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-cart.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-summary.css' | asset_url | stylesheet_tag }}</noscript>
+<!-- EComposer FAQ Section -->
+{% assign ecom_root_url = routes.root_url %}
+{% if ecom_root_url != '/'%}
+{% assign ecom_root_url = routes.root_url | append: '/' %}
+{% endif %}
+<link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /><noscript><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /></noscript>
+{%capture section_id %}ecom-662fafa978bacb307c047bd6-section{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}
+{{'ecom-662fafa978bacb307c047bd6.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-662fafa978bacb307c047bd6.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="662fafa978bacb307c047bd6";
+ window.EComposer.SECTION = {"template_id":"662fafa978bacb307c047bd6","title":"FAQs","type":"section","slug":"ecom-662fafa978bacb307c047bd6","plan_id":2};
+ </script>
+<!-- End Ecomposer FAQ Section -->
 {%- liquid
     assign padding_top = section.settings.mg_top_desktop | append: 'px'
     assign padding_bottom = section.settings.mg_bottom_desktop | append: 'px'
