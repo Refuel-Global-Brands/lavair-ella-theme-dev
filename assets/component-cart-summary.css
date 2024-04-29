@@ -419,9 +419,8 @@
 
 .cart-actions .button {
     border-radius: 0;
-    display: flex; 
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
 }
 
 .cart-actions .button + .button {
