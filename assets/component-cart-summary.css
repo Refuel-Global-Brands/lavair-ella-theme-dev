@@ -431,6 +431,7 @@
     display: inline-flex; 
     align-items: center;
     float: left!important;
+    line-height: 30px;
 }
 
 .cart-actions .button + .button {
