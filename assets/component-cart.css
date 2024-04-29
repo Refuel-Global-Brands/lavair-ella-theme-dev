@@ -105,6 +105,7 @@
   margin-top: 10px;
   padding: 10px 0 10px 5px;
   width: 100%;
+  position: relative;
 }
 
 .cart-item-block {
@@ -416,7 +417,9 @@
 .cart-item-block.cart-item-price {
   padding-top: 0;
   vertical-align: top!important;
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 
 .cart-item-block.cart-item-quantity {
@@ -433,6 +436,9 @@
   height: auto;
   text-align: center;
   vertical-align: bottom!important;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .remove-button-text {
