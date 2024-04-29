@@ -43,39 +43,6 @@
         endfor
     endif
 -%}
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Function to calculate and update saved amount
-    function updateSavedAmount() {
-      var totalSaving = 0;
-      var cartItems = {{ cart.items | json }};
-      cartItems.forEach(function(item) {
-        if (item.variant.compare_at_price > item.variant.price) {
-          var saving = item.variant.compare_at_price - item.variant.price;
-          var savingQty = saving * item.quantity;
-          totalSaving += savingQty;
-        }
-      });
-      
-      var moneyFormat = '{{ cart.money_format }}';
-      // Check if money format is valid
-      if (moneyFormat && moneyFormat.match(/{{(.*[^}]?)}}/)) {
-        document.querySelector('.cart-saved-amount .cart-total-label:last-child').textContent = '-' + Shopify.formatMoney(totalSaving, {{ cart.money_format | json }});
-      } else {
-        // Fallback to default money format if cart.money_format is not valid
-        document.querySelector('.cart-saved-amount .cart-total-label:last-child').textContent = '-' + Shopify.formatMoney(totalSaving, "${{ amount }}");
-      }
-    }
-
-    // Update saved amount when the cart is updated
-    document.addEventListener('cart:updated', function(event) {
-      updateSavedAmount();
-    });
-
-    // Initial update of saved amount
-    updateSavedAmount();
-  });
-</script>
 <cart-coupon-discount>
     <template data-discount-icon>{% render 'icon-discount' %}</template>
     <cart-items data-section-id="{{ section.id }}" data-section-type="cart" id="CartSection-{{ section.id }}" data-section="{{ section.id }}">
@@ -466,20 +433,6 @@
     @media (max-width: 550px) {#CartSection-{{ section.id }} .cart-container {padding-top: {{ padding_top_mobile }};padding-bottom: {{ padding_bottom_mobile }}}}
 </style>
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-{% schema %}
-{
-  "name": "Currency",
-  "settings": [
-    {
-      "type": "text",
-      "id": "cart_money_format",
-      "label": "Cart Money Format",
-      "default": "£{{ amount }}",
-      "info": "Enter the format for displaying currency in the cart."
-    }
-  ]
-}
-{% endschema %}
 
 {% schema %}
 {
