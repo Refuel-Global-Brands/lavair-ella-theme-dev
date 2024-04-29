@@ -931,7 +931,7 @@
 @media (min-width: 1025px) {
   .cart-item-block.cart-item-price {
       padding-left: 0;
-      text-align: center;
+      text-align: right;
   }
   
   .cart-content-empty {
