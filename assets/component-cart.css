@@ -582,6 +582,7 @@
 
 .form-input.quantity {
   text-align: center;
+  height: 45px;
 }
 
 .cart-header-item.cart-header-info {
