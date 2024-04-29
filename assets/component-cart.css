@@ -10,10 +10,6 @@ details {
   font-weight: 400;
 }
 
-details[open] {
-  padding: 0.5em;
-}
-
 details[open] summary {
   margin-bottom: 0.5em;
 }
