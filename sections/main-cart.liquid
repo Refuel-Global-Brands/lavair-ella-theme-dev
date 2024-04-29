@@ -45,28 +45,37 @@
 -%}
 
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        // Function to calculate and update saved amount
-        function updateSavedAmount() {
-            var totalSaving = 0;
-            {% for item in cart.items %}
-                {% if item.variant.compare_at_price > item.variant.price %}
-                    var saving = {{ item.variant.compare_at_price | minus: item.variant.price }};
-                    var savingQty = saving * {{ item.quantity }};
-                    totalSaving += savingQty;
-                {% endif %}
-            {% endfor %}
-            document.querySelector('.cart-saved-amount .cart-total-label:last-child').textContent = '-' + Shopify.formatMoney(totalSaving, {{ cart.money_format | json }});
+      document.addEventListener('DOMContentLoaded', function() {
+    // Function to calculate and update saved amount
+    function updateSavedAmount() {
+      var totalSaving = 0;
+      var cartItems = {{ cart.items | json }};
+      cartItems.forEach(function(item) {
+        if (item.variant.compare_at_price > item.variant.price) {
+          var saving = item.variant.compare_at_price - item.variant.price;
+          var savingQty = saving * item.quantity;
+          totalSaving += savingQty;
         }
+      });
+      
+      var moneyFormat = '{{ cart.money_format }}';
+      // Check if money format is valid
+      if (moneyFormat && moneyFormat.match(/{{(.*[^}]?)}}/)) {
+        document.querySelector('.cart-saved-amount .cart-total-label:last-child').textContent = '-' + Shopify.formatMoney(totalSaving, {{ cart.money_format | json }});
+      } else {
+        // Fallback to default money format if cart.money_format is not valid
+        document.querySelector('.cart-saved-amount .cart-total-label:last-child').textContent = '-' + Shopify.formatMoney(totalSaving, "${{ amount }}");
+      }
+    }
 
-        // Update saved amount when the cart is updated
-        document.addEventListener('cart:updated', function(event) {
-            updateSavedAmount();
-        });
-
-        // Initial update of saved amount
-        updateSavedAmount();
+    // Update saved amount when the cart is updated
+    document.addEventListener('cart:updated', function(event) {
+      updateSavedAmount();
     });
+
+    // Initial update of saved amount
+    updateSavedAmount();
+  });
 </script>
 <cart-coupon-discount>
     <template data-discount-icon>{% render 'icon-discount' %}</template>
