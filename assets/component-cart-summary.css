@@ -419,15 +419,17 @@
 
 .cart-actions .button {
     border-radius: 0;
-    display: inline-flex;
-    align-items: center;
 }
 
 .cart-actions .button-right {
+    display: inline-flex;
+    align-items: center; 
     float: right!important;
 }
 
 .cart-actions .button-left {
+    display: inline-flex; 
+    align-items: center;
     float: left!important;
 }
 
