@@ -43,9 +43,8 @@
         endfor
     endif
 -%}
-
 <script>
-      document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     // Function to calculate and update saved amount
     function updateSavedAmount() {
       var totalSaving = 0;
@@ -467,6 +466,21 @@
     @media (max-width: 550px) {#CartSection-{{ section.id }} .cart-container {padding-top: {{ padding_top_mobile }};padding-bottom: {{ padding_bottom_mobile }}}}
 </style>
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+{% schema %}
+{
+  "name": "Currency",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cart_money_format",
+      "label": "Cart Money Format",
+      "default": "£{{ amount }}",
+      "info": "Enter the format for displaying currency in the cart."
+    }
+  ]
+}
+{% endschema %}
+
 {% schema %}
 {
     "name": "t:sections.main_cart.name",

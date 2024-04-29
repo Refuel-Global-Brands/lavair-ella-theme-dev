@@ -156,4 +156,3 @@ class CartItems extends HTMLElement {
 }
 
 customElements.define('cart-items', CartItems);
-
