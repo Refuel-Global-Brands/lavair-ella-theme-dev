@@ -649,7 +649,7 @@
 
 
   .cart-header-item.cart-header-info,
-  .cart-item-block.cart-item-info {
+  .cart-item-block.cart-item-info.cart-item-price-actions {
     width: calc(100% - 400px);
   }
 
