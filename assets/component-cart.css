@@ -2,7 +2,6 @@ summary.cart-faq-summary {
   font-size: 14px;
   color: #222222;
   font-weight: 400;
-  cursor: pointer;
 }
 
 details.cart-faq-details {
@@ -15,10 +14,11 @@ details.cart-faq-details {
   padding-right: 16px;
   background-color: #f9f9f9;
   margin-bottom: 8px;
+  content: url(https://cdn.shopify.com/s/files/1/0047/5588/2033/files/arrow-right-1.svg?v=1714463299);
 }
 
 details.cart-faq-details[open] {
-
+  content: url(https://cdn.shopify.com/s/files/1/0047/5588/2033/files/arrow-down.svg?v=1714463298);
 }
 
 h1.cart-faq-heading {
