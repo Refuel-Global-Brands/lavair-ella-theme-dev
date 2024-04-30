@@ -11,8 +11,8 @@
 
 .cart-ymal-card {
   display: inline-block;
-  height: 25%;
-  width: 25%;
+  height: auto;
+  width: 10%;
 }
 
 .cart-ymal-product {
