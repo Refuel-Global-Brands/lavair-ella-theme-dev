@@ -1,10 +1,10 @@
-.cart-faq-summary {
+summary.cart-faq-summary {
   font-size: 14px;
   color: #222222;
   font-weight: 400;
 }
 
-.cart-faq-details {
+details.cart-faq-details {
   font-size: 14px;
   color: #222222;
   font-weight: 400;
@@ -16,7 +16,11 @@
   margin-bottom: 8px;
 }
 
-.cart-faq-heading {
+details.cart-faq-details[open] {
+
+}
+
+h1.cart-faq-heading {
   font-size: 14px;
   color: #222;
   font-weight: 500;
