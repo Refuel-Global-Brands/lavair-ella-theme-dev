@@ -2,6 +2,7 @@ summary.cart-faq-summary {
   font-size: 14px;
   color: #222222;
   font-weight: 400;
+  cursor: pointer;
 }
 
 details.cart-faq-details {
