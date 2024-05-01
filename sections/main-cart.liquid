@@ -47,7 +47,7 @@
 <cart-coupon-discount>
     <template data-discount-icon>{% render 'icon-discount' %}</template>
     <cart-items data-section-id="{{ section.id }}" data-section-type="cart" id="CartSection-{{ section.id }}" data-section="{{ section.id }}">
-        <div class="cart-container  {% if container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
+        <div class="cart-container  {% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
             {%- if show_breadcrumb -%}
                 {% render 'breadcrumb', alignment: breadcrumb_alignment %}
             {%- endif -%}
