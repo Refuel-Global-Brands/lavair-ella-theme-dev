@@ -312,12 +312,12 @@
                                         {% assign total_saving = 0 %}
                                         {% for item in cart.items %}
                                         {% if item.variant.compare_at_price > item.variant.price %}
-                                        {% assign saving = item.variant.compare_at_price | minus: item.variant.price | plus: discount.total_allocated_amount %}
+                                        {% assign saving = item.variant.compare_at_price | minus: item.variant.price %}
                                         {% assign saving_qty = saving | times: item.quantity %}
                                     	{% assign total_saving = saving_qty %}
                                         {% endif %}
                                         {% endfor %}
-                                        - {{ total_saving | money }}
+                                        - {{ total_saving | money }} {% render cart.cart_level_discount_applications %}
                                         </span></div>
                                     </li>
                                     <li class="cart-total cart-total-grandtotal">
