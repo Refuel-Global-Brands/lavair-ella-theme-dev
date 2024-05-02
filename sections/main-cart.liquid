@@ -313,7 +313,8 @@
                                         {% for discount_application in cart.cart_level_discount_applications %}
                                         {% for item in cart.items %}
                                         {% if item.variant.compare_at_price > item.variant.price %}
-                                        {% assign saving = item.variant.compare_at_price | minus: item.variant.price | plus: discount_application.total_allocated_amount %}
+                                        {% assign saving = item.variant.compare_at_price | minus: item.variant.price %}
+                                        {% assign saving = saving | plus: discount_application.total_allocated_amount %}
                                         {% assign saving_qty = saving | times: item.quantity %}
                                     	{% assign total_saving = saving_qty %}
                                         {% endif %}
