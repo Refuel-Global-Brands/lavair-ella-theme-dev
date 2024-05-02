@@ -188,7 +188,10 @@
         @media (min-width: 1280px) {
             .section-block-{{section.id}} .halo-block-header {padding-left: 60px; margin-bottom: {{ mg_bottom_view | append: 'px' }}}
         }
-        @media (max-width: 767px) {
+        @media (min-width: 768px) {
+            .section-block-{{section.id}} .halo-block-header {padding-left: 15px; padding-right: 15px; margin-bottom: {{ mg_bottom_view | append: 'px' }}}
+        }
+        @media (min-width: 490px) {
             .section-block-{{section.id}} .halo-block-header {margin-bottom: {{ mg_bottom_view | append: 'px' }}}
         }
     {%- endif -%}
