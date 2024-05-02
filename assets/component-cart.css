@@ -1061,7 +1061,7 @@ h1.cart-faq-heading {
 
 @media (min-width: 1280px) {
   .cart-content-wrapper {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .cart-content-item {
