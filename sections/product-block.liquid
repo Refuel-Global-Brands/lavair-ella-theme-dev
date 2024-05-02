@@ -181,11 +181,12 @@
             .layout_rtl .section-block-{{section.id}} .container-full .view_all {margin-left: 0;margin-right: 10px}
             .section-block-{{section.id}} .block-title--style2.enable_border_title_style2 .product-countdown-block {margin-top: 15px}
             .section-block-{{section.id}} .container-full .block-title--style3 .product-countdown-block {margin-top: 5px;padding-left: 10px;padding-right: 10px}
+            .section-block-{{section.id}} .halo-block-header {margin-bottom: {{ mg_bottom_view | append: 'px' }}}
         }
     {%- endif -%}
 
     {%- if section.settings.style_block_header == 'style2' -%}
-        .section-block-{{section.id}} .halo-block-header {margin-bottom: {{ mg_bottom_view | append: 'px' }}}
+        .section-block-{{section.id}} .halo-block-header {padding-left: 60px; margin-bottom: {{ mg_bottom_view | append: 'px' }}}
     {%- endif -%}
                                                                             
     @media (max-width: 480px)
