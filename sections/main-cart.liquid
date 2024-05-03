@@ -114,6 +114,7 @@
                                                             };
                                                         </script>
                                                         <h4 class="cart-item-name"><a href="{{ item.url }}" class="link link-underline"><span class="text">{{ item.product.title | escape }}</span></a></h4>
+                                                        <h4 class="cart-item-name">Test</h4>
                                                         {%- if item.product.variants.size != 0 -%}
                                                             {%- unless item.variant.title contains 'Default' -%}
                                                                 <div class="cart-item-option">
