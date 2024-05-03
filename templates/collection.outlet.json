@@ -63,9 +63,9 @@
         "show_sorting": true,
         "show_item_per_page": false,
         "show_view_as": false,
-        "products_per_page": "20",
-        "layout": "4",
-        "show_infinite_scrolling": "infinite",
+        "products_per_page": "15",
+        "layout": "3",
+        "show_infinite_scrolling": "show_more",
         "show_banner": false,
         "show_banner_1": false,
         "banner_position_1": "4",
@@ -133,12 +133,24 @@
         "border_width_card": 5,
         "border_color_card": "#f0f1f4"
       }
+    },
+    "ecom_instagram_slider_section_wCEQeL": {
+      "type": "ecom-instagram-slider-section",
+      "settings": {
+      }
+    },
+    "ecom_662fafa978bacb307c047bd6_section_XzKp4n": {
+      "type": "ecom-662fafa978bacb307c047bd6-section",
+      "settings": {
+      }
     }
   },
   "order": [
     "ecom_outlet_header_section_JJxWEn",
     "banner",
     "product-grid",
-    "product-recently-viewed"
+    "product-recently-viewed",
+    "ecom_instagram_slider_section_wCEQeL",
+    "ecom_662fafa978bacb307c047bd6_section_XzKp4n"
   ]
 }
