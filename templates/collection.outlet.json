@@ -1,9 +1,8 @@
 {
   "sections": {
-    "custom_liquid_Xd6yqV": {
-      "type": "custom-liquid",
+    "ecom_outlet_header_section_JJxWEn": {
+      "type": "ecom-outlet-header-section",
       "settings": {
-        "custom_liquid": "<div style=\"\nmargin-bottom: 10px;\nborder-bottom: solid #E2E2E2 1px;\nborder-top: solid #E2E2E2 1px;\nbackground-color: #fff;\n\">\n\n<div style=\"margin-left: auto; margin-right: auto; max-width: fit-content; padding-bottom: 50px; padding-top: 50px; padding-right: 100px; padding-left: 100px;\">\n<center><h1 style=\"font-weight: 500; font-color: #222222; font-size: 20px;\">{{ collection.title }}<\/h1><\/center>\n<\/div>\n<\/div>"
       }
     },
     "banner": {
@@ -137,7 +136,7 @@
     }
   },
   "order": [
-    "custom_liquid_Xd6yqV",
+    "ecom_outlet_header_section_JJxWEn",
     "banner",
     "product-grid",
     "product-recently-viewed"
