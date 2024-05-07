@@ -1,4 +1,16 @@
+.cart-faq-button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #222;
+}
 
+.cart-faq-button-text {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+}
 
 summary {
   display: block;
