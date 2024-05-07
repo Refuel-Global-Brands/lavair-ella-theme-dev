@@ -1,18 +1,8 @@
-.cart-faq-button {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: #222;
-  width: 100%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 .cart-faq-button-text {
   font-size: 14px;
-  color: #fff;
+  color: #222;
   font-weight: 500;
+  text-decoration: underline;
 }
 
 summary {
