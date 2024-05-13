@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-13 15:27:37
+ At 2024-05-13 15:36:21
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -22,7 +22,7 @@
  </script>
 <div class="ecom-builder" id="ecom-preview-cart"><div class="ecom-sections" data-section-id="{{section.id}}">
  <form action="{{ routes.cart_url }}" class="ecom-cart-form" method="post" enctype="multipart/form-data">
- <section class="ecom-row ecom-core ecom-section ecom-ozrxnt8ss8" data-id="ecom-ozrxnt8ss8" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-qlfnsbvp9h"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-3zhiedmo9bp" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__product" deep="1"><div class="ecom-cart__product-wrapper"><div class="ecom-cart__product-container">
+ <section class="ecom-row ecom-core ecom-section ecom-ozrxnt8ss8" data-id="ecom-ozrxnt8ss8" style="z-index: inherit;"><div data-deep="1" class="core__row--columns core__row--full"><div class="ecom-column ecom-core core__column--first ecom-qlfnsbvp9h"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-3zhiedmo9bp" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__product" deep="1"><div class="ecom-cart__product-wrapper"><div class="ecom-cart__product-container">
 						{% capture icon_discount %}
 							<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-discount color-foreground-text" viewBox="0 0 12 12" style="width: 10px;">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M7 0h3a2 2 0 012 2v3a1 1 0 01-.3.7l-6 6a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4l6-6A1 1 0 017 0zm2 2a1 1 0 102 0 1 1 0 00-2 0z" fill="currentColor">
@@ -51,10 +51,10 @@
 							>
 								
 				<div class="ecom-cart__product-items-heading">
-					<div>Product</div>
-					<div>Price</div>
-					<div>Quantity</div>
-					<div>Total</div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
 				</div>
 			
 								{% for item in cart.items %}
@@ -168,6 +168,14 @@
 											</div>
 										</div>
 										
+												<a href="{{ item.url_to_remove }}" class="ecom-cart__product-item-remove-button desktop">
+													
+														<svg class="w-6 h-6" x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+															<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+														</svg>
+													
+												</a>
+											
 										<a href="{{ item.url_to_remove }}" class="ecom-cart__product-item-remove-button responsive">
 											
 													<svg class="w-6 h-6" x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -330,14 +338,6 @@
 											{%- endif -%}
 										</div>
 										
-												<a href="{{ item.url_to_remove }}" class="ecom-cart__product-item-remove-button desktop">
-													
-														<svg class="w-6 h-6" x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-															<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-														</svg>
-													
-												</a>
-											
 									</div>
 								</div>
 							{% endfor %}
@@ -437,13 +437,7 @@
  {{amount}} gram
  </dd>
  </dl>
- </div></div>{%- endif -%}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-tjg9ojubn8d" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__coupon" deep="1">{%- if cart.item_count > 0 -%}<div class="ecom-cart__coupon-wrapper"><div class="ecom-cart__coupon-container"><label class="ecom-cart__coupon-text">Coupon: </label><input type="text" name="coupon" class="ecom-cart__coupon--input" placeholder="Enter your coupon code"></div></div>{%- endif -%}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-3vjsxppeuw8" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__checkout-button" deep="1">{%- if cart.item_count > 0 -%}<input type="hidden" name="checkout" value="ec"><div class="ecom-cart__checkout-button-wrapper"><div class="ecom-cart__checkout-button-container"><button type="submit" name="checkout" class="ecom-cart__checkout-button--submit"><span class="ecom-cart-checkout-text">Checkout</span><span class="ecom__element--button-icon"></span></button></div></div>{%- endif -%}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yvpp8ro8q4g" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__payment-method" deep="1">{%- if cart.item_count > 0 or request.page_type != 'cart' -%}<div class="ecom-product-single__playment-method-wrapper"><div class="ecom-product-single-payment-method-container"><div><ul class="ecom-product-single__payment-method-list" role="list" data-ecom-placeholder="">
- {%- for type in shop.enabled_payment_types -%}
- <li class="ecom-product-single__payment-method-item">
- {{ type | payment_type_svg_tag: class: 'ecom-product-single__payment-method-svg' }}
- </li>
- {%- endfor -%}
- </ul><div class="ecom-product-single__payment-method-img--wrapper"></div></div><p class="ecom-product-single-payment-method-content">Guarantee safe &amp; secure checkout</p></div></div>{%- endif -%}</div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section><input type="hidden" name="checkout" value="ec" /></form>
+ </div></div>{%- endif -%}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-tjg9ojubn8d" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__coupon" deep="1">{%- if cart.item_count > 0 -%}<div class="ecom-cart__coupon-wrapper"><div class="ecom-cart__coupon-container"><label class="ecom-cart__coupon-text">Coupon: </label><input type="text" name="coupon" class="ecom-cart__coupon--input" placeholder="Enter your coupon code"></div></div>{%- endif -%}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-3vjsxppeuw8" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__checkout-button" deep="1">{%- if cart.item_count > 0 -%}<input type="hidden" name="checkout" value="ec"><div class="ecom-cart__checkout-button-wrapper"><div class="ecom-cart__checkout-button-container"><button type="submit" name="checkout" class="ecom-cart__checkout-button--submit"><span class="ecom-cart-checkout-text">Checkout</span><span class="ecom__element--button-icon"></span></button></div></div>{%- endif -%}</div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section><input type="hidden" name="checkout" value="ec" /></form>
 </div></div>
 {% schema %}
 {
