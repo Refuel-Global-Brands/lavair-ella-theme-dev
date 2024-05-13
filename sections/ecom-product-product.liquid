@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-13 14:17:43
+ At 2024-05-13 14:18:42
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -195,28 +195,9 @@
  </div>
  </div></div><div class="ecom-product-single-afterpay">
  
- </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-8aq1pu3cv56" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="short"><div class="ecom-product-single__description--paragraph" style="max-height: var(--ecom-description-height); --ecom-description-height: 137px;">{{product.description}}</div><div class="ecom-product-single__description--more-actions">
- {%- unless product.description == blank -%}
- <button
- type="button"
- class="ecom-product-single__description-view-more-btn"
- >
- 
- <span>View more</span>
- </button>
- {%- endunless -%}
- </div><div class="ecom-product-single__description--less-actions">
- {%- unless product.description == blank -%}
- <button
- type="button"
- class="ecom-product-single__description-view-less-btn"
- style="display:none"
- >
- 
- <span>View less</span>
- </button>
- {%- endunless -%}
- </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
+ </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-8aq1pu3cv56" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="short"><div class="ecom-product-single__description--paragraph"><div>
+ <div>{{ product.description | strip_html | truncatewords: 20 }}</div>
+ </div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
  {% assign ecom_has_variant_picker = true%}
  {% assign variant_selected = product.selected_or_first_available_variant%}
  <div class="ecom-product-single__variant-picker--main">
