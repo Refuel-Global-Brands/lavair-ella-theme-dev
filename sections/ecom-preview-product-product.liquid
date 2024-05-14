@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-13 14:13:52
+ At 2024-05-14 15:23:04
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -41,7 +41,7 @@
  {%- if product != blank -%}
  {%- capture ec_form_id -%}product_form_{{ product.id }}_ecom-58hk4c0z62g{%- endcapture -%}
  {%- form 'product', product, id: ec_form_id, class: "ecom-product-form ecom-product-form--single ecom-click", product_id: product.id, data-product_id: product.id,data-product-id: product.id, data-handle: product.handle-%}
- <section class="ecom-row ecom-core ecom-section ecom-58hk4c0z62g" data-id="ecom-58hk4c0z62g" style="z-index: inherit;"><div data-deep="1" class="core__row--columns core__row--full"><div class="ecom-column ecom-core core__column--first ecom-gblbe0u6ll"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-ci0g40hqvv6" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__media" deep="1"><div class="ecom-product-single__media-wrapper "><div class="ecom-product-single__media-container ecom-product-single__media--grid ecom-product-single__media--horizontal ecom-product-single__media-tablet--horizontal ecom-product-single__media-mobile--horizontal"><div class="ecom-product-single__media--featured">
+ <section class="ecom-row ecom-core ecom-section ecom-58hk4c0z62g" data-id="ecom-58hk4c0z62g" style="z-index: inherit;"><div data-deep="1" class="core__row--columns core__row--full"><div class="ecom-column ecom-core core__column--first ecom-gblbe0u6ll"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-ci0g40hqvv6 hide-on-tablet hide-on-mobile" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__media" deep="1"><div class="ecom-product-single__media-wrapper "><div class="ecom-product-single__media-container ecom-product-single__media--grid ecom-product-single__media--horizontal ecom-product-single__media-tablet--horizontal ecom-product-single__media-mobile--horizontal"><div class="ecom-product-single__media--featured">
  {% comment %}
  Reactivity
  *this.data.settings.image_action
@@ -145,6 +145,102 @@
  <script type="application/json" id="Product-model-{{ product.id }}">
  {{ product.media | where: 'media_type', 'model' | json }}
  </script>
+ </div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-vstzw0vokn hide-on-desktop" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__media" deep="1"><div class="ecom-product-single__media-wrapper "><div class="ecom-product-single__media-container ecom-product-single__media--slider ecom-product-single__media--horizontal ecom-product-single__media-tablet--horizontal ecom-product-single__media-mobile--horizontal"><div class="ecom-product-single__media--featured ecom-swiper-container" data-breakpoints="{&quot;0&quot;:{&quot;__screen_name&quot;:&quot;mobile&quot;},&quot;768&quot;:{&quot;__screen_name&quot;:&quot;tablet&quot;},&quot;1025&quot;:{&quot;__screen_name&quot;:&quot;desktop&quot;,&quot;slidesPerView&quot;:1,&quot;spaceBetween&quot;:0}}" data-priority="variant">
+ {% comment %}
+ Reactivity
+ *this.data.settings.image_action
+ *this.data.settings.enable_zoom
+ *this.data.settings.grid_advance_number_images
+ {% endcomment %}
+ 
+ {%- liquid
+ if product.has_only_default_variant
+ assign target = product
+ else
+ assign target = product.selected_or_first_available_variant
+ endif
+ -%}
+ 
+ 
+ 
+ {% assign img_padding = 1 | times: 1 %}
+ {% assign img_padding__tablet = 1 | times: 1 %}
+ {% assign img_padding__mobile = 1 | times: 1 %}
+ <div class="ecom-swiper-wrapper ecom-product-single__media--images ecom-swiper-wrapper ecom-product-single__media--images-layout__slider">
+ {% assign use_limit = undefined %}
+ {% assign limit_images = 1 %}
+ {% for image in product.images %}
+ {%if use_limit and forloop.index > limit_images%}{% break %}{% endif %}
+ {% assign fetchpriority = 'low'%}
+ {% if forloop.first %}
+ {% assign fetchpriority = 'high'%}
+ {% endif %}
+ {% assign img_ration = 1 | divided_by: image.aspect_ratio | times: 100 %}
+ 
+ <div class="ecom-product-single__media--image ecom-swiper-slide ecom-flex ecom-image-align- ecom-image-align---tablet ecom-image-align---mobile ecom-product-single__media--image" data-index="{{forloop.index0}}" data-variant_id="{{ image.variants | map:'id' | join: ',' }}" style="--img_padding: {{ img_ration | divided_by: img_padding }}%;--img_padding__tablet: {{ img_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ img_ration | divided_by: img_padding__mobile }}%;" data-half-width="{% assign img_ration_half = 1 | divided_by: image.aspect_ratio | times: 50 %}{{img_ration_half}}" data-full-width="{% assign img_ration_full = 1 | divided_by: image.aspect_ratio | times: 100 %}{{img_ration_full}}">
+ 
+ {%- assign img_master = image | img_url: 'master' -%}
+ {{ image | image_url: width: 1946 | image_tag:
+ sizes: sizes,
+ widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946',
+ class: 'ecom-image-default'
+ 
+ ,loading: 'lazy'
+ ,fetchpriority: fetchpriority
+ ,alt: image.alt | escape
+ }}
+ 
+ </div>
+ {% endfor %}
+ {%- for media in product.media -%}
+ {% assign media_ration = 1 | divided_by: media.aspect_ratio | times: 100 %}
+ {% case media.media_type %}
+ {% when 'image' %}
+ {% continue %}
+ {% when 'external_video'%}
+ <div class="ecom-product-single__media--image ecom-swiper-slide ecom-flex ecom-image-align- ecom-image-align---tablet ecom-image-align---mobile ecom-product-single__media---external-video ecom-product-single__media--full" data-position="{{media.position}}" style="--img_padding: {{ media_ration | divided_by: img_padding }}%;--img_padding__tablet: {{ media_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ media_ration | divided_by: img_padding__mobile }}%;">
+ {{ media | external_video_tag: image_size:'master' }}
+ </div>
+ {% when 'video' %}
+ <div data-stopdrag="true" class="ecom-product-single__media--image ecom-swiper-slide ecom-flex ecom-image-align- ecom-image-align---tablet ecom-image-align---mobile ecom-product-single__media--video ecom-product-single__media--full ecom-swiper-no-swiping" data-position="{{media.position}}" style="--img_padding: {{ media_ration | divided_by: img_padding }}%;--img_padding__tablet: {{ media_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ media_ration | divided_by: img_padding__mobile }}%;">
+ {{ media | video_tag: image_size:'master', class: 'ecom-media-video', controls: undefined, autoplay: undefined, mute: undefined,loop: undefined }}
+ 
+ <button class="ecom-product-single__media--play-control" type="button">
+ <span class="ecom-product-single__media--play-control-wrapper">
+ <span class="visually-hidden">Play video</span>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><defs><style>.fa-secondary{opacity:.4}</style></defs><path class="fa-primary" d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"></path></svg>
+ </span>
+ </button>
+ 
+ </div>
+ {% when 'model' %}
+ <div class="ecom-product-single__media--image ecom-swiper-slide ecom-flex ecom-image-align- ecom-image-align---tablet ecom-image-align---mobile ecom-swiper-no-swiping ecom-product-single__media--model ecom-product-single__media--full" data-stopdrag="true" data-position="{{media.position}}">
+ <div class="ecom-product-single__media--model-wrapper" style="padding-top: 100%">
+ {{ media | model_viewer_tag: image_size:'master', reveal: 'interaction', toggleable: true, data-model-id: media.id }}
+ </div>
+ </div>
+ {% else %}
+ <div data-media-type="{{media.media_type}}" class="ecom-product-single__media--image ecom-swiper-slide ecom-flex ecom-image-align- ecom-image-align---tablet ecom-image-align---mobile ecom-swiper-no-swiping ecom-product-single__media--full" data-position="{{media.position}}">
+ <div class="ecom-product-single__media" style="--img_padding: {{ media_ration | divided_by: img_padding }}%;--img_padding__tablet: {{ media_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ media_ration | divided_by: img_padding__mobile }}%;">
+ {{ media | media_tag: image_size:'master', class: 'ecom-product-single__media--item' }}
+ </div>
+ </div>
+ {% endcase %}
+ {%- endfor -%}
+ </div>
+ 
+ <div class="ecom-swiper-pagination"></div>
+ <div class="ecom-swiper-button-next ecom-swiper-controls" style="display: flex">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M 12.96875 4.28125 L 11.53125 5.71875 L 21.8125 16 L 11.53125 26.28125 L 12.96875 27.71875 L 23.96875 16.71875 L 24.65625 16 L 23.96875 15.28125 Z"></path></svg>
+ </div>
+ <div class="ecom-swiper-button-prev ecom-swiper-controls" style="display: flex">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M 19.03125 4.28125 L 8.03125 15.28125 L 7.34375 16 L 8.03125 16.71875 L 19.03125 27.71875 L 20.46875 26.28125 L 10.1875 16 L 20.46875 5.71875 Z"></path></svg>
+ </div>
+ 
+ </div></div></div><div class="ecom-hidden-content">
+ <script type="application/json" id="Product-model-{{ product.id }}">
+ {{ product.media | where: 'media_type', 'model' | json }}
+ </script>
  </div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-iooifwtbe0k product-info" id="product-info"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-5s63dm9dc7f" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__title" deep="1"><div class="ecom-product-single__title-wrapper"><div class="ecom-product-single__title-container"><h1 class="ecom-product__heading" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</h1></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-ym8k2148snb" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__price" deep="1"><div class="ecom-product-single__price-wrapper"><div class="ecom-product-single__price-container"><div class="ecom-product-single__price-container-grid"><div class="ecom-product-single ecom-product-single__price--prices">
  {%- liquid
  if product.has_only_default_variant
@@ -153,7 +249,7 @@
  assign target = product.selected_or_first_available_variant
  endif
  -%}
- <div class="ecom-product-single__price--sale {% if target.compare_at_price == nil or target.compare_at_price < target.price %} ecom-product-single__price-normal {% endif %}" data-price="{{target.price}}">
+ <div class="ecom-product-single__price--sale {% if target.compare_at_price == nil or target.compare_at_price <= target.price %} ecom-product-single__price-normal {% endif %}" data-price="{{target.price}}">
  {%- if settings.currency_code_enabled -%}
  {{target.price | money_with_currency}}
  {%- else -%}
@@ -161,7 +257,7 @@
  {%- endif -%}
  </div>
  
- <div class="ecom-product-single__price--regular" {%- if target.compare_at_price == nil or target.compare_at_price < target.price -%} style="display:none" {% endif %}>
+ <div class="ecom-product-single__price--regular" {%- if target.compare_at_price == nil or target.compare_at_price <= target.price -%} style="display:none" {% endif %}>
  {%- if settings.currency_code_enabled -%}
  {{target.compare_at_price | money_with_currency}}
  {%- else -%}
@@ -195,30 +291,13 @@
  </div>
  </div></div><div class="ecom-product-single-afterpay">
  
- </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-8aq1pu3cv56" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="short"><div class="ecom-product-single__description--paragraph" style="max-height: var(--ecom-description-height); --ecom-description-height: 137px;">{{product.description}}</div><div class="ecom-product-single__description--more-actions">
- {%- unless product.description == blank -%}
- <button
- type="button"
- class="ecom-product-single__description-view-more-btn"
- >
- 
- <span>View more</span>
- </button>
- {%- endunless -%}
- </div><div class="ecom-product-single__description--less-actions">
- {%- unless product.description == blank -%}
- <button
- type="button"
- class="ecom-product-single__description-view-less-btn"
- style="display:none"
- >
- 
- <span>View less</span>
- </button>
- {%- endunless -%}
- </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
- {% assign ecom_has_variant_picker = true%}
- {% assign variant_selected = product.selected_or_first_available_variant%}
+ </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-8aq1pu3cv56" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="short"><div class="ecom-product-single__description--paragraph"><div>
+ <div>{{ product.description | strip_html | truncatewords: 21 }}</div>
+ </div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
+ {%- liquid
+ assign ecom_has_variant_picker = true
+ assign variant_selected = product.selected_or_first_available_variant
+ -%}
  <div class="ecom-product-single__variant-picker--main">
  {% unless product.has_only_default_variant%}
  {%- for option in product.options_with_values -%}
@@ -348,7 +427,7 @@
  </div>
  {%- endif -%}
  {%- endif -%}
- </div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-w5xt8gqo2m" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__add-to-cart" deep="1"><div class="ecom-product-single__add-to-cart-wrapper"><div class="ecom-product-single__add-to-cart-container"><div class="ecom-product-single__add-to-cart-buttons"><div class="ecom-product-single__add-to-cart-buttons-wrapper"><button type="submit" class="ecom-product-single__add-to-cart--submit ecom-flex" data-text-add-cart="Add to cart" data-text-pre-order="Pre Order" data-text-unavailable="Unavailable" data-text-outstock="Out stock" data-text-added-cart="Added to cart" data-message-added-cart="Added to cart" data-href="#" data-target="" data-action="popup" data-variant-id="{{product.first_available_variant.id}}"><span class="ecom-add-to-cart-text">Add to cart</span><span class="ecom__element--button-icon"></span></button></div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-fqfrqbmwcfs" data-core-is="group"><div class="ecom-core ecom-group core__block ecom-dbq9rqmorbs"> <div class="core__group--wrapper ecom-accordion__wrapper ecom-flex ecom-column ecom-w__full ecom__element ecom__accordion" data-r="" style=""><div class="core__group--items"><div id="ecom-5rxs64yshv" class="core__group--item ecom-accordion__item ecom-item-active" data-id="ecom-5rxs64yshv"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items ecom-item-active"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Description</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-jcrys6barp" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="full"><div class="ecom-product-single__description--paragraph" style="max-height: var(--ecom-description-height);">{{product.description}}</div></div></div></div></div> </div></div></div></div><div id="ecom-blfrsp4zie" class="core__group--item ecom-accordion__item" data-id="ecom-blfrsp4zie"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Specifications</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-uwl2o9u3lvr" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__review" deep="1"><div class="ecom-product-single__review-wrapper" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{review_platform}}"><div class="ecom-product-single__review-container">
+ </div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-w5xt8gqo2m" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__add-to-cart" deep="1"><div class="ecom-product-single__add-to-cart-wrapper"><div class="ecom-product-single__add-to-cart-container"><div class="ecom-product-single__add-to-cart-buttons"><div class="ecom-product-single__add-to-cart-buttons-wrapper"><button type="submit" class="ecom-product-single__add-to-cart--submit ecom-flex" data-text-add-cart="Add to cart" data-text-pre-order="Pre Order" data-text-unavailable="Unavailable" data-text-outstock="Out stock" data-text-added-cart="Added to cart" data-message-added-cart="Added to cart" data-href="#" data-target="" data-action="popup" data-variant-id="{{product.first_available_variant.id}}"><span class="ecom-add-to-cart-text">Add to cart</span><span class="ecom__element--button-icon"></span></button></div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-29o0riewxle" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="1"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#"><span class="ecom__element--button-icon-text">Free Shipping For Orders £150.00+</span><span class="ecom-button-icon ecom__element--button-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M 0 6 L 0 8 L 19 8 L 19 23 L 12.84375 23 C 12.398438 21.28125 10.851563 20 9 20 C 7.148438 20 5.601563 21.28125 5.15625 23 L 4 23 L 4 18 L 2 18 L 2 25 L 5.15625 25 C 5.601563 26.71875 7.148438 28 9 28 C 10.851563 28 12.398438 26.71875 12.84375 25 L 21.15625 25 C 21.601563 26.71875 23.148438 28 25 28 C 26.851563 28 28.398438 26.71875 28.84375 25 L 32 25 L 32 16.84375 L 31.9375 16.6875 L 29.9375 10.6875 L 29.71875 10 L 21 10 L 21 6 Z M 1 10 L 1 12 L 10 12 L 10 10 Z M 21 12 L 28.28125 12 L 30 17.125 L 30 23 L 28.84375 23 C 28.398438 21.28125 26.851563 20 25 20 C 23.148438 20 21.601563 21.28125 21.15625 23 L 21 23 Z M 2 14 L 2 16 L 8 16 L 8 14 Z M 9 22 C 10.117188 22 11 22.882813 11 24 C 11 25.117188 10.117188 26 9 26 C 7.882813 26 7 25.117188 7 24 C 7 22.882813 7.882813 22 9 22 Z M 25 22 C 26.117188 22 27 22.882813 27 24 C 27 25.117188 26.117188 26 25 26 C 23.882813 26 23 25.117188 23 24 C 23 22.882813 23.882813 22 25 22 Z"></path></svg></span></a></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-fqfrqbmwcfs" data-core-is="group"><div class="ecom-core ecom-group core__block ecom-dbq9rqmorbs"> <div class="core__group--wrapper ecom-accordion__wrapper ecom-flex ecom-column ecom-w__full ecom__element ecom__accordion" data-r="" style=""><div class="core__group--items"><div id="ecom-5rxs64yshv" class="core__group--item ecom-accordion__item ecom-item-active" data-id="ecom-5rxs64yshv"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items ecom-item-active"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Description</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-jcrys6barp" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="full"><div class="ecom-product-single__description--paragraph" style="max-height: var(--ecom-description-height);">{{product.description}}</div></div></div></div></div> </div></div></div></div><div id="ecom-blfrsp4zie" class="core__group--item ecom-accordion__item" data-id="ecom-blfrsp4zie"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Specifications</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-uwl2o9u3lvr" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__review" deep="1"><div class="ecom-product-single__review-wrapper" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{review_platform}}"><div class="ecom-product-single__review-container">
  {%- if review_platform and review_platform != 'none' -%}
  {%- if EComBuilderMode == true -%}
  <div class="ecom-theme-app-extensions-skeleton">
@@ -545,7 +624,7 @@
  {%- endif -%}
  
  </table>
- </div></div></div></div> </div></div></div></div></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-29o0riewxle" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="1"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#"><span class="ecom__element--button-icon-text">Free Shipping For Orders £150.00+</span><span class="ecom-button-icon ecom__element--button-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M 0 6 L 0 8 L 19 8 L 19 23 L 12.84375 23 C 12.398438 21.28125 10.851563 20 9 20 C 7.148438 20 5.601563 21.28125 5.15625 23 L 4 23 L 4 18 L 2 18 L 2 25 L 5.15625 25 C 5.601563 26.71875 7.148438 28 9 28 C 10.851563 28 12.398438 26.71875 12.84375 25 L 21.15625 25 C 21.601563 26.71875 23.148438 28 25 28 C 26.851563 28 28.398438 26.71875 28.84375 25 L 32 25 L 32 16.84375 L 31.9375 16.6875 L 29.9375 10.6875 L 29.71875 10 L 21 10 L 21 6 Z M 1 10 L 1 12 L 10 12 L 10 10 Z M 21 12 L 28.28125 12 L 30 17.125 L 30 23 L 28.84375 23 C 28.398438 21.28125 26.851563 20 25 20 C 23.148438 20 21.601563 21.28125 21.15625 23 L 21 23 Z M 2 14 L 2 16 L 8 16 L 8 14 Z M 9 22 C 10.117188 22 11 22.882813 11 24 C 11 25.117188 10.117188 26 9 26 C 7.882813 26 7 25.117188 7 24 C 7 22.882813 7.882813 22 9 22 Z M 25 22 C 26.117188 22 27 22.882813 27 24 C 27 25.117188 26.117188 26 25 26 C 23.882813 26 23 25.117188 23 24 C 23 22.882813 23.882813 22 25 22 Z"></path></svg></span></a></div></div> <div class="ecom-block ecom-core core__block ecom-l2o4m1ycwr8" data-core-is="block"><div class="ecom__element element__heading ecom-element ecom-html" data-stopdrag="true" deep="1"><h3 class="ecom__heading ecom-db">You may also like</h3></div></div> <div class="ecom-animation ecom-block ecom-core core__block ecom-8jp1ctwveie" data-core-is="block" ecom-scrolling-animation="[{&quot;css&quot;:&quot;translateX&quot;,&quot;value&quot;:[]}]"><div class="ecom-element ecom-collection ecom-collection__product" deep="1"><div class="ecom-collection__product-wrapper"><div class="ecom-collection__product-container ecom-collection__product-container_product"><div class="ecom-collection__product-main ecom-collection_product_template_product" data-option-swiper="{&quot;direction&quot;:&quot;horizontal&quot;,&quot;freeMode&quot;:false,&quot;loop&quot;:true,&quot;breakpoints&quot;:{&quot;0&quot;:{&quot;slidesPerView&quot;:1,&quot;spaceBetween&quot;:15},&quot;768&quot;:{&quot;slidesPerView&quot;:3,&quot;spaceBetween&quot;:15},&quot;1025&quot;:{&quot;slidesPerView&quot;:3,&quot;spaceBetween&quot;:20}},&quot;autoplay&quot;:{&quot;enabled&quot;:false,&quot;delay&quot;:0,&quot;pauseOnMouseEnter&quot;:false,&quot;disableOnInteraction&quot;:false,&quot;reverseDirection&quot;:false},&quot;speed&quot;:200,&quot;grabCursor&quot;:true,&quot;slideActiveClass&quot;:&quot;ecom-box-active&quot;,&quot;centeredSlides&quot;:false,&quot;watchOverflow&quot;:true,&quot;autoHeight&quot;:true,&quot;cubeEffect&quot;:{&quot;slideShadows&quot;:true,&quot;shadowOffset&quot;:20},&quot;creativeEffect&quot;:{},&quot;fadeEffect&quot;:{&quot;crossFade&quot;:true},&quot;pagination&quot;:{&quot;el&quot;:&quot;.ecom-swiper-pagination&quot;,&quot;type&quot;:&quot;bullets&quot;,&quot;clickable&quot;:true},&quot;navigation&quot;:{&quot;nextEl&quot;:&quot;.ecom-swiper-button-next&quot;,&quot;prevEl&quot;:&quot;.ecom-swiper-button-prev&quot;}}" data-week="[%-W] week%!W" data-day="[%-d] day%!D" data-hour="[%-H] hr%!H" data-minute="[%-M] min%!M" data-second="[%-S] sec%!S" data-sale="Save {{sale}}" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{-review_platform-}}" data-countdown-shows="" data-translate="false">
+ </div></div></div></div> </div></div></div></div></div></div> </div></div> <div class="ecom-block ecom-core core__block ecom-l2o4m1ycwr8" data-core-is="block"><div class="ecom__element element__heading ecom-element ecom-html" data-stopdrag="true" deep="1"><h3 class="ecom__heading ecom-db">You may also like</h3></div></div> <div class="ecom-animation ecom-block ecom-core core__block ecom-8jp1ctwveie" data-core-is="block" ecom-scrolling-animation="[{&quot;css&quot;:&quot;translateX&quot;,&quot;value&quot;:[]}]"><div class="ecom-element ecom-collection ecom-collection__product" deep="1"><div class="ecom-collection__product-wrapper"><div class="ecom-collection__product-container ecom-collection__product-container_product"><div class="ecom-collection__product-main ecom-collection_product_template_product" data-option-swiper="{&quot;direction&quot;:&quot;horizontal&quot;,&quot;freeMode&quot;:false,&quot;loop&quot;:true,&quot;breakpoints&quot;:{&quot;0&quot;:{&quot;slidesPerView&quot;:2,&quot;spaceBetween&quot;:15},&quot;768&quot;:{&quot;slidesPerView&quot;:3,&quot;spaceBetween&quot;:15},&quot;1025&quot;:{&quot;slidesPerView&quot;:3,&quot;spaceBetween&quot;:20}},&quot;autoplay&quot;:{&quot;enabled&quot;:false,&quot;delay&quot;:0,&quot;pauseOnMouseEnter&quot;:false,&quot;disableOnInteraction&quot;:false,&quot;reverseDirection&quot;:false},&quot;speed&quot;:200,&quot;grabCursor&quot;:true,&quot;slideActiveClass&quot;:&quot;ecom-box-active&quot;,&quot;centeredSlides&quot;:false,&quot;watchOverflow&quot;:true,&quot;autoHeight&quot;:true,&quot;cubeEffect&quot;:{&quot;slideShadows&quot;:true,&quot;shadowOffset&quot;:20},&quot;creativeEffect&quot;:{},&quot;fadeEffect&quot;:{&quot;crossFade&quot;:true},&quot;pagination&quot;:{&quot;el&quot;:&quot;.ecom-swiper-pagination&quot;,&quot;type&quot;:&quot;bullets&quot;,&quot;clickable&quot;:true},&quot;navigation&quot;:{&quot;nextEl&quot;:&quot;.ecom-swiper-button-next&quot;,&quot;prevEl&quot;:&quot;.ecom-swiper-button-prev&quot;}}" data-week="[%-W] week%!W" data-day="[%-d] day%!D" data-hour="[%-H] hr%!H" data-minute="[%-M] min%!M" data-second="[%-S] sec%!S" data-sale="Save {{sale}}" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{-review_platform-}}" data-countdown-shows="" data-translate="false">
  {%- capture badge_tags -%}Hot,Best Selling,Trending Item{%- endcapture -%}
  {%- liquid
  assign colors = shop.metafields.ecomposer.colors
@@ -608,7 +687,7 @@
  {{ecom_related_type}}"
  data-grid-column="3"
  data-grid-column-tablet="3"
- data-grid-column-mobile="1"
+ data-grid-column-mobile="2"
  
  
  >
