@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-13 15:22:28
+ At 2024-05-14 15:24:00
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -249,7 +249,7 @@
  assign target = product.selected_or_first_available_variant
  endif
  -%}
- <div class="ecom-product-single__price--sale {% if target.compare_at_price == nil or target.compare_at_price < target.price %} ecom-product-single__price-normal {% endif %}" data-price="{{target.price}}">
+ <div class="ecom-product-single__price--sale {% if target.compare_at_price == nil or target.compare_at_price <= target.price %} ecom-product-single__price-normal {% endif %}" data-price="{{target.price}}">
  {%- if settings.currency_code_enabled -%}
  {{target.price | money_with_currency}}
  {%- else -%}
@@ -257,7 +257,7 @@
  {%- endif -%}
  </div>
  
- <div class="ecom-product-single__price--regular" {%- if target.compare_at_price == nil or target.compare_at_price < target.price -%} style="display:none" {% endif %}>
+ <div class="ecom-product-single__price--regular" {%- if target.compare_at_price == nil or target.compare_at_price <= target.price -%} style="display:none" {% endif %}>
  {%- if settings.currency_code_enabled -%}
  {{target.compare_at_price | money_with_currency}}
  {%- else -%}
@@ -294,8 +294,10 @@
  </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-8aq1pu3cv56" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="short"><div class="ecom-product-single__description--paragraph"><div>
  <div>{{ product.description | strip_html | truncatewords: 21 }}</div>
  </div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
- {% assign ecom_has_variant_picker = true%}
- {% assign variant_selected = product.selected_or_first_available_variant%}
+ {%- liquid
+ assign ecom_has_variant_picker = true
+ assign variant_selected = product.selected_or_first_available_variant
+ -%}
  <div class="ecom-product-single__variant-picker--main">
  {% unless product.has_only_default_variant%}
  {%- for option in product.options_with_values -%}
