@@ -135,6 +135,11 @@
         "border_color_card": "#f0f1f4"
       }
     },
+    "ecom_outlet_product_tabs_section_TY6mK7": {
+      "type": "ecom-outlet-product-tabs-section",
+      "settings": {
+      }
+    },
     "ecom_instagram_slider_section_wCEQeL": {
       "type": "ecom-instagram-slider-section",
       "settings": {
@@ -151,6 +156,7 @@
     "banner",
     "product-grid",
     "product-recently-viewed",
+    "ecom_outlet_product_tabs_section_TY6mK7",
     "ecom_instagram_slider_section_wCEQeL",
     "ecom_icons_section_section_jf8Hkn"
   ]
