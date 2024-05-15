@@ -31,6 +31,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "colors_bg": "#ffffff",
         "colors_bg_gradient": "",
@@ -139,11 +140,6 @@
       "settings": {
       }
     },
-    "ecom_662fafa978bacb307c047bd6_section_XzKp4n": {
-      "type": "ecom-662fafa978bacb307c047bd6-section",
-      "settings": {
-      }
-    },
     "ecom_icons_section_section_jf8Hkn": {
       "type": "ecom-icons-section-section",
       "settings": {
@@ -156,7 +152,6 @@
     "product-grid",
     "product-recently-viewed",
     "ecom_instagram_slider_section_wCEQeL",
-    "ecom_662fafa978bacb307c047bd6_section_XzKp4n",
     "ecom_icons_section_section_jf8Hkn"
   ]
 }
