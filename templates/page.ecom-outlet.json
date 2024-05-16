@@ -1,13 +1,13 @@
 {
   "layout": "theme",
   "sections": {
-    "ecom-o-page": {
-      "type": "ecom-o-page",
+    "ecom-outlet-page": {
+      "type": "ecom-outlet-page",
       "settings": {
       }
     }
   },
   "order": [
-    "ecom-o-page"
+    "ecom-outlet-page"
   ]
 }

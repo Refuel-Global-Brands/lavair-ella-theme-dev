@@ -906,7 +906,8 @@
         "one": "{{ count }} item in your cart",
         "other": "{{ count }} items in your cart"
       }
-    }
+    },
+    "ecom-o-page": ""
   },
   "localization": {
     "country_label": "Country\/region",
