@@ -84,10 +84,14 @@
                                 </div>
                                 {%- endif -%}
                         
-                        <div class="ecom-container-filter-list--wrapper " >
+                        <div class="ecom-container-filter-list--wrapper ecom-show--filter" data-type='push_down'>
                             <div class="ecom-container-filter-list-wrapper">
-                                
-                                <div class="ecom-container-filter-list" >
+                                <span
+                                            class="ecom-collection__filters-heading"
+                                        >
+                                        
+                                        </span>
+                                <div class="ecom-container-filter-list" data-type='push_down'>
                                     
                                                     {%- for filter in collection.filters -%}
                                     {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
@@ -107,7 +111,7 @@
                                                     
                                                 </div>
                                             </summary>
-                                            <div class="ecom-collection__filters-group--display ">
+                                            <div class="ecom-collection__filters-group--display ecom-scroll_bar">
                                                 
 
                                                 {% assign check_is_filter_color = false %}
@@ -173,7 +177,7 @@
                                                         
                                                     </div>
                                                 </summary>
-                                                <div class="ecom-collection__filters-group--display ">
+                                                <div class="ecom-collection__filters-group--display ecom-scroll_bar">
                                                     {%- comment -%}
                                                     
                                                     {%- endcomment -%}
