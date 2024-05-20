@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-20 17:23:38
+ At 2024-05-20 17:27:02
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -27,7 +27,7 @@
  {% endcomment %}
  {% liquid
  if request.page_type != 'collection' or collection == blank
- assign selected_collection = 'footwear'
+ assign selected_collection = ''
  if selected_collection == blank or selected_collection == '' or collections[selected_collection] == blank
  assign collection = collections.all
  else
@@ -86,6 +86,17 @@
  </summary>
  <div class="ecom-collection__filters-group--display ">
  
+ <div class="ecom-collection__filters-group--header">
+ <span class="ecom-collection__filters-group--selected no-js-hidden">
+ {% assign count = filter.active_values.size %}
+ {% if count == 1%}
+ {{count}} selected
+ {% else %}
+ {{count}} selected
+ {% endif %}
+ </span>
+ <a href="{{ filter.url_to_remove }}" class="ecom-collection__filters-group-reset-filter" >Reset</a>
+ </div>
  {% assign check_is_filter_color = false %}
  
  <ul
@@ -150,7 +161,11 @@
  </summary>
  <div class="ecom-collection__filters-group--display ">
  {%- comment -%}
- 
+ <div class="ecom-collection__filters-group--header">
+ {%- assign max_price_amount = filter.range_max | money -%}
+ <span class="ecom-collection__filters-group--selected">Max price {{max_price_amount}}</span>
+ <a href="{{ filter.url_to_remove }}" class="ecom-collection__filters-group-reset-filter" >Reset</a>
+ </div>
  {%- endcomment -%}
  {%- if false-%}
  {%- assign max_price_for_step = filter.range_max -%}
