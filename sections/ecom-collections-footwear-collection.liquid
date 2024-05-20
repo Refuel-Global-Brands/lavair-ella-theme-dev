@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-20 11:46:49
+ At 2024-05-20 14:34:47
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -64,7 +64,7 @@
  {% if EComBuilderMode %}
  <div class="ecom-collection__filters-applied-block">
  <div class="ecom-collection__filters-applied-heading">
- Applied filters
+ REFINED BY
  </div>
  <div class="ecom-collection-filters--active_values">
  <ul class="ecom-collection-filters--active_values-list" role="list">
@@ -91,7 +91,7 @@
  {%- if has_filter -%}
  <div class="ecom-collection__filters-applied-block">
  <div class="ecom-collection__filters-applied-heading">
- Applied filters
+ REFINED BY
  </div>
  <div class="ecom-collection-filters--active_values">
  <ul class="ecom-collection-filters--active_values-list" role="list">
@@ -134,14 +134,15 @@
  {% assign size = filter.values | size %}
  {% assign settings_size = undefined %}
  {%- if size > 0 -%}
- <div
+ <details
  data-name="{{filter.param_name}}"
  
- class="ecom-js-filter ecom-collection__filters-group-dropdown ecom-collection__filters-group ecom-collection__filters-group-lists ecom-d-none" data-index="{{ forloop.index }}" data-attrs-max="5">
+ class="ecom-js-filter ecom-collection__filters-group-not__dropdown ecom-collection__filters-group ecom-collection__filters-group-lists ecom-d-none" data-index="{{ forloop.index }}" data-attrs-max="5">
  <summary class="ecom-collection__filters-group-summary">
  <div class="ecom-collection__filters-group-header">
  <span class="ecom-collection__filters-group-summary--title">{{ filter.label | escape }}</span>
- 
+ <div class="ecom-icon-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M362.7 203.9l-159.1 144c-6.125 5.469-15.31 5.469-21.44 0L21.29 203.9C14.73 197.1 14.2 187.9 20.1 181.3C26.38 174.4 36.5 174.5 42.73 180.1L192 314.5l149.3-134.4c6.594-5.877 16.69-5.361 22.62 1.188C369.8 187.9 369.3 197.1 362.7 203.9z"></path></svg></div>
+ <div class="ecom-icon-filter-open"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M363.9 330.7c-6.271 6.918-16.39 6.783-22.62 1.188L192 197.5l-149.3 134.4c-6.594 5.877-16.69 5.361-22.62-1.188C14.2 324.1 14.73 314 21.29 308.1l159.1-144c6.125-5.469 15.31-5.469 21.44 0l159.1 144C369.3 314 369.8 324.1 363.9 330.7z"></path></svg></div>
  </div>
  </summary>
  <div class="ecom-collection__filters-group--display ">
@@ -186,7 +187,7 @@
  
  </ul>
  </div>
- </div>
+ </details>
  {%- endif -%}
  {% when 'price_range' %}
  {% liquid
@@ -197,14 +198,15 @@
  endif
  %}
  
- <div
+ <details
  
- class="ecom-collection__filters-group ecom-collection__filters-group-dropdown ecom-collection__filters-group-price-range" data-index="{{ forloop.index }}">
+ class="ecom-collection__filters-group ecom-collection__filters-group-not__dropdown ecom-collection__filters-group-price-range" data-index="{{ forloop.index }}">
  <summary class="ecom-collection__filters-group-summary">
  <div class="ecom-collection__filters-group-header">
  <span class="ecom-collection__filters-group-summary--title">{{ filter.label | escape }}</span>
  <span class="ecom-collection__filters-group-count-bubble{%- if filter.min_value.value or filter.max_value.value -%}{{ filter.active_values.size }} count-bubble--dot{% endif %}"></span>
- 
+ <div class="ecom-icon-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M362.7 203.9l-159.1 144c-6.125 5.469-15.31 5.469-21.44 0L21.29 203.9C14.73 197.1 14.2 187.9 20.1 181.3C26.38 174.4 36.5 174.5 42.73 180.1L192 314.5l149.3-134.4c6.594-5.877 16.69-5.361 22.62 1.188C369.8 187.9 369.3 197.1 362.7 203.9z"></path></svg></div>
+ <div class="ecom-icon-filter-open"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M363.9 330.7c-6.271 6.918-16.39 6.783-22.62 1.188L192 197.5l-149.3 134.4c-6.594 5.877-16.69 5.361-22.62-1.188C14.2 324.1 14.73 314 21.29 308.1l159.1-144c6.125-5.469 15.31-5.469 21.44 0l159.1 144C369.3 314 369.8 324.1 363.9 330.7z"></path></svg></div>
  </div>
  </summary>
  <div class="ecom-collection__filters-group--display ">
@@ -359,14 +361,14 @@
  {%- endif -%}
  </div>
  
- </div>
+ </details>
  {% endcase %}
  {%- endfor -%}
  </div>
  </div>
  </div>
  
- </form></div></div></div></div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-2uxpfzmd"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-ob34d5mbzq" data-core-is="row"><div class="ecom-row ecom-core core__block ecom-atcp3u8cpsf" data-id="ecom-atcp3u8cpsf" style="z-index: inherit;"><div data-deep="2" class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-nqisxwj6xgf"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-2znqv7nzbcm" data-core-is="block"><div class="ecom__element ecom-element element__text" data-stopdrag="" deep="2"><div class="text-content ecom-html has-drop-cap-view-framed">UP TO 60% OFF</div></div></div> <div class="ecom-block ecom-core core__block ecom-wbjyug9q189" data-core-is="block"><div class="ecom__element element__heading ecom-element ecom-html" data-stopdrag="true" deep="2"><h3 class="ecom__heading ecom-db">Spring Collection<div><b></b></div></h3></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-lhvco50xdue" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="2"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#"><span class="ecom__element--button-icon-text">Shop now</span><span class="ecom-button-icon ecom__element--button-icon"></span></a></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-04pdoj09vslc"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-nqjiqc709w" data-core-is="block"><div class="ecom-row ecom-core core__block ecom-3jk7rlqf07i" data-id="ecom-3jk7rlqf07i" style="z-index: inherit;"><div data-deep="3" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-94f2duyijf"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-qtxmvx0f8ri" data-core-is="block"><div class="ecom__element ecom-element element__text" data-stopdrag="" deep="3"><div class="text-content ecom-html has-drop-cap-view-framed">Winter Sale</div></div></div> <div class="ecom-block ecom-core core__block ecom-i214p6fq2r" data-core-is="block"><div class="ecom__element element__heading ecom-element ecom-html" data-stopdrag="true" deep="3"><h3 class="ecom__heading ecom-db">Up to 60% off newly&nbsp;<div><b>added styles</b></div></h3></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-z5dgdzhde3" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="3"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#"><span class="ecom__element--button-icon-text">Shop now</span><span class="ecom-button-icon ecom__element--button-icon"></span></a></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-it1bgmxibw9" data-core-is="row"><div class="ecom-row ecom-core core__block ecom-w6c016llo3s" data-id="ecom-w6c016llo3s" style="z-index: inherit;"><div data-deep="2" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-035j7tczq8j2"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-iokuq51710e" data-core-is="block"><div class="ecom__element ecom-element element__text" data-stopdrag="" deep="2"><div class="text-content ecom-html has-drop-cap-view-framed">Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Phasellus tempus. Curabitur at lacus ac velit ornare lobortis. Suspendisse feugiat. Nunc nec neque.</div></div></div> <div class="ecom-block ecom-core core__block ecom-eeyxm5i5qn5" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="2"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#ec-description-collection"><span class="ecom__element--button-icon-text">Read more</span><span class="ecom-button-icon ecom__element--button-icon"></span></a></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-dudtfsd3hhi" data-core-is="row"><div class="ecom-row ecom-core core__block ecom-iqzw6e0xzbs" data-id="ecom-iqzw6e0xzbs" style="z-index: inherit;"><div data-deep="2" class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-dse3p9tbixp"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-yr9zfzxic9" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__title" deep="2"><div class="ecom-element ecom-collection ecom-collection__title-wrapper"><div class="ecom-element ecom-collection ecom-collection__title-container"><h2 class="ecom-collection__title--headline ecom__heading">{{collection.title}}</h2></div></div></div></div> <div class="ecom-block ecom-core core__block ecom-w73rzkt17hj" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="2"><span class="ec-count-pr">
+ </form></div></div></div></div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-2uxpfzmd"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-dudtfsd3hhi" data-core-is="row"><div class="ecom-row ecom-core core__block ecom-iqzw6e0xzbs" data-id="ecom-iqzw6e0xzbs" style="z-index: inherit;"><div data-deep="2" class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-dse3p9tbixp"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-yr9zfzxic9" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__title" deep="2"><div class="ecom-element ecom-collection ecom-collection__title-wrapper"><div class="ecom-element ecom-collection ecom-collection__title-container"><h2 class="ecom-collection__title--headline ecom__heading">{{collection.title}}</h2></div></div></div></div> <div class="ecom-block ecom-core core__block ecom-w73rzkt17hj" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="2"><span class="ec-count-pr">
 {{ collection.all_products_count }} 
 {% if collection.all_products_count == 1 %} product {%- else -%} products {%- endif -%} 
 </span></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-ibkte42j5g"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper ecom__column-full-height" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-4z0b3lch6ig" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__sorting" deep="2"><div class="ecom-collection__sorting-wrapper"><div class="ecom-collection__sorting-container"><div class="ecom-collection__filters-heading"> </div><select name="sort_by" class="ecom-collection__sorting-select" aria-describedby="a11y-refresh-page-message">
