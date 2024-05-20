@@ -96,10 +96,10 @@
                                         {% assign size = filter.values | size %}
                                         {% assign settings_size = undefined %}
                                         {%- if size > 0 -%}
-                                        <div
+                                        <details
                                         data-name="{{filter.param_name}}"
                                         
-                                        class="ecom-js-filter ecom-collection__filters-group-dropdown ecom-collection__filters-group ecom-collection__filters-group-lists ecom-d-none" data-index="{{ forloop.index }}" data-attrs-max="5">
+                                        class="ecom-js-filter ecom-collection__filters-group-not__dropdown ecom-collection__filters-group ecom-collection__filters-group-lists ecom-d-none" data-index="{{ forloop.index }}" data-attrs-max="5">
 
                                             <summary class="ecom-collection__filters-group-summary">
                                                 <div class="ecom-collection__filters-group-header">
@@ -153,7 +153,7 @@
                                                     
                                                 </ul>
                                             </div>
-                                            </div>
+                                            </details>
                                         {%- endif -%}
                                     {% when 'price_range' %}
                                         {% liquid
@@ -164,9 +164,9 @@
                                             endif
                                             %}
                                             
-                                            <div
+                                            <details
                                             
-                                            class="ecom-collection__filters-group ecom-collection__filters-group-dropdown ecom-collection__filters-group-price-range" data-index="{{ forloop.index }}">
+                                            class="ecom-collection__filters-group ecom-collection__filters-group-not__dropdown ecom-collection__filters-group-price-range" data-index="{{ forloop.index }}">
                                                 <summary class="ecom-collection__filters-group-summary">
                                                     <div class="ecom-collection__filters-group-header">
                                                         <span class="ecom-collection__filters-group-summary--title">{{ filter.label | escape }}</span>
@@ -330,7 +330,7 @@
                                                 </div>
                                             
 
-                                            </div>
+                                            </details>
                                         {% endcase %}
                                     {%- endfor -%}
                                 </div>
