@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-20 14:34:47
+ At 2024-05-20 14:36:28
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -60,67 +60,6 @@
  </svg>
  </span>
  {% endcapture %}
- 
- {% if EComBuilderMode %}
- <div class="ecom-collection__filters-applied-block">
- <div class="ecom-collection__filters-applied-heading">
- REFINED BY
- </div>
- <div class="ecom-collection-filters--active_values">
- <ul class="ecom-collection-filters--active_values-list" role="list">
- {% for filter in collection.filters %}
- {% if filter.type == 'list' %}
- {% for value in filter.values %}
- <li class="ecom-collection__filters-group-list-item ecom-al_center">
- <a href="{{value.url_to_remove}}" title="{{value.label}}">{{ value.label | escape }} {{close_icon}}</a>
- </li>
- {% endfor %}
- {% break %}
- {% endif %}
- {% endfor %}
- </ul>
- </div>
- </div>
- {% endif %}
- {%- for filter in collection.filters -%}
- {%- if filter.active_values.size > 0 or filter.min_value.value != nil or filter.max_value.value != nil -%}
- {%- assign has_filter = true -%}
- {%- break -%}
- {%- endif -%}
- {%- endfor -%}
- {%- if has_filter -%}
- <div class="ecom-collection__filters-applied-block">
- <div class="ecom-collection__filters-applied-heading">
- REFINED BY
- </div>
- <div class="ecom-collection-filters--active_values">
- <ul class="ecom-collection-filters--active_values-list" role="list">
- {%- for filter in collection.filters -%}
- {%- if filter.active_values.size > 0 -%}
- {% for value in filter.active_values %}
- <li class="ecom-collection__filters-group-list-item ecom-al_center">
- <a class="ecom-collection__filters-group-list-item-clear" href="{{value.url_to_remove}}" title="{{value.label}}">{{ value.label | escape }} {{close_icon}}</a>
- </li>
- {% endfor %}
- {% endif %}
- {% if filter.type == "price_range" %}
- {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
- <li class="ecom-collection__filters-group-list-item ecom-al_center">
- <a class="ecom-collection__filters-group-list-item-clear" href="{{filter.url_to_remove}}">
- {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
- {{close_icon}}
- </a>
- </li>
- {%- endif -%}
- {% endif %}
- {% endfor %}
- <li class="ecom-collection__filters-group-list-item ecom-al_center">
- <a href="{{collection.url}}" title="Clear all" class="ecom-collection__filters-group-list-item-clear">Clear all{{close_icon}}</a>
- </li>
- </ul>
- </div>
- </div>
- {%- endif -%}
  
  <div class="ecom-container-filter-list--wrapper " >
  <div class="ecom-container-filter-list-wrapper">
@@ -371,7 +310,71 @@
  </form></div></div></div></div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-2uxpfzmd"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-dudtfsd3hhi" data-core-is="row"><div class="ecom-row ecom-core core__block ecom-iqzw6e0xzbs" data-id="ecom-iqzw6e0xzbs" style="z-index: inherit;"><div data-deep="2" class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-dse3p9tbixp"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-yr9zfzxic9" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__title" deep="2"><div class="ecom-element ecom-collection ecom-collection__title-wrapper"><div class="ecom-element ecom-collection ecom-collection__title-container"><h2 class="ecom-collection__title--headline ecom__heading">{{collection.title}}</h2></div></div></div></div> <div class="ecom-block ecom-core core__block ecom-w73rzkt17hj" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="2"><span class="ec-count-pr">
 {{ collection.all_products_count }} 
 {% if collection.all_products_count == 1 %} product {%- else -%} products {%- endif -%} 
-</span></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-ibkte42j5g"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper ecom__column-full-height" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-4z0b3lch6ig" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__sorting" deep="2"><div class="ecom-collection__sorting-wrapper"><div class="ecom-collection__sorting-container"><div class="ecom-collection__filters-heading"> </div><select name="sort_by" class="ecom-collection__sorting-select" aria-describedby="a11y-refresh-page-message">
+</span></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-papfe5n49qh" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__filter-values" deep="2">
+ 
+ {% capture close_icon %}
+ <span class="ecom-colletion-filter-value--close-icon ecom-flex">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="currentColor"><defs><style>.fa-secondary{opacity:.4}</style></defs><path class="fa-secondary" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path></svg>
+ </span>
+ 
+ {% endcapture %}
+ <ul class="ecom-collection-filter-values-list" role="list">
+ {%- if EComBuilderMode -%}
+ {% for filter in collection.filters %}
+ {% if filter.type == 'list' %}
+ {% for value in filter.values %}
+ <li class="ecom-collection-filter-values-list__item ecom-al_center">
+ <a
+ href="{{value.url_to_remove}}" title="{{value.label}}"
+ class="ecom-w__full ecom-flex ecom-al_center"
+ >
+ {{ value.label | escape }} {{close_icon}}
+ </a>
+ </li>
+ {% endfor %}
+ {% break %}
+ {% endif %}
+ {% endfor %}
+ {%- else -%}
+ {%- for filter in collection.filters -%}
+ {%- if filter.active_values.size > 0 or filter.min_value.value != nil or filter.max_value.value != nil -%}
+ {%- assign has_filter = true -%}
+ {%- break -%}
+ {%- endif -%}
+ {%- endfor -%}
+ {%- if has_filter -%}
+ {%- for filter in collection.filters -%}
+ {%- if filter.active_values.size > 0 or filter.min_value.value != nil or filter.max_value.value != nil -%}
+ {% for value in filter.active_values %}
+ <li class="ecom-collection-filter-values-list__item ecom-al_center">
+ <a
+ href="{{value.url_to_remove}}" title="{{value.label}}"
+ class="ecom-w__full ecom-flex ecom-al_center"
+ >
+ {{ value.label | escape }} {{close_icon}}
+ </a>
+ </li>
+ {% endfor %}
+ {% if filter.type == "price_range" %}
+ {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+ <li class="ecom-collection-filter-values-list__item ecom-al_center">
+ <a class="ecom-w__full ecom-flex ecom-al_center" href="{{filter.url_to_remove}}">
+ {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
+ {{close_icon}}
+ </a>
+ </li>
+ {%- endif -%}
+ {% endif %}
+ {% endif %}
+ {% endfor %}
+ <li class="ecom-collection-filter-values-list__item ecom-al_center">
+ <a href="{{collection.url}}" title="Clear all" class="ecom-flex ecom-al_center">Clear all{{close_icon}}</a>
+ </li>
+ {% endif %}
+ {%- endif -%}
+ </ul>
+ 
+ </div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-ibkte42j5g"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper ecom__column-full-height" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-4z0b3lch6ig" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__sorting" deep="2"><div class="ecom-collection__sorting-wrapper"><div class="ecom-collection__sorting-container"><div class="ecom-collection__filters-heading"> </div><select name="sort_by" class="ecom-collection__sorting-select" aria-describedby="a11y-refresh-page-message">
  {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
  {%- for option in collection.sort_options -%}
  <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
