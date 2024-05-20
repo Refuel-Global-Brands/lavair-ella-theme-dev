@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-20 17:27:02
+ At 2024-05-20 17:30:26
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -27,7 +27,7 @@
  {% endcomment %}
  {% liquid
  if request.page_type != 'collection' or collection == blank
- assign selected_collection = ''
+ assign selected_collection = 'footwear'
  if selected_collection == blank or selected_collection == '' or collections[selected_collection] == blank
  assign collection = collections.all
  else
