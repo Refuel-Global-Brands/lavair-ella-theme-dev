@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-20 18:45:18
+ At 2024-05-20 19:00:14
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -394,7 +394,7 @@
  {%- endif -%}
  </ul>
  
- </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-atjuiz559fh" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__product" deep="1"><div class="ecom-collection__product-wrapper"><div class="ecom-collection__product-container ecom-collection__product-container_collection"><div class="ecom-collection__product-main ecom-collection_product_template_collection" data-option-swiper="{&quot;direction&quot;:&quot;horizontal&quot;,&quot;freeMode&quot;:false,&quot;breakpoints&quot;:{&quot;0&quot;:{&quot;slidesPerView&quot;:2},&quot;768&quot;:{&quot;slidesPerView&quot;:3},&quot;1025&quot;:{&quot;slidesPerView&quot;:4}},&quot;autoplay&quot;:{&quot;enabled&quot;:false,&quot;delay&quot;:0,&quot;pauseOnMouseEnter&quot;:false,&quot;disableOnInteraction&quot;:false,&quot;reverseDirection&quot;:false},&quot;speed&quot;:200,&quot;grabCursor&quot;:true,&quot;slideActiveClass&quot;:&quot;ecom-box-active&quot;,&quot;centeredSlides&quot;:false,&quot;watchOverflow&quot;:true,&quot;autoHeight&quot;:true,&quot;cubeEffect&quot;:{&quot;slideShadows&quot;:true,&quot;shadowOffset&quot;:20},&quot;creativeEffect&quot;:{},&quot;fadeEffect&quot;:{&quot;crossFade&quot;:true},&quot;pagination&quot;:{&quot;el&quot;:&quot;.ecom-swiper-pagination&quot;,&quot;type&quot;:&quot;bullets&quot;,&quot;clickable&quot;:true},&quot;navigation&quot;:{&quot;nextEl&quot;:&quot;.ecom-swiper-button-next&quot;,&quot;prevEl&quot;:&quot;.ecom-swiper-button-prev&quot;},&quot;spaceBetween&quot;:10}" data-pagination="default" data-week="[%-W] week%!W" data-day="[%-d] day%!D" data-hour="[%-H] hr%!H" data-minute="[%-M] min%!M" data-second="[%-S] sec%!S" data-sale="-{{sale}}%" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{-review_platform-}}" data-countdown-shows="day,hour,minute,second" data-translate="false">
+ </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-atjuiz559fh" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__product" deep="1"><div class="ecom-collection__product-wrapper"><div class="ecom-collection__product-container ecom-collection__product-container_collection"><div class="ecom-collection__product-main ecom-collection_product_template_collection" data-option-swiper="{&quot;direction&quot;:&quot;horizontal&quot;,&quot;freeMode&quot;:false,&quot;breakpoints&quot;:{&quot;0&quot;:{&quot;slidesPerView&quot;:2},&quot;768&quot;:{&quot;slidesPerView&quot;:3},&quot;1025&quot;:{&quot;slidesPerView&quot;:4}},&quot;autoplay&quot;:{&quot;enabled&quot;:false,&quot;delay&quot;:0,&quot;pauseOnMouseEnter&quot;:false,&quot;disableOnInteraction&quot;:false,&quot;reverseDirection&quot;:false},&quot;speed&quot;:200,&quot;grabCursor&quot;:true,&quot;slideActiveClass&quot;:&quot;ecom-box-active&quot;,&quot;centeredSlides&quot;:false,&quot;watchOverflow&quot;:true,&quot;autoHeight&quot;:true,&quot;cubeEffect&quot;:{&quot;slideShadows&quot;:true,&quot;shadowOffset&quot;:20},&quot;creativeEffect&quot;:{},&quot;fadeEffect&quot;:{&quot;crossFade&quot;:true},&quot;pagination&quot;:{&quot;el&quot;:&quot;.ecom-swiper-pagination&quot;,&quot;type&quot;:&quot;bullets&quot;,&quot;clickable&quot;:true},&quot;navigation&quot;:{&quot;nextEl&quot;:&quot;.ecom-swiper-button-next&quot;,&quot;prevEl&quot;:&quot;.ecom-swiper-button-prev&quot;},&quot;spaceBetween&quot;:10}" data-pagination="loadmore" data-week="[%-W] week%!W" data-day="[%-d] day%!D" data-hour="[%-H] hr%!H" data-minute="[%-M] min%!M" data-second="[%-S] sec%!S" data-sale="-{{sale}}%" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{-review_platform-}}" data-countdown-shows="day,hour,minute,second" data-translate="false">
  {%- capture badge_tags -%}Hot{%- endcapture -%}
  {%- liquid
  assign colors = shop.metafields.ecomposer.colors
@@ -405,7 +405,7 @@
  -%}
  
  
- {%- capture limit-%}9{% endcapture %}
+ {%- capture limit-%}12{% endcapture %}
  {%- if limit == blank -%}
  {% assign limit = 12 %}
  {% else %}
@@ -449,137 +449,6 @@
  {% assign other_option_layout = 'radio' %}
  {% capture product_picker%}
  
- {%- if product.has_only_default_variant == false-%}
- {% if quickshop_layout != 'full' and product.options.size > 1%}
- {% assign hide_quickshop = false %}
- {% endif %}
- 
- {%- if enable_hook -%}
- {% capture the_ecom_hook %}
- {% render 'ecom_product_loop_before_variant', product: product %}
- {% endcapture %}
- {% unless the_ecom_hook contains 'Liquid error' %}
- {{ the_ecom_hook }}
- {% endunless %}
- {%- endif -%}
- <div class="ecom-collection__product-variants" data-picker-type="color">
- <button class="ecom-collection__product-close"></button>
- <form class="ecom-collection__product-form ecom-product-form" product_id="{{product.id}}" data-product_id="{{product.id}}" data-product-id="{{product.id}}" data-handle="{{product.handle}}">
- <div class="ecom-child-element" >
- {% assign variant_selected = product.first_available_variant%}
- 
- {%- capture swatch_option_temp -%}Color{%- endcapture -%}
- {%- assign swatch_option_temp = swatch_option_temp | split: ',' -%}
- {% assign swatch_option = "" %}
- {% for item in swatch_option_temp %}
- {% assign normalizedItem = item | strip %}
- {% assign swatch_option = swatch_option | append: normalizedItem %}
- {% unless forloop.last %}
- {% assign swatch_option = swatch_option | append: ',' %}
- {% endunless %}
- {% endfor %}
- {% assign swatch_option = swatch_option | split: ',' %}
- {% assign option_index = current_option.position | minus: 1 %}
- {%- for option in product.options_with_values -%}
- {%- if swatch_option contains option.name -%}
- {% assign variant_selected = product.selected_or_first_available_variant %}
- {% assign current_option = option %}
- {% assign option_index = current_option.position | minus: 1 %}
- <div class="ecom-collection__product-picker-main ecom-collection__product-picker-option-{{current_option.name | handleize }}">
- 
- 
- <ul class="ecom-collection__product-picker-colors-list">
- {%- assign index = current_option.position | prepend: 'option' -%}
- {% assign value_key_selected = variant_selected[index] | downcase %}
- {%- for value in current_option.values -%}
- {% assign value_key = value | downcase | strip %}
- <li data-option-index="{{ option_index }}" class="ecom-collection__product-swatch-item ecom-collection__product-picker-colors-item {%comment%}{% if value_key == value_key_selected %}ecom-product-swatch-item--active ecom-button-active{% endif %}{%endcomment%}" data-value="{{ value | escape }}">
- <span class="ecom-collection__product-swatch-item--wrapper"></span>
- <span class="ecom-collection__product-picker-colors-item--preview {% if colors and colors.value[value_key] == blank %}ecom-collection__product-picker-colors--no-color{%- endif -%}" {% if colors and colors.value[value_key] != blank %} style="{{colors.value[value_key]}}"{% endif %}>
- </span>
- </li>
- {%endfor%}
- </ul>
- 
- </div>
- {% endif %}
- {% endfor %}
- {%- if other_option_layout != 'hide' -%}
- <div class="ecom-collection__product-quick-shop-wrapper {% if hide_quickshop %} ecom-collection__product-quick-shop--force-show{% endif %}">
- {%- for option in product.options_with_values -%}
- {%- if swatch_option contains option.name -%}{% continue%}{%-endif-%}
- {%- assign index = option.position | prepend: 'option' -%}
- {% assign option_index = option.position | minus: 1 %}
- <div class="ecom-collection__product-picker-other ecom-collection__product-picker-option-{{option.name | handleize }}">
- 
- 
- <ul class="ecom-collection__product-picker-radio-list ecom-d-flex">
- {% for value in option.values %}
- <li class="ecom-collection__product-swatch-item ecom-collection__product-picker-radio-list-item {% if forloop.first %}ecom-product-swatch-item--active ecom-button-active{% endif %}" data-option-index="{{ option_index }}" data-value="{{ value | escape }}">
- {{value}}
- </li>
- {% endfor %}
- </ul>
- 
- </div>
- {%- endfor -%}
- </div>
- {%- endif -%}
- 
- 
- <div class="ecom-collection__product-quick-shop-wrapper {% if hide_quickshop %} ecom-collection__product-quick-shop--force-show{% endif %}">
- <div class="ecom-collection__product-picker-selection" style="display:none;">
- <select name="variant_id" data-product-id="{{product.id}}" id="ecom-variant-selector-{{product.id}}-ecom-atjuiz559fh">
- {% for variant in product.variants %}
- <option value="{{variant.id}}">{{variant.title}}</option>
- {% endfor %}
- </select>
- </div>
- </div>
- </div>
- {%- if product.requires_selling_plan == true and view_more_only != true -%}
- 
- {%- else -%}
- <div class="ecom-collection__product-quick-shop-add-to-cart-wrapper {% if hide_quickshop or view_more_only %} ecom-collection__product-quick-shop--force-show{% endif %} ">
- <div class="ecom-collection__product-form__actions ">
- 
- <button type="button" class="ecom-child-element ecom-collection__product-submit ecom-ajax-cart-submit ecom-collection__product-simple-add-to-cart
- ecom-collection__product-add-cart-icon-before"
- data-text-add-cart="Add to cart"
- data-text-unavailable="Unavailable"
- data-text-sold-out="outstock"
- data-action="popup"
- data-text-added-cart="Added to cart"
- data-message-added-cart="Added to cart"
- data-href="#"
- data-target="_blank"
- data-text-pre-order="Pre order"
- 
- >
- 
- <span class="ecom-add-to-cart-text">
- Add to cart
- </span>
- </button>
- </div>
- 
- </div>
- {%- endif -%}
- </form> {% comment %} End form {% endcomment %}
- <script class="product-json" type="application/json">
- {%- render "ecom_product_json", product: product -%}
- </script>
- </div>
- {%- if enable_hook -%}
- {% capture the_ecom_hook %}
- {% render 'ecom_product_loop_after_variant', product: product %}
- {% endcapture %}
- {% unless the_ecom_hook contains 'Liquid error' %}
- {{ the_ecom_hook }}
- {% endunless %}
- {%- endif -%}
- {% endif %}
- 
  {% endcapture%}
  {% capture product_actions%}
  <div class="ecom-collection__product--actions" data-layout="{{quickshop_layout}}">
@@ -587,7 +456,7 @@
  <div
  class="ecom-button-default ecom-collection__product-form__actions "
  
- >
+ style="display:none;">
  {%- if enable_hook -%}
  {% capture the_ecom_hook %}
  {% render 'ecom_product_loop_before_cart_button', product: product %}
@@ -711,47 +580,9 @@
  </div>
  {% endif %}
  
- <div class="ecom-collection__product-badge">
  
  
- <span class="ecom-collection__product-badge--sold-out" aria-hidden="true" style="{%- if product.available == true -%}display: none; {%- endif -%}">
- Sold
- </span>
- <span class="ecom-collection__product-badge--sale" aria-hidden="true" style="{%- unless product.compare_at_price > product.price and product.available -%}display: none;{%- endunless -%}">
- Sale
- </span>
- {% if badge_tags %}
- {% for badge in badge_tags %}
- {% for original_tag in product.tags %}
- {% assign tag = original_tag | replace: ' ', ' ' %}
- {% if tag == badge %}
- <span class="ecom-collection__product-badge--custom ecom-collection__product-badge--{{ badge | handleize}}" aria-hidden="true">
- {{ badge }}
- </span>
- {% endif %}
- {% endfor %}
- {%- assign bad = badge | strip -%}
- {% endfor %}
- {% endif %}
  
- {%- if product.has_only_default_variant -%}
- {%- if product.compare_at_price != null and product.compare_at_price > product.price -%}
- {%- assign sale = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
- <span class="ecom-collection__product-price--bage-sale">
- -{{sale}}%
- </span>
- {%- endif -%}
- {%- else -%}
- {%- if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
- {%- assign sale = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round -%}
- {%else%}
- {%- assign sale = null %}
- {%- endif -%}
- <span class="ecom-collection__product-price--bage-sale" style="{% unless sale %}display:none{% endunless %}">
- -{{sale}}%
- </span>
- {%- endif -%}
- </div>
  </a>
  
  <div class="ecom-collection__product-group-button-action " style="justify-content: start">
@@ -777,7 +608,7 @@
  {% endunless %}
  {%- endif -%}
  <h3
- class="ecom-collection__product-title-tag {% if review_platform and review_platform == 'vital-reviews' %}card__heading{% endif %} ecom-child-element"
+ class="ecom-collection__product-title-tag ecom-child-element"
  
  >
  <a
@@ -798,82 +629,26 @@
  {% endunless %}
  {%- endif -%}
  
- <div
- class="ecom-collection__product-rating-wrapper ecom-child-element"
- 
- data-rating-platform="{{review_platform}}"
- >
- {%- if review_platform -%}
- {%- case review_platform -%}
- {%- when 'none' -%}
- {%- when 'ali-reviews' -%}
- <div product-id="{{ product.id }}" product-handle="{{ product.handle }}" class="alireviews-review-star-rating"></div>
- {%- when 'opinew-reviews' -%}
- <div class='opinew-stars-plugin-product-list'>{% render 'opinew_review_stars_lists' product:product %}</div>
- {%- when 'judgeme' -%}
- <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>
- {{ product.metafields.judgeme.badge }}
- </div>
- {%- when 'product-reviews-addon' -%}
- <span class=" stamped-product-reviews-badge" data-product-sku="{{ product.handle }}" data-id="{{ product.id }}" style="display:block;">{{- product.metafields.stamped.badge -}}</span>
- {%- when 'areviews-aliexpress'-%}
- <div class="areviews_product_item areviews_stars{{ product.id }}" data-product-id="{{ product.id }}"></div>
- {%- when 'loox'-%}
- <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
- {% when 'ryviu'%}
- <div class="ryviu-collection">
- <ryviu-widget-total collection=1
- reviews_data="{{product.metafields.ryviu.product_reviews_info | escape }}"
- product_id="{{product.id}}" handle="{{product.handle}}">
- </ryviu-widget-total>
- </div>
- {%- when 'yotpo-social-reviews' -%}
- <div class="yotpo bottomLine" style="display:inline-block" data-product-id="{{ product.id }}"> </div>
- {%- when 'vital-reviews' -%}
- <div></div>
- {%- when 'aliexpress-reviews-importer'-%}
- <div class="shop-booster-content shop-booster-col-rat" id="shop-booster-pid-d-{{ product.id }}" ></div>
- {%- when 'rivyo-product-review'-%}
- <div class="wc_product_review_badge" data-handle="{{ product.handle }}" data-product_id="{{ product.id }}"></div>
- {%-when 'growave' -%}
- {% capture the_snippet_review_avg %}{% render 'ssw-widget-avg-rate-listing', product: product %}{% endcapture %}
- {% unless the_snippet_review_avg contains 'Liquid error' %}
- {{ the_snippet_review_avg }}
- {% endunless %}
- {%- when 'smart-aliexpress-reviews'-%}
- <div class="scm-reviews-rate" data-rate-version2= {{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json}}>
- </div>
- {%- when 'photo-reviews' -%}
- <div class='opinew-stars-plugin-product-list'>{% render 'opinew_review_stars_lists' product:product %}</div>
- {%- when 'product-reviews' -%}
- <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
- {%- when 'lai-reviews' -%}
- {%- if EComBuilderMode -%}
- <div class="ecom-placeholder-on-builder-mode" data-ecom-placeholder="Lai star rating"></div>
- {%- endif -%}
- <div class="scm-reviews-rate" data-rate-version2="{{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json | escape }}" data-product-id="{{ product.id }}"></div>
- {%- when 'sealapps-product-review' -%}
- <div class="ecom-star-rating-sealapp" product-id="{{ product.id }}"></div>
- {%- when 'rivyo' -%}
- <div class="wc_product_review_badge" data-handle="{{ product.handle }}" data-product_id="{{ product.id }}"></div>
- {%- when 'klaviyo-reviews' -%}
- <div class="klaviyo-star-rating-widget" data-id="{{product.id}}" data-product-title="{{product.title}}" data-product-type="{{product.type}}"></div>
- {%- when 'air-reviews' -%}
- <div class="AirReviews-Widget AirReviews-Widget--Stars" data-review-avg="{{ product.metafields.air_reviews_product.review_avg }}" data-review-count="{{ product.metafields.air_reviews_product.review_count }}"></div>
- {% else %}
- <p>The rating platform not supported</p>
- {%-endcase-%}
- {%- else -%}
- <p>Please select the rating platform in settings</p>
- {%- endif -%}
- </div>
- 
  
  <div class="ecom-collection__product-prices ecom-child-element" >
  
- {%- assign target = product.selected_or_first_available_variant -%}
+ {% if product.has_only_default_variant %}
  <div class="ecom-collection__product-price-wrapper">
- <span class="ecom-collection__product-price{% if product.compare_at_price > product.price %} ecom-collection__product-price--sale{% endif %}">{% if settings.currency_code_enabled == true %} {{target.price | money_with_currency }} {% else %} {{target.price | money }} {% endif %}</span>
+ <span class="ecom-collection__product-price{% if product.compare_at_price > product.price %} ecom-collection__product-price--sale{% endif %}">{% if settings.currency_code_enabled == true %} {{product.price_min | money_with_currency }} {% else %} {{product.price_min | money }} {% endif %}</span>
+ <span class="ecom-collection__product-price--regular ecom-collection__product--compare-at-price"{%- if product.compare_at_price == nil or product.compare_at_price <= product.price -%} style="display:none; content:'1'" {%- endif -%}>{% if settings.currency_code_enabled == true %} {{ product.compare_at_price_max | money_with_currency }} {% else %} {{ product.compare_at_price_max | money }} {% endif %}</span>
+ {%- comment -%}
+ <span class="ecom-collection__product-price--bage-sale">
+ {% assign sale = product.compare_at_price_max | minus: product.price | times: 100 | divided_by: product.compare_at_price_max | times: 100 | money %}
+ -{{sale}}%
+ </span>
+ {%- endcomment -%}
+ </div>
+ 
+ {% else %}
+ 
+ <div class="ecom-collection__product-price-wrapper">
+ {%- assign target = product.selected_or_first_available_variant -%}
+ <span class="ecom-collection__product-price{% if target.compare_at_price > target.price %} ecom-collection__product-price--sale{% endif %}">{% if settings.currency_code_enabled == true %} {{ target.price | money_with_currency }} {% else %} {{ target.price | money }} {% endif %}</span>
  <span
  class="ecom-collection__product-price--regular ecom-collection__product--compare-at-price"
  {%- if product.compare_at_price == nil or product.compare_at_price <= product.price -%} style="display:none" {% endif %}
@@ -883,6 +658,8 @@
  </div>
  
  
+ {% endif %}
+ 
  </div>
  
  {% if product_style != 'absolute'%}
@@ -890,31 +667,6 @@
  {% endif %}
  {% if product_style == 'horizontal' or product_style == 'vertical' or product_layout == 'list' %}
  {{product_actions}}
- {% endif %}
- 
- {% if product.available and product.metafields.ecomposer.countdown %}
- <div
- class="ecom-collection__product-countdown ecom-child-element" 
- >
- <div
- class="ecom-collection__product-countdown-wrapper"
- >
- <div class="ecom-collection__product-countdown-wrapper--title">Hurry up! The sale will end on</div>
- <div class="ecom-product-single__countdown-container" >
- {%- assign countdown_from = product.metafields.ecomposer.countdown_from -%}
- <div data-product-id="{{product.id}}" class="ecom-collection__product-countdown-time ecom-collection__product-countdown-time--metafields" data-ecom-countdown-from="{{ countdown_from }}" data-ecom-countdown="{{product.metafields.ecomposer.countdown}}"></div>
- </div>
- 
- {% if countdown_from%}
- <div class="ecom-collection__product-countdown-progress-bar">
- <div class="ecom-collection__product-countdown-progress-bar--wrap">
- <div class="ecom-collection__product-countdown-progress-bar--timer ecom-product-single__countdown-progress-bar--timer"></div>
- </div>
- </div>
- {% endif %}
- 
- </div>
- </div>
  {% endif %}
  
  </div>
@@ -944,55 +696,17 @@
  {%- if paginate.pages > 1 -%}
  
  
- <nav role="navigation" ecom-child-element" 
- <ol class="ecom-pagination-navigation ecom-collection__pagination-navigation">
- {%- if paginate.previous -%}
- <li class="ecom-prev" style="">
- <a class="ecom-pagination-item ecom-paginate-action" href="{{ paginate.previous.url }}">
- <span class="ecom-paginate-action--icon"><svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.25 10.5V6H15V4.5H8.25V0L0 5.25L8.25 10.5ZM6.75 7.7625L2.79375 5.25L6.75 2.7375V7.7625Z"></path></svg></span>
  
+ {%- if paginate.next.url -%}
+ <div class="ecom-products-pagination-loadmore ecom-collection__pagination-navigation">
+ <a data-get='{{ paginate.next.url }}' href="{{ paginate.next.url }}" class="ecom-products-pagination-loadmore-btn ecom-pagination-item">
+ <span class="ecom-paginate-loadmore--content ecom-flex ecom-al_center">
+ <span class="ecom-paginate-loadmore--text">LOAD MORE</span>
+ 
+ </span>
  </a>
- </li>
- {%- else -%}
- <li class="ecom-pagination-item ecom-prev ecom-paginate-action disabled" style="">
- <span class="ecom-paginate-action--icon"><svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.25 10.5V6H15V4.5H8.25V0L0 5.25L8.25 10.5ZM6.75 7.7625L2.79375 5.25L6.75 2.7375V7.7625Z"></path></svg></span>
- 
- </li>
+ </div>
  {%- endif -%}
- {%- for part in paginate.parts -%}
- {%- if part.is_link -%}
- <li>
- <a class="ecom-pagination-item" href="{{ part.url }}" title="{{ part.title }}">
- {{ part.title }}
- </a>
- </li>
- {%- else -%}
- {%- if part.title == paginate.current_page -%}
- <li class="ecom-pagination-item ecom-button-active" aria-current="page">
- {{ part.title }}
- </li>
- {%- else -%}
- <li class="ecom-pagination-item">
- {{ part.title }}
- </li>
- {%- endif -%}
- {%- endif -%}
- {%- endfor -%}
- {%- if paginate.next -%}
- <li class="ecom-next" style="">
- <a class="ecom-paginate-action ecom-pagination-item" href="{{ paginate.next.url }}">
- 
- <span class="ecom-paginate-action--icon"><svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6.75 10.5V6H0V4.5H6.75V0L15 5.25L6.75 10.5ZM8.25 7.7625L12.2062 5.25L8.25 2.7375V7.7625Z"></path></svg></span>
- </a>
- </li>
- {%- else -%}
- <li class="ecom-pagination-item ecom-next ecom-paginate-action ecom-collection__pagination--disabled" style="">
- 
- <span class="ecom-paginate-action--icon"><svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6.75 10.5V6H0V4.5H6.75V0L15 5.25L6.75 10.5ZM8.25 7.7625L12.2062 5.25L8.25 2.7375V7.7625Z"></path></svg></span>
- </li>
- {%- endif -%}
- </ol>
- </nav>
  
  {%- endif -%}
  
