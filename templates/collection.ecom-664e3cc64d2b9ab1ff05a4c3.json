@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-664e3cc64d2b9ab1ff05a4c3-collection": {
+      "type": "ecom-664e3cc64d2b9ab1ff05a4c3-collection",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-664e3cc64d2b9ab1ff05a4c3-collection"
+  ]
+}
