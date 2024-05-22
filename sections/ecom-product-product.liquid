@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-16 08:08:51
+ At 2024-05-22 10:21:54
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -27,7 +27,7 @@
  {% endcomment %}
  {% liquid
  if request.page_type != 'product' or product == blank
- assign selected_product = 'pacific-2-0-black-red'
+ assign selected_product = 'creator-grey-charcoal'
  if selected_product == blank or selected_product == '' or all_products[selected_product] == blank
  assign product = collections['all'].products.first
  else
@@ -293,7 +293,7 @@
  
  </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-8aq1pu3cv56" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="short"><div class="ecom-product-single__description--paragraph"><div>
  <div>{{ product.description | strip_html | truncatewords: 21 }}</div>
- </div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
+ </div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-im4lzlrcagj" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__metafield" deep="1"><div class="ecom-product-single__metafield-wrapper"><div class="ecom-product-single__metafield-container">{{ product.metafields.custom.product_colour_variant }}</div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
  {%- liquid
  assign ecom_has_variant_picker = true
  assign variant_selected = product.selected_or_first_available_variant
@@ -840,9 +840,7 @@
  style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"
  
  >
- <img srcset="{%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
- {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
- {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+ <img srcset="{%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
  {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
  {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
  {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w{%- endif -%}"
@@ -856,9 +854,7 @@
  />
  
  {%- if product.media[1] != nil -%}
- <img srcset="{%- if product.media[1].width >= 165 -%}{{ product.media[1] | img_url: '165x' }} 165w,{%- endif -%}
- {%- if product.media[1].width >= 360 -%}{{ product.media[1] | img_url: '360x' }} 360w,{%- endif -%}
- {%- if product.media[1].width >= 533 -%}{{ product.media[1] | img_url: '533x' }} 533w,{%- endif -%}
+ <img srcset="{%- if product.media[1].width >= 533 -%}{{ product.media[1] | img_url: '533x' }} 533w,{%- endif -%}
  {%- if product.media[1].width >= 720 -%}{{ product.media[1] | img_url: '720x' }} 720w,{%- endif -%}
  {%- if product.media[1].width >= 940 -%}{{ product.media[1] | img_url: '940x' }} 940w,{%- endif -%}
  {%- if product.media[1].width >= 1066 -%}{{ product.media[1] | img_url: '1066x' }} 1066w{%- endif -%}"
