@@ -907,7 +907,8 @@
         "other": "{{ count }} items in your cart"
       }
     },
-    "ecom-o-page": ""
+    "ecom-o-page": "",
+    "ecom-664e3cc64d2b9ab1ff05a4c3-collection": ""
   },
   "localization": {
     "country_label": "Country\/region",
