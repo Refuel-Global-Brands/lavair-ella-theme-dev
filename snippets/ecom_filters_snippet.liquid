@@ -109,6 +109,17 @@
                                             </summary>
                                             <div class="ecom-collection__filters-group--display ">
                                                 
+                                                    <div class="ecom-collection__filters-group--header">
+                                                        <span class="ecom-collection__filters-group--selected no-js-hidden">
+                                                            {% assign count = filter.active_values.size %}
+                                                            {% if count == 1%}
+                                                                {{ count}} selected
+                                                            {% else %}
+                                                                {{ count}} selected
+                                                            {% endif %}
+                                                        </span>
+                                                        <a href="{{ filter.url_to_remove }}" class="ecom-collection__filters-group-reset-filter" >Reset</a>
+                                                    </div>
 
                                                 {% assign check_is_filter_color = false %}
                                                 
@@ -175,7 +186,11 @@
                                                 </summary>
                                                 <div class="ecom-collection__filters-group--display ">
                                                     {%- comment -%}
-                                                    
+                                                    <div class="ecom-collection__filters-group--header">
+                                                            {%- assign max_price_amount = filter.range_max | money -%}
+                                                            <span class="ecom-collection__filters-group--selected">Max price {{max_price_amount}}</span>
+                                                            <a href="{{ filter.url_to_remove }}" class="ecom-collection__filters-group-reset-filter" >Reset</a>
+                                                        </div>
                                                     {%- endcomment -%}
                                                     {%- if false-%}
                                                         {%- assign max_price_for_step = filter.range_max -%}
