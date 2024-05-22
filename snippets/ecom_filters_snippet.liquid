@@ -123,6 +123,11 @@
 
                                                 {% assign check_is_filter_color = false %}
                                                 
+                                                        {% assign current_option_name = filter.param_name  | split: '.' | last | handleize %}
+                                                        {% if  color_option_name  ==  current_option_name %}
+                                                            {% assign check_is_filter_color = true %}
+                                                        {% endif %}
+                                                    
                                                 <ul
                                                     class="ecom-collection__filters-group-list  ecom-scroll_bar{% if check_is_filter_color %} ecom-collection__filters-enable-colors{% endif %}" data-param-name="{{filter.param_name}}" role="list" data-index="{{ forloop.index }}"
                                                 >
