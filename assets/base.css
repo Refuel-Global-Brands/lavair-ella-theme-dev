@@ -2396,7 +2396,10 @@ summary::-webkit-details-marker {
         box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
         background: var(--bg-color);
         padding: var(--p-top) 0 var(--p-bottom);
-        display: block;
+        display: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 99999999999999999999999999999 !important;
     }
 
     @media screen and (min-width: 1025px) {
