@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-outlet-page": {
+      "type": "ecom-outlet-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-outlet-page"
+  ]
+}

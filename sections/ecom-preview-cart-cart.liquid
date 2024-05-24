@@ -1,0 +1,135 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2024-05-13 15:44:45
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /><noscript><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /></noscript>
+{%- assign headless = true -%}{%- render "ecom_theme_helper" -%}{%capture section_id %}ecom-preview-cart-cart{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}
+{{'ecom-preview-template-cart.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-preview-template-cart.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="preview-template-cart";
+ window.EComposer.TEMPLATE = {"template_id":"preview-template-cart","title":"Untitled","type":"cart","slug":"ecom-preview-cart","plan_id":4};
+ </script>
+<div class="ecom-builder" id="ecom-preview-cart"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-ozrxnt8ss8" data-id="ecom-ozrxnt8ss8" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-qlfnsbvp9h"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-lhp92jck71" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="1"><div class="cart-item-block-left">
+ <a class="cart-item-image image-{{ media_size }}" href="{{ item.url }}"{% if media_size == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: item.image.aspect_ratio | times: 100 }}%"{% elsif media_size == 'square' %} style="padding-bottom: 100%"{% elsif media_size == 'portrait' %}{% if portrait_aspect_ratio != blank %} style="padding-bottom: {{ portrait_aspect_ratio }}"{% endif %}{% elsif media_size == 'circle'%} style="padding-bottom: 100%"{% endif %}>
+ {% render 'icon-external-link' %}
+ <img style="background-color: #f1f1f1" srcset="{{ item.image | img_url: '160x' }}" src="{{ item.image | img_url: '160x' }}" alt="{{ item.title | escape }}" sizes="auto" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}">
+ </a>
+</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-u6ht5xcvdq"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--wrapper" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-l677ahix0f" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__informations" deep="1">{%- if cart.item_count > 0 -%}<div class="ecom-cart__informations-wrapper"><div class="ecom-cart__informations-container">
+ <dl class="ecom-cart__informations-item_count">
+ <dt class="ecom-cart__information-title">
+ Quantity: 
+ </dt>
+ <dd class="ecom-cart__information-text">
+ {% assign count = cart.item_count %}
+ {{count}} item(s)
+ </dd>
+ </dl>
+ 
+ {% if cart.discount_applications.size > 0 %}
+ <dl class="ecom-cart__informations-discount_application">
+ <dt class="ecom-cart__information-title">Discounts: </dt>
+ <dd class="ecom-cart__information-text">
+ {% for discount_application in cart.discount_applications %}
+ {%- assign amount = discount_application.total_allocated_amount | money -%}
+ <span class="ecom-cart__informations-discount_application-value">
+ {% assign title = discount_application.title %}
+ {{title}} - Save: {{amount}}
+ </span><br>
+ {% endfor %}
+ </dd>
+ </dl>
+ {% else %}
+ 
+ {% endif %}
+ 
+ <dl class="ecom-cart__informations-total_discount">
+ <dt class="ecom-cart__information-title">
+ Total discount:
+ </dt>
+ <dd class="ecom-cart__information-text">
+ {%- assign tmp = cart.total_discount -%}
+ {% comment %}
+ {%- for item in cart.items -%}
+ {% if item.total_discount == 0 and item.variant.compare_at_price > item.price %} 
+ {% assign tmp = tmp | plus: item.variant.compare_at_price | minus: item.price %}
+ {% assign tmp = tmp | times: item.quantity %}
+ {% endif %}
+ {%- endfor -%}
+ {% endcomment %}
+ {% assign amount = tmp | money %}
+ Saving {{amount}}
+ </dd>
+ </dl>
+ 
+ <dl class="ecom-cart__informations-items_subtotal_price">
+ <dt class="ecom-cart__information-title">
+ Subtotal:
+ </dt>
+ <dd class="ecom-cart__information-text totals__subtotal-value" data-hulkapps-cart-total>
+ {{ cart.items_subtotal_price | money }}
+ </dd>
+ </dl>
+ 
+ <dl class="ecom-cart__informations-taxes_included">
+ <dt class="ecom-cart__information-title">
+ Taxes:
+ </dt>
+ <dd class="ecom-cart__information-text">
+ {%- if cart.taxes_included-%}
+ Taxes included
+ {% else %}
+ Taxes included
+ {% endif %}
+ </dd>
+ </dl>
+ 
+ <dl class="ecom-cart__informations-total_price">
+ <dt class="ecom-cart__information-title">
+ Total price:
+ </dt>
+ <dd class="ecom-cart__information-text totals__subtotal-value" data-hulkapps-cart-total>
+ {%- assign amount = cart.total_price | money -%}
+ {{amount}}
+ </dd>
+ </dl>
+ 
+ <dl class="ecom-cart__informations-total_weight">
+ <dt class="ecom-cart__information-title">
+ Total weight:
+ </dt>
+ <dd class="ecom-cart__information-text">
+ {% assign amount = cart.total_weight | weight_with_unit %}
+ {{amount}} gram
+ </dd>
+ </dl>
+ </div></div>{%- endif -%}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-tjg9ojubn8d" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__coupon" deep="1">{%- if cart.item_count > 0 -%}<div class="ecom-cart__coupon-wrapper"><div class="ecom-cart__coupon-container"><label class="ecom-cart__coupon-text">Coupon: </label><input type="text" name="coupon" class="ecom-cart__coupon--input" placeholder="Enter your coupon code"></div></div>{%- endif -%}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-3vjsxppeuw8" data-core-is="block"><div class="ecom-element ecom-cart ecom-cart__checkout-button" deep="1">{%- if cart.item_count > 0 -%}<input type="hidden" name="checkout" value="ec"><div class="ecom-cart__checkout-button-wrapper"><div class="ecom-cart__checkout-button-container"><button type="submit" name="checkout" class="ecom-cart__checkout-button--submit"><span class="ecom-cart-checkout-text">Checkout</span><span class="ecom__element--button-icon"></span></button></div></div>{%- endif -%}</div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</div></div>
+{% schema %}
+{
+ "name": "Untitled",
+ "locales": {},
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n Please don't add Shopify sections to EComposer's page in the theme customize. If you do this, Shopify sections will be deleted when you republish your page in EComposer\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop?open_builder=1&page=cart&id=preview-template-cart&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ]
+}
+{% endschema %}
