@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-28 15:26:08
+ At 2024-05-28 15:33:27
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -21,6 +21,25 @@
  window.EComposer.TEMPLATE = {"template_id":"664e3cc64d2b9ab1ff05a4c3","title":"Collection","type":"collection","slug":"ecom-collection","plan_id":4};
  </script>
 <div class="ecom-builder" id="ecom-collection"><div class="ecom-sections" data-section-id="{{section.id}}">
+ {% comment %}
+ // Reactive
+ * this.data.settings.collection
+ {% endcomment %}
+ {% liquid
+ if request.page_type != 'collection' or collection == blank
+ assign selected_collection = 'footwear'
+ if selected_collection == blank or selected_collection == '' or collections[selected_collection] == blank
+ assign collection = collections.all
+ else
+ assign collection = collections[selected_collection]
+ if collection.id == blank
+ assign collection = collections.all
+ endif
+ endif
+ endif
+ %}
+ <section class="ecom-row ecom-core ecom-section ecom-m83ez15sun" data-id="ecom-m83ez15sun" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-8n0lyrkg7kf"><div class="core__column--wrapper" style=""><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-78ale2iiiyc" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__banner" deep="1"><div class="ecom-collection__banner-wrapper" style="background-image: url(&quot;/images/placeholder.png&quot;);"><h1 class="ecom-collection__banner-heading">{{ collection.title }}</h1><div class="ecom-collection__banner-paragraph">{{ collection.description }}</div></div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+ 
  {% comment %}
  // Reactive
  * this.data.settings.collection
