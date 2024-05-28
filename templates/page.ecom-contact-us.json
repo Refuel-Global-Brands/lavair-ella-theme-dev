@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-contact-us-page": {
+      "type": "ecom-contact-us-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-contact-us-page"
+  ]
+}

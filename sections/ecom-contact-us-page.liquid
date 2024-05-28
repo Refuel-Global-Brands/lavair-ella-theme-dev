@@ -1,0 +1,71 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2024-05-28 13:14:23
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /><noscript><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /></noscript>
+{%capture section_id %}ecom-contact-us-page{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}
+{{'ecom-6655d8aecea9d5bfa60e8ce7.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-6655d8aecea9d5bfa60e8ce7.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="6655d8aecea9d5bfa60e8ce7";
+ window.EComposer.PAGE = {"template_id":"6655d8aecea9d5bfa60e8ce7","title":"Contact us","type":"page","slug":"ecom-contact-us","plan_id":4};
+ </script>
+<div class="ecom-builder" id="ecom-contact-us"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-621afdfj2bd" data-id="ecom-621afdfj2bd" style="z-index: inherit;"><div data-deep="1" class="core__row--columns core__row--full"><div class="ecom-column ecom-core core__column--first ecom-l38dv02l4d"><div class="core__column--wrapper" style=""><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="0"></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-hjibz3p86xl"><div class="core__column--wrapper" style=""><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-emtambpmlmo" data-core-is="block"><div class="ecom-element ecom-shopify-elements ecom__form" deep="1"><div class="ecom__form-wrapper"><div class="ecom__form-container">{%- comment-%}<form id="ecom-contact-form-ecom-emtambpmlmo" class="ecom__form">{%- endcomment -%}{% form 'contact', class: 'ecom-contact-form', id: 'ecom-contact-form-ecom-emtambpmlmo', data-ec-tracking-id: 'contact-us-page' %}<div class="ecom__form-fields"><div class="ecom__form-field ecom-html" style="width: calc(50% - 10px);"><label for="contact[first-name]" class="ecom__form-field-label"><span>First name</span><span class="ecom__form-field-required">* </span></label><input type="text" name="contact[first-name]" class="ecom__form--input ecom__form-text" required="" id="first-name" placeholder="John"></div><div class="ecom__form-field ecom-html" style="width: calc(50% - 10px);"><label for="contact[last-name]" class="ecom__form-field-label"><span>Last name</span><span class="ecom__form-field-required">* </span></label><input type="text" name="contact[last-name]" class="ecom__form--input ecom__form-text" required="" id="last-name" placeholder="Doe"></div><div class="ecom__form-field ecom-html" style="width: calc(50% - 10px);"><label for="contact[email]" class="ecom__form-field-label"><span>Email</span><span class="ecom__form-field-required">* </span></label><input type="email" name="contact[email]" class="ecom__form--input ecom__form-email" required="" id="ecom-contact-email-2" placeholder="example@email.com"></div><div class="ecom__form-field ecom-html" style="width: calc(50% - 10px);"><label for="contact[phone-number]" class="ecom__form-field-label"><span>Phone number</span></label><input type="text" name="contact[phone-number]" class="ecom__form--input ecom__form-text" id="phone-number" placeholder="Phone number"></div><div class="ecom__form-field ecom-html" style="width: calc(100% + 0px);"><label for="contact[message]" class="ecom__form-field-label"><span>Message</span><span class="ecom__form-field-required">* </span></label><textarea name="contact[message]" id="ecom-contact-message-4" class="ecom__form-textarea" rows="6" placeholder="Type your message here..." required=""></textarea></div></div><div class="ecom__form-action"><button type="submit" class="ecom__form-button"><span id="contact-us-page" class="ecom_form-submit--text">Send message</span></button></div><div>
+ {%- if form.posted_successfully? or EComBuilderMode == true -%}
+ <div class="ecom__form-success" {% unless EComBuilderMode %}tabindex="-1" autofocus{% endunless%}>
+ Your message has been sent! Please allow up to 72 hours for a response from our customer service team.
+ </div>
+ {% endif %}
+ {%- if form.errors or EComBuilderMode == true -%}
+ <div class="ecom__form-message">
+ <h2 class="ecom__form-status" role="alert" {% unless EComBuilderMode %}tabindex="-1" autofocus{% endunless%}>
+ An error has occurred please try again.<br>If the problem persists, please contact our customer service team.
+ </h2>
+ </div>
+ <ul class="ecom__form-status-list" role="list">
+ {% for field in form.errors %}
+ <li class="ecom__form-status-error">
+ {% if field == 'form' %}
+ {{ form.errors.messages[field] }}
+ {% else %}
+ {{ form.errors.translated_fields[field] }} - {{ form.errors.messages[field] }}
+ {% endif %}
+ </li>
+ {% endfor %}
+ {% if EComBuilderMode %}
+ <li class="ecom__form-status-error">
+ This is sample text when email invalid
+ </li>
+ {% endif %}
+ </ul>
+ {%- endif -%}
+ </div>{% endform %}{%- comment-%}</form>{%- endcomment-%}</div></div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</div></div>
+{% schema %}
+{
+ "name": "Contact us",
+ "locales": {},
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n Please don't add Shopify sections to EComposer's page in the theme customize. If you do this, Shopify sections will be deleted when you republish your page in EComposer\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop?open_builder=1&page=page&id=6655d8aecea9d5bfa60e8ce7&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ]
+}
+{% endschema %}
