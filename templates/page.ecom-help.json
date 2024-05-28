@@ -1,13 +1,13 @@
 {
   "layout": "theme",
   "sections": {
-    "ecom-faq-page": {
-      "type": "ecom-faq-page",
+    "ecom-help-page": {
+      "type": "ecom-help-page",
       "settings": {
       }
     }
   },
   "order": [
-    "ecom-faq-page"
+    "ecom-help-page"
   ]
 }
