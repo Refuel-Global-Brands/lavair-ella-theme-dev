@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-29 08:55:51
+ At 2024-05-29 09:15:19
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -27,7 +27,7 @@
  {% endcomment %}
  {% liquid
  if request.page_type != 'product' or product == blank
- assign selected_product = 'creator-grey-charcoal'
+ assign selected_product = 'aequora-black-white'
  if selected_product == blank or selected_product == '' or all_products[selected_product] == blank
  assign product = collections['all'].products.first
  else
@@ -327,223 +327,7 @@
  <script type="application/json" id="product-json-{{product.id}}-ecom-yny3oynq7e">
  {%- render "ecom_product_json", product: product -%}
  </script>
- </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-xdi5eig8uw ec-custom-position" data-core-is="block"><div class="ecom-element ecom-base-elements ecom-element__lightbox" deep="1"><div class="ecom-element__lightbox-wrapper"><div class="ecom-element__lightbox-container ecom-flex" data-ecom-placeholder="">
- {%- capture show_when -%}option{%- endcapture -%}
- {%- capture value -%}Size{%- endcapture -%}
- {%- assign check = false -%}
- {%- case show_when-%}
- {%- when 'all' -%}
- {% assign check = true %}
- {%- when 'option'- %}
- {% if value and product.options contains value %}
- {% assign check = true %}
- {% endif %}
- {%- when 'tag'-%}
- {%- if value and product.tags contains value -%}
- {% assign check = true %}
- {%- endif -%}
- {% when 'type' %}
- {%- if value and product.type contains value -%}
- {% assign check = true %}
- {%- endif -%}
- {% when 'vendor' %}
- {%- if value and product.vendor contains value -%}
- {% assign check = true %}
- {%- endif -%}
- {%- endcase -%}
- {%- if check -%}
- {%- capture type -%}image{%- endcapture -%}
- 
- <button type="button" ecom-modal="inline" class="ecom__element--button ecom-elements__lightbox-button ecom-flex ecom-fl_cener ecom-al_center" ecom-modal-source="#ecom-elements__lightbox-content-ecom-xdi5eig8uw">
- <span class="ecom-elements__lightbox-button-text" >
- Find your size
- </span>
- <span class="ecom-button-icon ecom-elements__lightbox-button-icon">
- 
- </span>
- </button>
- 
- 
- {%- if type != 'page' -%}
- <div style="display:none" >
- {%- if type == 'custom' -%}
- <div class="ecom-html" id="ecom-elements__lightbox-content-ecom-xdi5eig8uw">
- <div class="ecom-elements__lightbox-content-heading">Understand about EComposer</div>
- <div class="ecom-elements__lightbox-content-body"><h2 style="margin: 0px 0px 10px; padding: 0px; line-height: 24px;">EComposer helps you create professional Shopify websites without any programming knowledge. With 80+ design elements and 50+ templates, there’s no limit to what you can build. Download EComposer for free today and start building the store you’ve always wanted</h2></div>
- </div>
- {%- elsif type == 'video' -%}
- <div id="ecom-elements__lightbox-content-ecom-xdi5eig8uw" style="height:100%">
- 
- <iframe
- class="ecom_iframe"
- frameborder="0"
- allowfullscreen="1"
- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
- style="border: 0; width: 100%; height:100%; display: flex !important"
- src=""
- >
- </iframe>
- 
- </div>
- {%- elsif type == 'video_metafield' -%}
- <div id="ecom-elements__lightbox-content-ecom-xdi5eig8uw" style="height:100%">
- {% assign video = undefined.value.sources %}
- {%- if video.size > 1 -%}
- {% assign video_url = video[1].url %}
- {%- else -%}
- {% assign video_url = video[0].url %}
- {%- endif -%}
- <video
- style="display: flex !important;width: 100%; height:100%;"
- class="ecom_video"
- controls
- playsinline
- >
- <source src="{{ video_url }}" />
- </video>
- </div>
- {%- elsif type == 'image_metafield' -%}
- {% assign image = undefined %}
- <div id="ecom-elements__lightbox-content-ecom-xdi5eig8uw" style="height:100%; width: 100%; display:flex;">
- <img src="{{ image | img_url: 'master'}}" alt="" style="object-fit: cover; width: 100%;">
- </div>
- {%- else -%}
- <div id="ecom-elements__lightbox-content-ecom-xdi5eig8uw" style="height:100%; width: 100%; display:flex;">
- <picture style="height:100%; width: 100%; display:flex;">
- <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0781/3424/7729/files/size-guide-no-replace.jpg?v=1695000432" alt="size-guide-no-replace" name="size-guide-no-replace" ext="jpg" url="https://cdn.shopify.com/s/files/1/0726/1221/7115/files/size-guide-no-replace.jpg?v=1680342763&ecom-need-replace&ecom-need-replace&ecom-need-replace&ecom-need-replace&ecom-need-replace" thumbnail="https://cdn.shopify.com/s/files/1/0781/3424/7729/files/size-guide-no-replace.jpg?v=1695000432" id="eNr4wjqa" width="1400" height="1540" style="object-fit:cover;width:100%;">
- </picture>
- </div>
- {%- endif -%}
- </div>
- {%- else -%}
- <div class="ecom-elements__lightbox-content ecom-html" id="ecom-elements__lightbox-content-ecom-xdi5eig8uw" style="display:none">
- <div>
- {%- capture page_handle -%}
- size-guide
- {%- endcapture-%}
- {% assign p = pages[page_handle] %}
- {% if p %}{{p.content}}{% endif %}
- </div>
- </div>
- {%- endif -%}
- {%- endif -%}
- </div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-w5xt8gqo2m" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__add-to-cart" deep="1"><div class="ecom-product-single__add-to-cart-wrapper"><div class="ecom-product-single__add-to-cart-container"><div class="ecom-product-single__add-to-cart-buttons"><div class="ecom-product-single__add-to-cart-buttons-wrapper"><button type="submit" class="ecom-product-single__add-to-cart--submit ecom-flex" data-text-add-cart="Add to cart" data-text-pre-order="Pre Order" data-text-unavailable="Unavailable" data-text-outstock="Out of stock" data-text-added-cart="Added to cart" data-message-added-cart="Added to cart" data-href="#" data-target="" data-action="popup" data-variant-id="{{product.first_available_variant.id}}" name="add"><span class="ecom-add-to-cart-text">Add to cart</span><span class="ecom__element--button-icon"></span></button></div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-29o0riewxle" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="1"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#"><span class="ecom__element--button-icon-text">Free Shipping For Orders £150.00+</span><span class="ecom-button-icon ecom__element--button-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M 0 6 L 0 8 L 19 8 L 19 23 L 12.84375 23 C 12.398438 21.28125 10.851563 20 9 20 C 7.148438 20 5.601563 21.28125 5.15625 23 L 4 23 L 4 18 L 2 18 L 2 25 L 5.15625 25 C 5.601563 26.71875 7.148438 28 9 28 C 10.851563 28 12.398438 26.71875 12.84375 25 L 21.15625 25 C 21.601563 26.71875 23.148438 28 25 28 C 26.851563 28 28.398438 26.71875 28.84375 25 L 32 25 L 32 16.84375 L 31.9375 16.6875 L 29.9375 10.6875 L 29.71875 10 L 21 10 L 21 6 Z M 1 10 L 1 12 L 10 12 L 10 10 Z M 21 12 L 28.28125 12 L 30 17.125 L 30 23 L 28.84375 23 C 28.398438 21.28125 26.851563 20 25 20 C 23.148438 20 21.601563 21.28125 21.15625 23 L 21 23 Z M 2 14 L 2 16 L 8 16 L 8 14 Z M 9 22 C 10.117188 22 11 22.882813 11 24 C 11 25.117188 10.117188 26 9 26 C 7.882813 26 7 25.117188 7 24 C 7 22.882813 7.882813 22 9 22 Z M 25 22 C 26.117188 22 27 22.882813 27 24 C 27 25.117188 26.117188 26 25 26 C 23.882813 26 23 25.117188 23 24 C 23 22.882813 23.882813 22 25 22 Z"></path></svg></span></a></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-fqfrqbmwcfs" data-core-is="group"><div class="ecom-core ecom-group core__block ecom-dbq9rqmorbs"> <div class="core__group--wrapper ecom-accordion__wrapper ecom-flex ecom-column ecom-w__full ecom__element ecom__accordion ecom-accordion-close-all" data-r="" style=""><div class="core__group--items"><div id="ecom-5rxs64yshv" class="core__group--item ecom-accordion__item" data-id="ecom-5rxs64yshv"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Description</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-jcrys6barp" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="full"><div class="ecom-product-single__description--paragraph" style="max-height: var(--ecom-description-height);">{{product.description}}</div></div></div></div></div> </div></div></div></div><div id="ecom-blfrsp4zie" class="core__group--item ecom-accordion__item" data-id="ecom-blfrsp4zie"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Specifications</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-uwl2o9u3lvr" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__review" deep="1"><div class="ecom-product-single__review-wrapper" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{review_platform}}"><div class="ecom-product-single__review-container">
- {%- if review_platform and review_platform != 'none' -%}
- {%- if EComBuilderMode == true -%}
- <div class="ecom-theme-app-extensions-skeleton">
- <div class="ecom-app-extension-info">
- <span class="ecom-theme-app-extension-icon">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M416 176C416 78.8 322.9 0 208 0S0 78.8 0 176c0 41.48 17.07 79.54 45.44 109.6c-15.17 32.34-38.65 58.07-38.95 58.38c-6.514 6.836-8.309 16.91-4.568 25.67C5.754 378.4 14.26 384 23.66 384c54.19 0 97.76-20.73 125.9-39.17C168.1 349.4 187.7 352 208 352C322.9 352 416 273.2 416 176zM208 320c-16.96 0-34.04-2.098-50.75-6.232L143.7 310.4L132 318.1c-20.43 13.38-51.58 28.99-89.85 32.97c9.377-12.11 22.3-30.63 32.24-51.82l9.242-19.71L68.72 263.7C44.7 238.2 32 207.9 32 176C32 96.6 110.1 32 208 32S384 96.6 384 176S305 320 208 320zM606.4 435.4C627.6 407.1 640 372.9 640 336C640 238.8 554 160 448 160c-.3145 0-.6191 .041-.9336 .043C447.5 165.3 448 170.6 448 176c0 5.43-.4668 10.76-.9414 16.09C447.4 192.1 447.7 192 448 192c88.22 0 160 64.6 160 144c0 28.69-9.424 56.45-27.25 80.26l-13.08 17.47l11.49 18.55c6.568 10.61 13.18 19.74 18.61 26.74c-18.26-1.91-36.45-6.625-54.3-14.09l-12.69-5.305l-12.58 5.557C495.9 475 472.3 480 448 480c-75.05 0-137.7-46.91-154.9-109.7c-10.1 3.336-20.5 6.132-31.2 8.271C282.7 455.1 357.1 512 448 512c29.82 0 57.94-6.414 83.12-17.54C555 504.5 583.7 512 616.3 512c9.398 0 17.91-5.57 21.73-14.32c3.74-8.758 1.945-18.84-4.568-25.67C633.3 471.8 619.6 456.8 606.4 435.4z"/></svg>
- </span>
- <div class="ecom-theme-app-extension-content">
- <span class="ecom-theme-app-extension-title">{{review_platform | replace: '_', ' ' | replace: '-', ' ' | capitalize}}</span>
- <div class="ecom-placeholder-on-builder-mode" data-ecom-placeholder="The review element will display when published to Online store"></div>
- </div>
- </div>
- </div>
- {%- else -%}
- {%- case review_platform -%}
- {%- when 'none' -%}
- <div class="ecom-theme-app-extensions-skeleton">
- <p>Please select the integrated review app platform in settings</p>
- </div>
- {%- when 'ali-reviews' -%}
- <div class="alireviews-review-box"></div>
- {%- when 'opinew-reviews' -%}
- <div style="clear:both;"></div><div id="opinew-reviews-product-page-code" class="opw-widget-wrapper-default">
- <span id="opinew-plugin" data-server-address="https://api.opinew.com"
- data-opw-prodreviews="{{ product.metafields.opinew_metafields['product_plugin'] }}"
- data-opinew-shop-id="{{ shop.id }}" data-shop-url="{{shop.domain}}"
- data-platform-product-id="{{product.id}}">
- <span id="opinew_product_plugin_app"></span>
- </span>
- </div>
- {%- when 'judgeme' -%}
- <div style='clear:both'></div>
- <div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-id='{{ product.id }}'>
- {{ product.metafields.judgeme.widget }}
- </div>
- {%- when 'product-reviews-addon' -%}
- <div id="stamped-main-widget"
- data-widget-style="standard"
- data-product-id="{{ product.id }}"
- data-name="{{ product.title | escape }}"
- data-url="{{ shop.url }}{{ product.url }}"
- data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
- data-description="{{ product.description | escape }}"
- data-product-sku="{{product.handle}}"
- data-widget-language="{{ language }}">
- </div>
- {%- when 'areviews-aliexpress'-%}
- <div class="page-full">{%- render 'aliexpress_reviews', product: product-%}</div>
- {%- when 'loox'-%}
- <div id="looxReviews" data-product-id="{{product.id}}" >{{- product.metafields.loox.reviews -}}</div>
- {% when 'ryviu'%}
- <div class="lt-block-reviews">
- <ryviu-widget product_id="{{product.id}}" handle="{{product.handle}}" title_product="{{product.title}}" image_product="{{ product.featured_image.src | img_url: '100x' }}"></ryviu-widget>
- </div>
- {%- when 'yotpo-social-reviews' -%}
- <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-description="{{ product.description | escape }}"></div>
- {%- when 'aliexpress-reviews-importer'-%}
- <div id="shopbooster-ali" product-id="{{ product.id }}" ></div>
- {%- when 'rivyo-product-review'-%}
- <div id="wc_review_section" class="wc_review_main_content" data-url="{{ shop.url }}" data-handle="{{ product.handle }}" data-product_id="{{ product.id }}" data-limit="0"></div>
- {%-when 'growave' -%}
- {% capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1, product: product %}{% endcapture %}
- {% unless the_snippet_reviews contains 'Liquid error' %}
- {{ the_snippet_reviews }}
- {% endunless %}
- {%- when 'smart-aliexpress-reviews'-%}
- {% render "reviews-importer" product: product%}
- {%- when 'vital-reviews'-%}
- <div id="bundle-product_reviews"></div>
- {%- when 'photo-reviews' -%}
- <div style="clear:both;"></div>
- <div id="opinew-reviews-product-page-code" class="">
- <span id="opinew-plugin" data-server-address="https://www.opinew.com" data-opw-prodreviews="{{ product.metafields.opinew_metafields['product_plugin'] }}" data-opinew-shop-id="{{ shop.id }}" data-shop-url="{{shop.domain}}" data-platform-product-id="{{product.id}}">
- <span id="opinew_product_plugin_app"></span>
- </span>
- </div>
- {%- when 'product-reviews' -%}
- <div id="shopify-product-reviews" data-id="{{product.id}}">{{- product.metafields.spr.reviews -}}</div>
- {%- when 'lai-reviews' -%}
- {%- if EComBuilderMode -%}
- <div class="ecom-placeholder-on-builder-mode" data-ecom-placeholder="Lai review form will display when published to Online store"></div>
- {%- endif -%}
- {% assign smaTemplatePageBuilderCurrent = template | split: '.' | first %}
- {% if smaTemplatePageBuilderCurrent != 'product' %}
- <div class="scm-container custom" style="display: none;">
- <div id="scm-reviews-importer" class="scm-reviews-importer">
- <iframe id="scm-reviews-importer-iframe" width="100%"></iframe>
- </div>
- </div>
- {% endif %}
- {% assign random_number = "now" | date: "%N" | modulo: 1000 | plus: 0 %}<script>var sectionConfig= (typeof sectionConfig == "undefined" || sectionConfig == null) ? {} : sectionConfig;var scmCustomData= (typeof scmCustomData == "undefined" || scmCustomData == null) ? {} : scmCustomData;var scmCustomDataWigetAll= (typeof scmCustomDataWigetAll == "undefined" || scmCustomDataWigetAll == null) ? [] : scmCustomDataWigetAll; scmCustomDataWigetAll['{{ random_number }}'] ={"id_iframe" : "{{ random_number }}","productId" : "{{ product.id }}","typePage" : 'productPage',"sectionConfig" : JSON.stringify(sectionConfig),"scmCustomData" : JSON.stringify(scmCustomData),'dataProduct' : []};sectionConfig= null;scmCustomData= null;scmCustomDataWigetAll['{{ random_number }}'].dataProduct['product']= {{ product | json }};{% for metafieldValue in product.metafields.scm_review_importer %}scmCustomDataWigetAll['{{ random_number }}'].dataProduct['{{ metafieldValue[0] }}']= `{{ metafieldValue[1] | json }}`;{% endfor %}</script>
- <div class="scm-container" style="display: none;">
- <div class="scm-reviews-importer" data-product-id= {{ product.id }}>
- <iframe class="scm-reviews-importer-iframe" width="100%" title="Sma reviews section Product page" data-idIframe="{{ random_number }}"></iframe>
- </div>
- </div>
- {%- when 'rivyo' -%}
- <div id="wc_review_section" class="wc_review_main_content" data-url="{{ shop.url }}" data-handle="{{ product.handle }}" data-product_id="{{ product.id }}" data-limit="0"></div>
- {%- when 'sealapps-product-review' -%}
- <div class="custom-vstar-review-widget" style="width:100%"></div>
- {%- when 'klaviyo-reviews' -%}
- <div id="klaviyo-reviews-all" data-id="{{product.id}}"></div> 
- {%- when 'air-reviews' -%}
- <div class="AirReviews-Widget AirReviews-Widget--Block"></div>
- {% else %}
- <div class="ecom-theme-app-extensions-skeleton">
- <p>The reivew platform not supported</p>
- </div>
- {%-endcase-%}
- {%- endif -%}
- {%- else -%}
- <div class="ecom-theme-app-extensions-skeleton">
- <p>Please select the integrated review app platform in settings</p>
- </div>
- {%- endif -%}
- </div></div></div></div> </div></div></div></div><div id="ecom-ot7czbavpn" class="core__group--item ecom-accordion__item" data-id="ecom-ot7czbavpn"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Shipping and Returns</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="2"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-5rfhpak9xka" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__attributes" deep="1"><div class="ecom-product-single__attributes-wrapper"><div class="ecom-product-single__attributes-container">
+ </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-nbntgx2y69" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="1"><a id="find-your-size" class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="https://lavairbrand.com/pages/find-your-size"><span class="ecom__element--button-icon-text">Find your size</span><span class="ecom-button-icon ecom__element--button-icon"></span></a></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-w5xt8gqo2m" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__add-to-cart" deep="1"><div class="ecom-product-single__add-to-cart-wrapper"><div class="ecom-product-single__add-to-cart-container"><div class="ecom-product-single__add-to-cart-buttons"><div class="ecom-product-single__add-to-cart-buttons-wrapper"><button type="submit" class="ecom-product-single__add-to-cart--submit ecom-flex" data-text-add-cart="Add to cart" data-text-pre-order="Pre Order" data-text-unavailable="Unavailable" data-text-outstock="Out of stock" data-text-added-cart="Added to cart" data-message-added-cart="Added to cart" data-href="#" data-target="" data-action="popup" data-variant-id="{{product.first_available_variant.id}}" name="add"><span class="ecom-add-to-cart-text">Add to cart</span><span class="ecom__element--button-icon"></span></button></div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-29o0riewxle" data-core-is="block"><div class="ecom__element ecom-element-button ecom-button-default" deep="1"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#"><span class="ecom__element--button-icon-text">Free Shipping For Orders £150.00+</span><span class="ecom-button-icon ecom__element--button-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M 0 6 L 0 8 L 19 8 L 19 23 L 12.84375 23 C 12.398438 21.28125 10.851563 20 9 20 C 7.148438 20 5.601563 21.28125 5.15625 23 L 4 23 L 4 18 L 2 18 L 2 25 L 5.15625 25 C 5.601563 26.71875 7.148438 28 9 28 C 10.851563 28 12.398438 26.71875 12.84375 25 L 21.15625 25 C 21.601563 26.71875 23.148438 28 25 28 C 26.851563 28 28.398438 26.71875 28.84375 25 L 32 25 L 32 16.84375 L 31.9375 16.6875 L 29.9375 10.6875 L 29.71875 10 L 21 10 L 21 6 Z M 1 10 L 1 12 L 10 12 L 10 10 Z M 21 12 L 28.28125 12 L 30 17.125 L 30 23 L 28.84375 23 C 28.398438 21.28125 26.851563 20 25 20 C 23.148438 20 21.601563 21.28125 21.15625 23 L 21 23 Z M 2 14 L 2 16 L 8 16 L 8 14 Z M 9 22 C 10.117188 22 11 22.882813 11 24 C 11 25.117188 10.117188 26 9 26 C 7.882813 26 7 25.117188 7 24 C 7 22.882813 7.882813 22 9 22 Z M 25 22 C 26.117188 22 27 22.882813 27 24 C 27 25.117188 26.117188 26 25 26 C 23.882813 26 23 25.117188 23 24 C 23 22.882813 23.882813 22 25 22 Z"></path></svg></span></a></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-fqfrqbmwcfs" data-core-is="group"><div class="ecom-core ecom-group core__block ecom-dbq9rqmorbs"> <div class="core__group--wrapper ecom-accordion__wrapper ecom-flex ecom-column ecom-w__full ecom__element ecom__accordion ecom-accordion-close-all" data-r="" style=""><div class="core__group--items"><div id="ecom-5rxs64yshv" class="core__group--item ecom-accordion__item" data-id="ecom-5rxs64yshv"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Description</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-jcrys6barp" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="full"><div class="ecom-product-single__description--paragraph" style="max-height: var(--ecom-description-height);">{{product.description}}</div></div></div></div></div> </div></div></div></div><div id="ecom-blfrsp4zie" class="core__group--item ecom-accordion__item" data-id="ecom-blfrsp4zie"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Specifications</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="1"></div></div></div><div id="ecom-ot7czbavpn" class="core__group--item ecom-accordion__item" data-id="ecom-ot7czbavpn"><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M377.4 296.6l-168 176C204.8 477.3 198.6 480 192 480s-12.84-2.688-17.38-7.438l-168-176C-2.5 286.1-2.156 271.8 7.438 262.6c9.5-9.156 24.75-8.812 33.94 .8125L168 396.1V56.02c0-13.25 10.75-24.01 23.1-24.01S216 42.77 216 56.02v340.1l126.6-132.7c9.156-9.625 24.41-9.969 33.94-.8125C386.2 271.8 386.5 286.1 377.4 296.6z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title"></span><h3 class="ecom-accordion__title-text ecom-items--text">Shipping and Returns</h3></div></div><div class="core__group--body ecom-accordion__body"><div class="core__blocks" index="2"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-5rfhpak9xka" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__attributes" deep="1"><div class="ecom-product-single__attributes-wrapper"><div class="ecom-product-single__attributes-container">
  <table>
  
  {%- unless product.has_only_default_variant-%}
@@ -987,7 +771,7 @@
  {% else %}
  <div class="ecom-collection__product--wrapper-items ecom-collection-product__layout-grid" >
  <div class="ecom-collection__product-item ecom-collection__product--no-item" >
- There are no product yet!
+ No products found.
  </div>
  </div>
  {% endif %}
