@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-29 08:50:10
+ At 2024-05-29 08:50:57
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -241,123 +241,7 @@
  <script type="application/json" id="Product-model-{{ product.id }}">
  {{ product.media | where: 'media_type', 'model' | json }}
  </script>
- </div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-iooifwtbe0k product-info" id="product-info"><div class="core__column--wrapper" style=""><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-2d618uve8hi" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__review" deep="1"><div class="ecom-product-single__review-wrapper" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{review_platform}}"><div class="ecom-product-single__review-container">
- {%- if review_platform and review_platform != 'none' -%}
- {%- if EComBuilderMode == true -%}
- <div class="ecom-theme-app-extensions-skeleton">
- <div class="ecom-app-extension-info">
- <span class="ecom-theme-app-extension-icon">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M416 176C416 78.8 322.9 0 208 0S0 78.8 0 176c0 41.48 17.07 79.54 45.44 109.6c-15.17 32.34-38.65 58.07-38.95 58.38c-6.514 6.836-8.309 16.91-4.568 25.67C5.754 378.4 14.26 384 23.66 384c54.19 0 97.76-20.73 125.9-39.17C168.1 349.4 187.7 352 208 352C322.9 352 416 273.2 416 176zM208 320c-16.96 0-34.04-2.098-50.75-6.232L143.7 310.4L132 318.1c-20.43 13.38-51.58 28.99-89.85 32.97c9.377-12.11 22.3-30.63 32.24-51.82l9.242-19.71L68.72 263.7C44.7 238.2 32 207.9 32 176C32 96.6 110.1 32 208 32S384 96.6 384 176S305 320 208 320zM606.4 435.4C627.6 407.1 640 372.9 640 336C640 238.8 554 160 448 160c-.3145 0-.6191 .041-.9336 .043C447.5 165.3 448 170.6 448 176c0 5.43-.4668 10.76-.9414 16.09C447.4 192.1 447.7 192 448 192c88.22 0 160 64.6 160 144c0 28.69-9.424 56.45-27.25 80.26l-13.08 17.47l11.49 18.55c6.568 10.61 13.18 19.74 18.61 26.74c-18.26-1.91-36.45-6.625-54.3-14.09l-12.69-5.305l-12.58 5.557C495.9 475 472.3 480 448 480c-75.05 0-137.7-46.91-154.9-109.7c-10.1 3.336-20.5 6.132-31.2 8.271C282.7 455.1 357.1 512 448 512c29.82 0 57.94-6.414 83.12-17.54C555 504.5 583.7 512 616.3 512c9.398 0 17.91-5.57 21.73-14.32c3.74-8.758 1.945-18.84-4.568-25.67C633.3 471.8 619.6 456.8 606.4 435.4z"/></svg>
- </span>
- <div class="ecom-theme-app-extension-content">
- <span class="ecom-theme-app-extension-title">{{review_platform | replace: '_', ' ' | replace: '-', ' ' | capitalize}}</span>
- <div class="ecom-placeholder-on-builder-mode" data-ecom-placeholder="The review element will display when published to Online store"></div>
- </div>
- </div>
- </div>
- {%- else -%}
- {%- case review_platform -%}
- {%- when 'none' -%}
- <div class="ecom-theme-app-extensions-skeleton">
- <p>Please select the integrated review app platform in settings</p>
- </div>
- {%- when 'ali-reviews' -%}
- <div class="alireviews-review-box"></div>
- {%- when 'opinew-reviews' -%}
- <div style="clear:both;"></div><div id="opinew-reviews-product-page-code" class="opw-widget-wrapper-default">
- <span id="opinew-plugin" data-server-address="https://api.opinew.com"
- data-opw-prodreviews="{{ product.metafields.opinew_metafields['product_plugin'] }}"
- data-opinew-shop-id="{{ shop.id }}" data-shop-url="{{shop.domain}}"
- data-platform-product-id="{{product.id}}">
- <span id="opinew_product_plugin_app"></span>
- </span>
- </div>
- {%- when 'judgeme' -%}
- <div style='clear:both'></div>
- <div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-id='{{ product.id }}'>
- {{ product.metafields.judgeme.widget }}
- </div>
- {%- when 'product-reviews-addon' -%}
- <div id="stamped-main-widget"
- data-widget-style="standard"
- data-product-id="{{ product.id }}"
- data-name="{{ product.title | escape }}"
- data-url="{{ shop.url }}{{ product.url }}"
- data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
- data-description="{{ product.description | escape }}"
- data-product-sku="{{product.handle}}"
- data-widget-language="{{ language }}">
- </div>
- {%- when 'areviews-aliexpress'-%}
- <div class="page-full">{%- render 'aliexpress_reviews', product: product-%}</div>
- {%- when 'loox'-%}
- <div id="looxReviews" data-product-id="{{product.id}}" >{{- product.metafields.loox.reviews -}}</div>
- {% when 'ryviu'%}
- <div class="lt-block-reviews">
- <ryviu-widget product_id="{{product.id}}" handle="{{product.handle}}" title_product="{{product.title}}" image_product="{{ product.featured_image.src | img_url: '100x' }}"></ryviu-widget>
- </div>
- {%- when 'yotpo-social-reviews' -%}
- <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-description="{{ product.description | escape }}"></div>
- {%- when 'aliexpress-reviews-importer'-%}
- <div id="shopbooster-ali" product-id="{{ product.id }}" ></div>
- {%- when 'rivyo-product-review'-%}
- <div id="wc_review_section" class="wc_review_main_content" data-url="{{ shop.url }}" data-handle="{{ product.handle }}" data-product_id="{{ product.id }}" data-limit="0"></div>
- {%-when 'growave' -%}
- {% capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1, product: product %}{% endcapture %}
- {% unless the_snippet_reviews contains 'Liquid error' %}
- {{ the_snippet_reviews }}
- {% endunless %}
- {%- when 'smart-aliexpress-reviews'-%}
- {% render "reviews-importer" product: product%}
- {%- when 'vital-reviews'-%}
- <div id="bundle-product_reviews"></div>
- {%- when 'photo-reviews' -%}
- <div style="clear:both;"></div>
- <div id="opinew-reviews-product-page-code" class="">
- <span id="opinew-plugin" data-server-address="https://www.opinew.com" data-opw-prodreviews="{{ product.metafields.opinew_metafields['product_plugin'] }}" data-opinew-shop-id="{{ shop.id }}" data-shop-url="{{shop.domain}}" data-platform-product-id="{{product.id}}">
- <span id="opinew_product_plugin_app"></span>
- </span>
- </div>
- {%- when 'product-reviews' -%}
- <div id="shopify-product-reviews" data-id="{{product.id}}">{{- product.metafields.spr.reviews -}}</div>
- {%- when 'lai-reviews' -%}
- {%- if EComBuilderMode -%}
- <div class="ecom-placeholder-on-builder-mode" data-ecom-placeholder="Lai review form will display when published to Online store"></div>
- {%- endif -%}
- {% assign smaTemplatePageBuilderCurrent = template | split: '.' | first %}
- {% if smaTemplatePageBuilderCurrent != 'product' %}
- <div class="scm-container custom" style="display: none;">
- <div id="scm-reviews-importer" class="scm-reviews-importer">
- <iframe id="scm-reviews-importer-iframe" width="100%"></iframe>
- </div>
- </div>
- {% endif %}
- {% assign random_number = "now" | date: "%N" | modulo: 1000 | plus: 0 %}<script>var sectionConfig= (typeof sectionConfig == "undefined" || sectionConfig == null) ? {} : sectionConfig;var scmCustomData= (typeof scmCustomData == "undefined" || scmCustomData == null) ? {} : scmCustomData;var scmCustomDataWigetAll= (typeof scmCustomDataWigetAll == "undefined" || scmCustomDataWigetAll == null) ? [] : scmCustomDataWigetAll; scmCustomDataWigetAll['{{ random_number }}'] ={"id_iframe" : "{{ random_number }}","productId" : "{{ product.id }}","typePage" : 'productPage',"sectionConfig" : JSON.stringify(sectionConfig),"scmCustomData" : JSON.stringify(scmCustomData),'dataProduct' : []};sectionConfig= null;scmCustomData= null;scmCustomDataWigetAll['{{ random_number }}'].dataProduct['product']= {{ product | json }};{% for metafieldValue in product.metafields.scm_review_importer %}scmCustomDataWigetAll['{{ random_number }}'].dataProduct['{{ metafieldValue[0] }}']= `{{ metafieldValue[1] | json }}`;{% endfor %}</script>
- <div class="scm-container" style="display: none;">
- <div class="scm-reviews-importer" data-product-id= {{ product.id }}>
- <iframe class="scm-reviews-importer-iframe" width="100%" title="Sma reviews section Product page" data-idIframe="{{ random_number }}"></iframe>
- </div>
- </div>
- {%- when 'rivyo' -%}
- <div id="wc_review_section" class="wc_review_main_content" data-url="{{ shop.url }}" data-handle="{{ product.handle }}" data-product_id="{{ product.id }}" data-limit="0"></div>
- {%- when 'sealapps-product-review' -%}
- <div class="custom-vstar-review-widget" style="width:100%"></div>
- {%- when 'klaviyo-reviews' -%}
- <div id="klaviyo-reviews-all" data-id="{{product.id}}"></div> 
- {%- when 'air-reviews' -%}
- <div class="AirReviews-Widget AirReviews-Widget--Block"></div>
- {% else %}
- <div class="ecom-theme-app-extensions-skeleton">
- <p>The reivew platform not supported</p>
- </div>
- {%-endcase-%}
- {%- endif -%}
- {%- else -%}
- <div class="ecom-theme-app-extensions-skeleton">
- <p>Please select the integrated review app platform in settings</p>
- </div>
- {%- endif -%}
- </div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-5s63dm9dc7f" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__title" deep="1"><div class="ecom-product-single__title-wrapper"><div class="ecom-product-single__title-container"><h1 class="ecom-product__heading" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</h1></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-ym8k2148snb" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__price" deep="1"><div class="ecom-product-single__price-wrapper"><div class="ecom-product-single__price-container"><div class="ecom-product-single__price-container-grid"><div class="ecom-product-single ecom-product-single__price--prices">
+ </div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-iooifwtbe0k product-info" id="product-info"><div class="core__column--wrapper" style=""><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-5s63dm9dc7f" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__title" deep="1"><div class="ecom-product-single__title-wrapper"><div class="ecom-product-single__title-container"><h1 class="ecom-product__heading" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</h1></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-ym8k2148snb" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__price" deep="1"><div class="ecom-product-single__price-wrapper"><div class="ecom-product-single__price-container"><div class="ecom-product-single__price-container-grid"><div class="ecom-product-single ecom-product-single__price--prices">
  {%- liquid
  if product.has_only_default_variant
  assign target = product
