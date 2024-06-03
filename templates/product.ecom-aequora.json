@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-aequora-product": {
+      "type": "ecom-aequora-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-aequora-product"
+  ]
+}
