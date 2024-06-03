@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-03 14:45:09
+ At 2024-06-03 14:58:15
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -293,7 +293,7 @@
  
  </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-8aq1pu3cv56" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__description" deep="1"><div class="ecom-product-single__description-wrapper"><div class="ecom-product-single__description-container" data-show-type="short"><div class="ecom-product-single__description--paragraph"><div>
  <div>{{ product.description | strip_html | truncatewords: 21 }}</div>
- </div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-0119fvd1d7g8" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="1"> <style>
+ </div></div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-0119fvd1d7g8" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="1"><style>
  .column {
  float: left;
  padding-right: 5px;
@@ -309,42 +309,43 @@
  .active-product img {
  border: 1px solid #222!important;
  }
- </style>
+</style>
 
 <div class="row">
- <div class="column" data-url="https://lavairbrand.com/products/creator-navy?variant=variant-code-1,https://lavairbrand.com/products/creator-navy?variant=variant-code-2">
- <a href="https://lavairbrand.com/products/creator-navy?variant=variant-code-1"><img src="https://lavairbrand.com/cdn/shop/files/CreatorNavy.png" alt="Creator Navy" style="width: 90px;"></a>
+ <div class="column" data-url="/products/creator-navy">
+ <a href="https://lavairbrand.com/products/creator-navy" target="_blank"><img src="https://lavairbrand.com/cdn/shop/files/CreatorNavy.png" alt="Creator Navy" style="width: 90px;"></a>
  </div>
 
- <div class="column" data-url="https://lavairbrand.com/products/creator-neo-triple-black?variant=variant-code-3,https://lavairbrand.com/products/creator-neo-triple-black?variant=variant-code-4">
- <a href="https://lavairbrand.com/products/creator-neo-triple-black?variant=variant-code-3"><img src="https://lavairbrand.com/cdn/shop/files/CreatorNeoTripleBlack1v2_c1bace9e-9de1-484d-8504-547944344ff4.png" alt="Creator Neo Triple Black" style="width: 90px;"></a>
+ <div class="column" data-url="/products/creator-neo-triple-black">
+ <a href="https://lavairbrand.com/products/creator-neo-triple-black" target="_blank"><img src="https://lavairbrand.com/cdn/shop/files/CreatorNeoTripleBlack1v2_c1bace9e-9de1-484d-8504-547944344ff4.png" alt="Creator Neo Triple Black" style="width: 90px;"></a>
  </div>
 
- <div class="column" data-url="https://lavairbrand.com/products/creator-grey-charcoal?variant=variant-code-5,https://lavairbrand.com/products/creator-grey-charcoal?variant=variant-code-6">
- <a href="https://lavairbrand.com/products/creator-grey-charcoal?variant=variant-code-5"><img src="https://lavairbrand.com/cdn/shop/files/creatorGreyCharcoalnewheroimage.png" alt="Creator Grey Charcoal" style="width: 90px;"></a>
+ <div class="column" data-url="/products/creator-grey-charcoal">
+ <a href="https://lavairbrand.com/products/creator-grey-charcoal" target="_blank"><img src="https://lavairbrand.com/cdn/shop/files/creatorGreyCharcoalnewheroimage.png" alt="Creator Grey Charcoal" style="width: 90px;"></a>
  </div>
 
- <div class="column" data-url="https://lavairbrand.com/products/creator-charcoal?variant=variant-code-11,https://lavairbrand.com/products/creator-charcoal?variant=variant-code-12">
- <a href="https://lavairbrand.com/products/creator-charcoal?variant=variant-code-11"><img src="https://lavairbrand.com/cdn/shop/files/CreatorCharcoalHerov3.png" alt="Creator Charcoal" style="width: 90px;"></a>
+ <div class="column" data-url="/products/creator-charcoal">
+ <a href="https://lavairbrand.com/products/creator-charcoal" target="_blank"><img src="https://lavairbrand.com/cdn/shop/files/CreatorCharcoalHerov3.png" alt="Creator Charcoal" style="width: 90px;"></a>
  </div>
 
- <div class="column" data-url="https://lavairbrand.com/products/creator-black?variant=variant-code-13,https://lavairbrand.com/products/creator-black?variant=variant-code-14">
- <a href="https://lavairbrand.com/products/creator-black?variant=variant-code-13"><img src="https://lavairbrand.com/cdn/shop/files/creatorBlackonwhite.png" alt="Creator Triple Black" style="width: 90px;"></a>
+ <div class="column" data-url="/products/creator-black">
+ <a href="https://lavairbrand.com/products/creator-black" target="_blank"><img src="https://lavairbrand.com/cdn/shop/files/creatorBlackonwhite.png" alt="Creator Triple Black" style="width: 90px;"></a>
  </div>
 </div>
 
 <script>
  document.addEventListener('DOMContentLoaded', function() {
  var currentURL = window.location.href;
+ console.log('Current URL:', currentURL); // Debug log
  var columns = document.querySelectorAll('.column');
 
  columns.forEach(function(column) {
- var urls = column.getAttribute('data-url').split(',');
- urls.forEach(function(url) {
- if (currentURL.trim() === url.trim()) {
+ var urlFragment = column.getAttribute('data-url').trim();
+ console.log('Checking URL Fragment:', urlFragment); // Debug log
+ if (currentURL.includes(urlFragment)) {
+ console.log('Match found for fragment:', urlFragment); // Debug log
  column.classList.add('active-product');
  }
- });
  });
  });
 </script></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
