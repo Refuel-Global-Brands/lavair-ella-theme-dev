@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-03 13:52:44
+ At 2024-06-03 13:54:43
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -305,10 +305,14 @@
  clear: both;
  display: table;
  }
+
+ .active-product img {
+ border: 1px solid #222;
+ }
 </style>
 
 <div class="row">
- <div class="column">
+ <div class="column" data-url="https://lavairbrand.com/products/creator-navy">
  <a href="https://lavairbrand.com/products/creator-navy" target="_blank"><img src="https://lavairbrand.com/cdn/shop/files/CreatorNavy.png" alt="Creator Navy" style="width: 90px;"></a>
  </div>
 
@@ -335,7 +339,20 @@
  <div class="column">
  <a href="https://lavairbrand.com/products/creator-black" target="_blank"><img src="https://lavairbrand.com/cdn/shop/files/creatorBlackonwhite.png" alt="Creator Triple Black" style="width: 90px;"></a>
  </div>
-</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
+</div>
+
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+ var currentURL = window.location.href;
+ var columns = document.querySelectorAll('.column');
+
+ columns.forEach(function(column) {
+ if (currentURL === column.getAttribute('data-url')) {
+ column.classList.add('active-product');
+ }
+ });
+ });
+</script></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-yny3oynq7e" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" deep="1"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%}" data-picker-type="radio" data-ecom-placeholder="">
  {%- liquid
  assign ecom_has_variant_picker = true
  assign variant_selected = product.selected_or_first_available_variant
