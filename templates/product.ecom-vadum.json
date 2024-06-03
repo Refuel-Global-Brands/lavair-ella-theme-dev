@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-vadum-product": {
+      "type": "ecom-vadum-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-vadum-product"
+  ]
+}
