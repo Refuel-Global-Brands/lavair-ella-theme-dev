@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-aero-product": {
+      "type": "ecom-aero-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-aero-product"
+  ]
+}
