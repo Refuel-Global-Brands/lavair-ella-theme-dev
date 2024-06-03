@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-femento-product": {
+      "type": "ecom-femento-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-femento-product"
+  ]
+}
