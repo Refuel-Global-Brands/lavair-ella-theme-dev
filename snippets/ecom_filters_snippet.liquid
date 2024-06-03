@@ -85,7 +85,7 @@
                                             {% endif %}
                                             {% endfor %}
                                             <li class="ecom-collection__filters-group-list-item ecom-al_center">
-                                                <a href="{{results.url}}" title="Clear all" class="ecom-collection__filters-group-list-item-clear">Clear all{{close_icon}}</a>
+                                                <a href="{% if results.url %}{{results.url}}{% else %}/search?q={{results.terms}}&sort_by={{results.sort_by}}{% endif %}" title="Clear all" class="ecom-collection__filters-group-list-item-clear">Clear all{{close_icon}}</a>
                                             </li>
                                         </ul>
                                     </div>
