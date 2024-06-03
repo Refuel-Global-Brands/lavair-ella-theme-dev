@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-creator-product-page-product": {
+      "type": "ecom-creator-product-page-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-creator-product-page-product"
+  ]
+}
