@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-linear-product": {
+      "type": "ecom-linear-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-linear-product"
+  ]
+}
