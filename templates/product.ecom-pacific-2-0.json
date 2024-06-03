@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-pacific-2-0-product": {
+      "type": "ecom-pacific-2-0-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-pacific-2-0-product"
+  ]
+}
