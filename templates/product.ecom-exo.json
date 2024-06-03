@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-exo-product": {
+      "type": "ecom-exo-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-exo-product"
+  ]
+}
