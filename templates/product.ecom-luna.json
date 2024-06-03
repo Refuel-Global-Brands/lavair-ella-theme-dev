@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-luna-product": {
+      "type": "ecom-luna-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-luna-product"
+  ]
+}
