@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-03 15:03:25
+ At 2024-06-04 09:04:15
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -492,28 +492,12 @@
  {% assign limit = limit | plus: 0 %}
  {%- endif-%}
  
- 
- {% if product.type and product.type != blank and products.size < 2 or products == blank %}
+ {% if product.type and product.type != blank %}
  {% paginate collections.all.products by 1000 %}
- {% assign products = collection.all.products | where: 'type', product.type | where: "available" %}
+ {% assign products_type = collections.all.products | where: 'type', product.type | where: "available" | map: 'handle' %}
  {% endpaginate %}
+ {% assign products = products | concat: products_type | uniq %}
  {% assign ecom_related_type = 'ecom-product-related-shopify-type' %}
- {% endif %}
- {% if product.vendor and product.vendor != blank and products == blank or products.size < 2%}
- {% paginate collections.all.products by 1000 %}
- {% assign products = collection.all.products | where: 'vendor', product.vendor | where: "available" %}
- {% endpaginate %}
- {% assign ecom_related_type = 'ecom-product-related-shopify-vendor' %}
- {% endif %}
- {% if product.collections.size > 0 and products.size < 2 or products == blank %}
- {% for c in product.collections %}
- {% if c.handle == 'all' or c.handle == 'frontpage' or c.products_count < 1 %}{% continue%}{% endif%}
- {% assign products = c.products | where: "available" %}
- {% assign ecom_related_type = 'ecom-product-related-shopify-collection' %}
- {% assign is_collection = true%}
- {% assign collection = c %}
- {%- break -%}
- {% endfor %}
  {% endif %}
  
  {% endif %}
