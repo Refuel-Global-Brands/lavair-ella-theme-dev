@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-aesthetic-essentialism-tee-product": {
+      "type": "ecom-aesthetic-essentialism-tee-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-aesthetic-essentialism-tee-product"
+  ]
+}
