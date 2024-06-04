@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-aesthetics-tee-product": {
+      "type": "ecom-aesthetics-tee-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-aesthetics-tee-product"
+  ]
+}
