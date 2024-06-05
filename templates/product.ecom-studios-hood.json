@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-studios-hood-product": {
+      "type": "ecom-studios-hood-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-studios-hood-product"
+  ]
+}
