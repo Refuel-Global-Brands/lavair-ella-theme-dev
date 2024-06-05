@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-05 14:13:56
+ At 2024-06-05 14:15:13
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -21,20 +21,10 @@
  window.EComposer.TEMPLATE = {"template_id":"666071b69cf86b248e0364b8","title":"Search Page","type":"search","slug":"ecom-search-page","plan_id":4};
  </script>
 <div class="ecom-builder" id="ecom-search-page"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-9a8s69u4a5" data-id="ecom-9a8s69u4a5" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-6pnfa3oi5oe"><div class="core__column--wrapper" style=""><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-7qtle0861tq" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="1">{% if search.performed %}
- <h1>Search results for "{{ search.terms }}"</h1>
- {% if search.results_count == 0 %}
- <p>No results found for "{{ search.terms }}".</p>
- {% else %}
- <p>{{ search.results_count }} results found for "{{ search.terms }}".</p>
- 
- {% endif %}
+ <h1>"{{ search.terms }}"</h1>
 {% else %}
  <h1>Search</h1>
-{% endif %}</div></div> <div class="ecom-block ecom-core core__block elmspace ecom-0g6oewlwur66" data-core-is="block"><div class="ecom-element ecom-search-resutl_text" deep="1"><div class="ecom-search-text">
- {% assign count = search.results_count %}
- {% assign terms = search.terms %}
- {{ count }} results found for "{{ terms }}" 
- </div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+{% endif %}</div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
  {% comment %}
  // Reactive
  * this.data.settings.collection
