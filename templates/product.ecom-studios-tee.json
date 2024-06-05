@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-studios-tee-product": {
+      "type": "ecom-studios-tee-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-studios-tee-product"
+  ]
+}
