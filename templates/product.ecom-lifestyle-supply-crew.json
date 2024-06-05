@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-lifestyle-supply-crew-product": {
+      "type": "ecom-lifestyle-supply-crew-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-lifestyle-supply-crew-product"
+  ]
+}
