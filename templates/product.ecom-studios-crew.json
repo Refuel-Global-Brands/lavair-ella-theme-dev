@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-studios-crew-product": {
+      "type": "ecom-studios-crew-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-studios-crew-product"
+  ]
+}
