@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-studios-joggers-product": {
+      "type": "ecom-studios-joggers-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-studios-joggers-product"
+  ]
+}
