@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-lifestyle-supply-tee-product": {
+      "type": "ecom-lifestyle-supply-tee-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-lifestyle-supply-tee-product"
+  ]
+}
