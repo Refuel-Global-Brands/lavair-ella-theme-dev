@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-05-29 11:09:35
+ At 2024-06-05 10:55:39
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -141,7 +141,7 @@
  {% endif %}
  {% endfor %}
  <li class="ecom-collection__filters-group-list-item ecom-al_center">
- <a href="{{results.url}}" title="Clear all" class="ecom-collection__filters-group-list-item-clear">Clear all{{close_icon}}</a>
+ <a href="{% if results.url %}{{results.url}}{% else %}/search?q={{results.terms}}&sort_by={{results.sort_by}}{% endif %}" title="Clear all" class="ecom-collection__filters-group-list-item-clear">Clear all{{close_icon}}</a>
  </li>
  </ul>
  </div>
@@ -632,9 +632,30 @@
  </div>
  {% endif %}
  
+ <div class="ecom-collection__product-badge">
  
  
+ <span class="ecom-collection__product-badge--sold-out" aria-hidden="true" style="{%- if product.available == true -%}display: none; {%- endif -%}">
+ Sold out
+ </span>
+ <span class="ecom-collection__product-badge--sale" aria-hidden="true" style="{%- unless product.compare_at_price > product.price and product.available -%}display: none;{%- endunless -%}">
+ Sale
+ </span>
+ {% if badge_tags %}
+ {% for badge in badge_tags %}
+ {% for original_tag in product.tags %}
+ {% assign tag = original_tag | replace: ' ', ' ' %}
+ {% if tag == badge %}
+ <span class="ecom-collection__product-badge--custom ecom-collection__product-badge--{{ badge | handleize}}" aria-hidden="true">
+ {{ badge }}
+ </span>
+ {% endif %}
+ {% endfor %}
+ {%- assign bad = badge | strip -%}
+ {% endfor %}
+ {% endif %}
  
+ </div>
  </a>
  
  <div class="ecom-collection__product-group-button-action " style="justify-content: start">
