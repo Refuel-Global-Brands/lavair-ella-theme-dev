@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-single-colourway-product-product": {
+      "type": "ecom-single-colourway-product-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-single-colourway-product-product"
+  ]
+}
