@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-05 08:29:13
+ At 2024-06-05 09:08:25
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -542,25 +542,6 @@
  {% endfor %}
  {% endif %}
  
- {%- if product.has_only_default_variant -%}
- {%- if product.compare_at_price != null and product.compare_at_price > product.price -%}
- {%- assign sale = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
- <span class="ecom-product-related__price--bage-sale">
- Save {{sale}}%
- </span>
- {%- endif -%}
- {%- else -%}
- {%- if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
- {%- assign sale = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round -%}
- {%else%}
- {%- assign sale = null %}
- {%- endif -%}
- 
- <span class="ecom-product-related__price--bage-sale" style="{% unless sale %}display:none{% endunless %}">
- Save {{sale}}%
- </span>
- 
- {%- endif -%}
  </div>
  </a>
  </div>
@@ -604,25 +585,6 @@
  {% endfor %}
  {% endif %}
  
- {%- if product.has_only_default_variant -%}
- {%- if product.compare_at_price != null and product.compare_at_price > product.price -%}
- {%- assign sale = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
- <span class="ecom-product-related__price--bage-sale">
- Save {{sale}}%
- </span>
- {%- endif -%}
- {%- else -%}
- {%- if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
- {%- assign sale = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round -%}
- {%else%}
- {%- assign sale = null %}
- {%- endif -%}
- 
- <span class="ecom-product-related__price--bage-sale" style="{% unless sale %}display:none{% endunless %}">
- Save {{sale}}%
- </span>
- 
- {%- endif -%}
  </div>
  </a>
  </div>
