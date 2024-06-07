@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-voting-test-post": {
+      "type": "ecom-voting-test-post",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-voting-test-post"
+  ]
+}
