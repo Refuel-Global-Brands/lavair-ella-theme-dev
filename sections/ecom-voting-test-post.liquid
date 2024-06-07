@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-07 13:45:57
+ At 2024-06-07 14:24:35
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -21,32 +21,30 @@
  window.EComposer.TEMPLATE = {"template_id":"66630f145f4f1629710689f7","title":"Voting Test","type":"post","slug":"ecom-voting-test","plan_id":4};
  </script>
 <div class="ecom-builder" id="ecom-voting-test"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-2uqn14ic2q6" data-id="ecom-2uqn14ic2q6" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-jnxkxnkqi0j"><div class="core__column--wrapper"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-o6nspr546" data-core-is="block"><div class="ecom__element ecom-element element__code exporting" deep="1"><style>
-.vote-container {
+ .vote-container {
  display: flex;
  align-items: center;
  gap: 10px;
-}
+ }
 
-.vote-btn {
+ .vote-btn {
  padding: 10px 20px;
  cursor: pointer;
  border: 1px solid #ccc;
  background-color: #f5f5f5;
  border-radius: 5px;
  transition: background-color 0.3s;
-}
+ }
 
-.vote-btn:hover {
+ .vote-btn:hover {
  background-color: #e0e0e0;
-}
+ }
 
-#voteCount {
+ #voteCount {
  font-size: 16px;
  font-weight: bold;
-}
-
+ }
 </style>
-
 
 <div class="vote-container">
  <button id="upvoteBtn" class="vote-btn">Upvote</button>
@@ -56,27 +54,37 @@
 
 <script>
  document.addEventListener("DOMContentLoaded", function() {
- var upvoteBtn = document.getElementById('upvoteBtn');
- var downvoteBtn = document.getElementById('downvoteBtn');
- var voteCount = document.getElementById('voteCount');
+ const upvoteBtn = document.getElementById('upvoteBtn');
+ const downvoteBtn = document.getElementById('downvoteBtn');
+ const voteCount = document.getElementById('voteCount');
 
- // Initialize vote count from local storage or set to 0
- var votes = localStorage.getItem('voteCount') ? parseInt(localStorage.getItem('voteCount')) : 0;
- voteCount.innerText = votes;
+ const apiUrl = 'https://vote-app-kappa.vercel.app/'; // Update with your Vercel app URL
 
- upvoteBtn.addEventListener('click', function() {
- votes++;
- voteCount.innerText = votes;
- localStorage.setItem('voteCount', votes);
+ async function fetchVotes() {
+ const response = await fetch(`${apiUrl}/votes`);
+ const data = await response.json();
+ voteCount.innerText = data.votes;
+ }
+
+ async function updateVote(action) {
+ const response = await fetch(`${apiUrl}/votes/${action}`, {
+ method: 'POST',
+ headers: {
+ 'Content-Type': 'application/json',
+ },
  });
+ const data = await response.json();
+ voteCount.innerText = data.votes;
+ }
 
- downvoteBtn.addEventListener('click', function() {
- votes--;
- voteCount.innerText = votes;
- localStorage.setItem('voteCount', votes);
+ upvoteBtn.addEventListener('click', () => updateVote('upvote'));
+ downvoteBtn.addEventListener('click', () => updateVote('downvote'));
+
+ // Fetch initial votes on page load
+ fetchVotes();
  });
-});
-</script></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</script>
+</div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
 </div></div>
 {% schema %}
 {
