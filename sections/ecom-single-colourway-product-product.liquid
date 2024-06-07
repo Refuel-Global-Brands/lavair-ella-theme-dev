@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-07 12:12:01
+ At 2024-06-07 12:12:55
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -27,7 +27,7 @@
  {% endcomment %}
  {% liquid
  if request.page_type != 'product' or product == blank
- assign selected_product = 'aero-black'
+ assign selected_product = 'utility-vest-black'
  if selected_product == blank or selected_product == '' or all_products[selected_product] == blank
  assign product = collections['all'].products.first
  else
@@ -64,7 +64,7 @@
  {% assign img_padding__mobile = 1 | times: 1 %}
  <div class="ecom-swiper-wrapper ecom-product-single__media--images ecom-swiper-wrapper ecom-product-single__media--images-layout__grid">
  {% assign use_limit = undefined %}
- {% assign limit_images = 1 %}
+ {% assign limit_images = undefined %}
  {% for image in product.images %}
  {%if use_limit and forloop.index > limit_images%}{% break %}{% endif %}
  {% assign fetchpriority = 'low'%}
