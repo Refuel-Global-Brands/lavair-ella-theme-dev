@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-linear-gum-product": {
+      "type": "ecom-linear-gum-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-linear-gum-product"
+  ]
+}
