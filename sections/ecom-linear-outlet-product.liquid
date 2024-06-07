@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-07 10:56:32
+ At 2024-06-07 10:57:54
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -327,14 +327,18 @@
 
 <script>
  document.addEventListener('DOMContentLoaded', function() {
- var currentURL = window.location.href;
+ var currentURL = window.location.href.split(/[?#]/)[0]; // Ignore query params and anchors
  console.log('Current URL:', currentURL); // Debug log
  var columns = document.querySelectorAll('.column');
 
  columns.forEach(function(column) {
  var urlFragment = column.getAttribute('data-url').trim();
  console.log('Checking URL Fragment:', urlFragment); // Debug log
- if (currentURL.includes(urlFragment)) {
+
+ // Create a regex to match the URL fragment as a distinct path segment
+ var regex = new RegExp(urlFragment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(\\/|$)', 'i');
+
+ if (regex.test(currentURL)) {
  console.log('Match found for fragment:', urlFragment); // Debug log
  column.classList.add('active-product');
  }
