@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-expert-recommendations-post": {
+      "type": "ecom-expert-recommendations-post",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ecom-expert-recommendations-post"
+  ]
+}
