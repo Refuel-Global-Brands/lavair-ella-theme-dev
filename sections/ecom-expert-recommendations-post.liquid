@@ -2,7 +2,7 @@
  EComposer (https://ecomposer.io)
  You SHOULD NOT modify source code in this page because
  It is automatically generated from EComposer
- At 2024-06-11 09:30:59
+ At 2024-06-11 09:32:54
  {% endcomment %} 
  
  {% assign ecom_root_url = routes.root_url %}
@@ -20,22 +20,7 @@
  window.EComposer.TEMPLATE_ID="666819523a02f673fc01e3b2";
  window.EComposer.TEMPLATE = {"template_id":"666819523a02f673fc01e3b2","title":"Expert Recommendations","type":"post","slug":"ecom-expert-recommendations","plan_id":4};
  </script>
-<div class="ecom-builder" id="ecom-expert-recommendations"><div class="ecom-sections" data-section-id="{{section.id}}">
- {% unless tmp_block %}{% assign tmp_block = blog %}{% endunless %}
- {%- capture article_selected -%}{%- endcapture-%}
- {% assign article_selected = article_selected | strip %}
- {%- if request.page_type != 'article' and article_selected != blank -%}
- {%- assign article = articles[article_selected]-%}
- {% assign blog_handle = article_selected | split: '/' | first %}
- {% assign blog = blogs[blog_handle] %}
- {%- endif -%}
- <section class="ecom-row ecom-core ecom-section ecom-2f3mc359l15" data-id="ecom-2f3mc359l15" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-eakvjs924xj"><div class="core__column--wrapper"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-27zw47pbupj" data-core-is="block"><div class="ecom-element ecom-shopify-elements ecom-shopify__article-title" deep="1"><div class="ecom-shopify__article--title-wrapper"><div class="ecom-shopify__article--title-container">
- {% if article != empty %}
- <h2 itemprop="headline" class="ecom-shopify__article--title-text" href="{{article.url}}" title="{{article.title | escape }}">{{article.title | escape }}</h2>
- {% else %}
- <div>Please select the article in settings</div>
- {% endif %}
- </div></div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+<div class="ecom-builder" id="ecom-expert-recommendations"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-2f3mc359l15" data-id="ecom-2f3mc359l15" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-eakvjs924xj"><div class="core__column--wrapper"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="0"></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
 </div></div>
 {% schema %}
 {
