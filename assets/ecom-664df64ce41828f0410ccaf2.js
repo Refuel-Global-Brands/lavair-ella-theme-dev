@@ -1,4 +1,4 @@
-/* Publish by EComposer at 2024-06-13 15:06:42*/
+/* Publish by EComposer at 2024-06-13 15:11:57*/
                 (function(){
                     const Func = (function() {
                         'use strict';
@@ -59,6 +59,66 @@ if(!this.$el)return;const e=this.$el,i=e.querySelector(".ecom-text_view-more-btn
                     
                         document.querySelectorAll('.ecom-mbw07tmi4x8').forEach(function(el){
                             Func.call({$el: el, id: 'ecom-mbw07tmi4x8', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-z3yk6b1lluk').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-z3yk6b1lluk', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-j1i9qx8ska').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-j1i9qx8ska', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-5c440rfvx8p').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-5c440rfvx8p', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-yxnhud7326').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-yxnhud7326', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-d93os1isp4i').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-d93os1isp4i', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-fh0jaj9d55b').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-fh0jaj9d55b', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-v9s71pv04h9').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-v9s71pv04h9', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-ar5j4ajkxfr').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-ar5j4ajkxfr', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-972to85bzlf').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-972to85bzlf', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-nvl3vi25k6r').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-nvl3vi25k6r', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-n2a1p86auvn').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-n2a1p86auvn', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-j0gsqtvdikm').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-j0gsqtvdikm', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-9c248wazao4').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-9c248wazao4', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-mlqew58lna8').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-mlqew58lna8', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-wbqybn1r7c').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-wbqybn1r7c', settings: {},isLive: true});
                         });
                     
 
@@ -143,6 +203,62 @@ if(!this.$el)return!1;const e=this.$el;this.settings.animation&&function(t){if(!
                             Func.call({$el: el, id: 'ecom-6qhkvk6gxcv', settings: {"animation":false},isLive: true});
                         });
                     
+                        document.querySelectorAll('.ecom-l76gjnu8soa').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-l76gjnu8soa', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-vx4ymyvnxkr').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-vx4ymyvnxkr', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-mpz1lw7eabm').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-mpz1lw7eabm', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-ltmsib406v').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-ltmsib406v', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-wex600qrkgf').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-wex600qrkgf', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-ojz66xa9avl').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-ojz66xa9avl', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-vzziq44ubsa').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-vzziq44ubsa', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-mglcsejcrbb').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-mglcsejcrbb', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-v9tcpdxtzrf').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-v9tcpdxtzrf', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-2eyqr05dqr').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-2eyqr05dqr', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-9lt1r7yw9nq').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-9lt1r7yw9nq', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-e6ypyix3dmr').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-e6ypyix3dmr', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-7uejizkret5').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-7uejizkret5', settings: {"animation":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-t2wpqj7cbo').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-t2wpqj7cbo', settings: {"animation":false},isLive: true});
+                        });
+                    
 
                 })();
             
@@ -171,6 +287,10 @@ var g,f,b,h,m;let e=this.$el;if(!e)return;let i=this.isLive;const t=(g=this.sett
                     
                         document.querySelectorAll('.ecom-dbq9rqmorbs').forEach(function(el){
                             Func.call({$el: el, id: 'ecom-dbq9rqmorbs', settings: {"disable_auto_close":false,"disable_effect":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-kn330rmj2om').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-kn330rmj2om', settings: {"disable_auto_close":false,"disable_effect":false},isLive: true});
                         });
                     
 
