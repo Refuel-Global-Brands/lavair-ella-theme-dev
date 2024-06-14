@@ -1499,6 +1499,12 @@ summary::-webkit-details-marker {
         appearance: none;
     }
 
+    .form-input:focus, .field__input:focus {
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgba(34, 34, 34, 0.6);
+    }
+
     input.form-input-placeholder::-webkit-input-placeholder{
         color: var(--form-input-placeholder);
         transition: var(--anchor-transition);
