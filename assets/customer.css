@@ -12,6 +12,14 @@
     height: 100%;
 }
 
+.account-page .halo-page-logo {
+    background-color: var(--navigation-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .login-rowItem .page-subheader {
 
 }
