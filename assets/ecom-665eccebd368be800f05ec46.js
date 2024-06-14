@@ -1,4 +1,4 @@
-/* Publish by EComposer at 2024-06-14 07:24:43*/
+/* Publish by EComposer at 2024-06-14 07:25:50*/
                 (function(){
                     const Func = (function() {
                         'use strict';
@@ -1008,10 +1008,6 @@ var K,X,tt;let e=this.$el;if(!e)return;let a=!0,_=e.querySelectorAll(".ecom-coll
                     
                         document.querySelectorAll('.ecom-kftgfrwipm8').forEach(function(el){
                             Func.call({$el: el, id: 'ecom-kftgfrwipm8', settings: {"show_featured_media":false,"bage_sale":"Save {{sale}}","enable_progress_pagination":false,"sale_badge_type":"percent","slider_speed":200,"layout":"grid","enable_preload":false,"show_compare":false,"show_wishlist":false},isLive: true});
-                        });
-                    
-                        document.querySelectorAll('.ecom-8jp1ctwveie').forEach(function(el){
-                            Func.call({$el: el, id: 'ecom-8jp1ctwveie', settings: {"show_featured_media":false,"bage_sale":"Save {{sale}}","sale_badge_type":"percent","slider_speed":200,"layout":"grid","enable_preload":false,"show_compare":false,"show_wishlist":false},isLive: true});
                         });
                     
 
