@@ -11,7 +11,11 @@
 }
 
 .account-page .halo-page-content {
-  padding-bottom: 80px
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .login-row {
@@ -41,10 +45,6 @@
 
 .login-item {
   margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
 .login-item:last-child {
