@@ -48,7 +48,7 @@
                     {% endif %}
                     <div class="form-field{% if form.errors contains "first_name" %} form-field--error{% endif %}">
                         <label class="form-label" for="RegisterForm-FirstName">
-                            {{ 'customer.register.first_name' | t }}
+                            First name
                         </label>
                         <input class="form-input form-input-placeholder{% if form.errors contains "first_name" %} error{% endif %}"
                             type="text"
@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-field{% if form.errors contains "last_name" %} form-field--error{% endif %}">
                         <label class="form-label" for="RegisterForm-LastName">
-                            {{ 'customer.register.last_name' | t }}
+                            Last name
                         </label>      
                         <input class="form-input form-input-placeholder{% if form.errors contains "last_name" %} error{% endif %}"
                             type="text"
@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
                         <label class="form-label" for="RegisterForm-email">
-                            {{ 'customer.register.you_email' | t }}
+                            Email
                             <em>*</em>
                         </label>      
                         <input class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
@@ -96,7 +96,7 @@
                     </div>
                     <div class="form-field{% if form.errors contains "password" %} form-field--error{% endif %}">
                         <label class="form-label" for="password">
-                            {{ 'customer.register.you_password' | t }}
+                            Password
                             <em>*</em>
                         </label>      
                         <input class="form-input form-input-placeholder{% if form.errors contains "password" %} error{% endif %}"
