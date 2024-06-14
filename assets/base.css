@@ -1482,7 +1482,7 @@ summary::-webkit-details-marker {
         letter-spacing: var(--body-letter-spacing);
         line-height: var(--body-line-height);
         text-align: left;
-        border: 1px solid #fff;
+        border: 1px solid #222;
         color: var(--form-input-color);
         background-color: var(--form-input-bg);
         box-shadow: unset!important;
