@@ -1,5 +1,9 @@
 .account-page .halo-page-header {
     background-color: var(--navigation-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .login-rowItem .page-subheader {
