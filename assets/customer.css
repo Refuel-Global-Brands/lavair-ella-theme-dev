@@ -165,10 +165,6 @@
 
 .login-item .accepts-marketing {
     margin-top: 15px;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column !important;
 }
 
 /* Login Page */
