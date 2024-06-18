@@ -191,10 +191,10 @@
 
 .login-item .accepts-marketing input[type="checkbox"],
 .login-item .accepts-marketing .form-label--checkbox {
-  display: inline-block;
-  width: auto;
-  margin: 0 auto;
-  padding-left: 0;
+  display: inline-block !important;
+  width: auto !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
 }
 
 /* Login Page */
