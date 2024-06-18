@@ -1379,7 +1379,6 @@ summary::-webkit-details-marker {
         pointer-events: auto;
         cursor: pointer;
         line-height: 22px;
-        font-weight: 400;
     }
 
     input[type="checkbox"] + .form-label--checkbox:before{
