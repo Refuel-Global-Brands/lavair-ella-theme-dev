@@ -1,4 +1,3 @@
-
 .lvr-club-logo {
   display: flex;
   align-items: center;
@@ -162,9 +161,6 @@
 
 .login-item .accepts-marketing {
     margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Login Page */
