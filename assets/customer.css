@@ -197,6 +197,10 @@
   padding-left: 0 !important;
 }
 
+.login-item .accepts-marketing .form-label--checkbox {
+  padding: 0 0 0 23px !important;
+}
+
 /* Login Page */
 .login-page .login-rowRight {
   background: var(--bg-global);
