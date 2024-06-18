@@ -189,6 +189,14 @@
     height: 100%;
 }
 
+.login-item .accepts-marketing input[type="checkbox"],
+.login-item .accepts-marketing .form-label--checkbox {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
 /* Login Page */
 .login-page .login-rowRight {
   background: var(--bg-global);
