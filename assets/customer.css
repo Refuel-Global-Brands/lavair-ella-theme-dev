@@ -100,6 +100,11 @@
     line-height: var(--body-line-height);
     letter-spacing: var(--body-letter-spacing);
     margin: 0 0 26px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
 }
 
 .login-item .login-message{
