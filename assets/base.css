@@ -1374,7 +1374,6 @@ summary::-webkit-details-marker {
         display: block;
         width: 100%;
         position: relative;
-        padding: 0 0 0 23px;
         margin: 0;
         pointer-events: auto;
         cursor: pointer;

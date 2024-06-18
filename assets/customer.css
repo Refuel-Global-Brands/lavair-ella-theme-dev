@@ -1,3 +1,10 @@
+.accepts-marketing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .lvr-club-logo {
   display: flex;
   align-items: center;
