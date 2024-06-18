@@ -1,6 +1,7 @@
 .form-link-text {
   font-weight: 500 !important;
   text-decoration: underline !important;
+  text-underline-offset: 3px;
 }
 
 .lvr-club-logo {
