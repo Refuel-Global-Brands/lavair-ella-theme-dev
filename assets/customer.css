@@ -1,9 +1,3 @@
-.accepts-marketing {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 .lvr-club-logo {
   display: flex;
@@ -168,6 +162,9 @@
 
 .login-item .accepts-marketing {
     margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Login Page */
