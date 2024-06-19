@@ -1411,8 +1411,8 @@ summary::-webkit-details-marker {
     }
 
     input[type="checkbox"]:checked + .form-label--checkbox:before {
-        background-color: #000;
-        border-color: #000;
+        background-color: #222;
+        border-color: #222;
     }
 
     input[type="checkbox"]:checked + .form-label--checkbox:after {
