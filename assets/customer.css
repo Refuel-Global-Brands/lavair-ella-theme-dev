@@ -22,6 +22,14 @@
   margin-top: 20px;
 }
 
+.no-account {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .lvr-club-logo {
   display: flex;
   align-items: center;
