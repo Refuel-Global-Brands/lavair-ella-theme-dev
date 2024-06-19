@@ -164,12 +164,13 @@
                                     >
                                 </div>
                                 <div class="forgot-password">
-                                    <span class="form-member-text"><a class="form-link-text" href="#recover" onclick="preventScroll(event)">Forgot your password?</a></span>
+                                    <span class="form-member-text"><a class="form-link-text" href="#recover" onclick="navigateAndScrollTop(event)">Forgot your password?</a></span>
                                 </div>
                                 <script>
-                                    function preventScroll(event) {
+                                    function navigateAndScrollTop(event) {
                                         event.preventDefault();
                                         window.location.hash = "recover";
+                                        window.scrollTo(0, 0);
                                     }
                                 </script>
                             {%- endif -%}
