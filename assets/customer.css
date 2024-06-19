@@ -84,6 +84,7 @@
 .account-page .halo-page-logo {
     background-color: var(--navigation-bg);
     padding-top: 40px;
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
