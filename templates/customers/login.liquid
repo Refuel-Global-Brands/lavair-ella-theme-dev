@@ -164,7 +164,7 @@
                                     >
                                 </div>
                                 <div class="forgot-password">
-                                    <span class="form-member-text"><a class="form-link-text" href="https://lavairbrand.com/account/login#recover" id="forgotPasswordLink">Forgot your password?</a></span>
+                                    <span class="form-member-text"><a class="form-link-text" href="#recover" id="forgotPasswordLink">Forgot your password?</a></span>
                                 </div>
                             {%- endif -%}
                             <div class="form-actions">
@@ -195,13 +195,13 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var forgotPasswordLink = document.getElementById('forgotPasswordLink');
     if (forgotPasswordLink) {
         forgotPasswordLink.addEventListener('click', function(event) {
-            event.preventDefault(); // This prevents the default action (scrolling to the bottom)
-            // Optional: Trigger any other behavior here, e.g., showing a modal
-            console.log('Forgot password link clicked. Implement desired behavior here.');
+            event.preventDefault();
+            // Implement the desired behavior here
+            console.log('Forgot password link clicked.');
         });
     }
 });
