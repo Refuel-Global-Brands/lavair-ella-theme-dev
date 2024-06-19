@@ -1410,14 +1410,30 @@ summary::-webkit-details-marker {
         transform: scale(.9);
     }
 
+    @keyframes fadeInCheckmark {
+        from {
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
+
+    @keyframes fillColor {
+        from {
+            background-color: transparent;
+            border-color: #ccc;
+        }
+        to {
+            background-color: #222;
+            border-color: #222;
+        }
+    }
+
     input[type="checkbox"]:checked + .form-label--checkbox:before {
-        background-color: #222;
-        border-color: #222;
+        animation: fillColor 0.3s ease-out forwards;
     }
 
     input[type="checkbox"]:checked + .form-label--checkbox:after {
-        opacity: 1;
-        transform: scale(1);
+        animation: fadeInCheckmark 0.3s ease-out forwards;
     }
 
     input[type="radio"] + .form-label--radio:before{
