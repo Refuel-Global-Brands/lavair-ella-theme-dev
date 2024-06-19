@@ -3,7 +3,8 @@
   height: 1px;
   background-color: #ccc;
   width: 400px;
-  margin: 20px 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .divider-parent {
