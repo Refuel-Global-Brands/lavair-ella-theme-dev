@@ -166,6 +166,11 @@
                                 <div class="forgot-password">
                                     <span class="form-member-text"><a class="form-link-text" href="#recover" id="forgotPasswordLink">Forgot your password?</a></span>
                                 </div>
+                                <script>
+                                    function preventScroll(event) {
+                                        event.preventDefault();
+                                    }
+                                </script>
                             {%- endif -%}
                             <div class="form-actions">
                                 <input type="submit" class="button button--primary" value="Continue">
