@@ -137,6 +137,7 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
+    width: 400px;
 }
 
 .login-item .login-message{
