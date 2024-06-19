@@ -1,5 +1,18 @@
 .form-field {
   width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-label {
+  white-space: nowrap;
+  margin-right: 20px;
+}
+
+.form-input {
+  flex-grow: 1;
+  margin: 0 auto;
 }
 
 .form-link-text {
