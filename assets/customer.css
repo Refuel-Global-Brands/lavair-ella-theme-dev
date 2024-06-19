@@ -7,6 +7,7 @@
 }
 
 .form-label {
+  width: 400px;
   white-space: nowrap;
   margin-bottom: 10px;
   align-self: flex-start;
