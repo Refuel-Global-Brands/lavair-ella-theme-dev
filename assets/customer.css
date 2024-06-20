@@ -26,7 +26,31 @@
   margin-bottom: 10px;
 }
 
-.form-input {
+#LoginForm-Label .form-label {
+  width: 400px;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+#RegisterForm-FirstName .form-input {
+  flex-grow: 1;
+  width: 400px;
+  margin: 0;
+}
+
+#RegisterForm-LastName .form-input {
+  flex-grow: 1;
+  width: 400px;
+  margin: 0;
+}
+
+#RegisterForm-password .form-input {
+  flex-grow: 1;
+  width: 400px;
+  margin: 0;
+}
+
+#RegisterForm-email .form-input {
   flex-grow: 1;
   width: 400px;
   margin: 0;
