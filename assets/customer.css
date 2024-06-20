@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.form-label {
+#RegisterForm-Label .form-label {
   width: 400px;
   white-space: nowrap;
   margin-bottom: 10px;

@@ -55,7 +55,7 @@
                         </div>
                     {% endif %}
                     <div class="form-field{% if form.errors contains "first_name" %} form-field--error{% endif %}">
-                        <label class="form-label" for="RegisterForm-FirstName">
+                        <label class="form-label" id="RegisterForm-Label" for="RegisterForm-FirstName">
                             First name
                         </label>
                         <input class="form-input form-input-placeholder{% if form.errors contains "first_name" %} error{% endif %}"
@@ -68,7 +68,7 @@
                         >
                     </div>
                     <div class="form-field{% if form.errors contains "last_name" %} form-field--error{% endif %}">
-                        <label class="form-label" for="RegisterForm-LastName">
+                        <label class="form-label" id="RegisterForm-Label" for="RegisterForm-LastName">
                             Last name
                         </label>      
                         <input class="form-input form-input-placeholder{% if form.errors contains "last_name" %} error{% endif %}"
@@ -81,7 +81,7 @@
                         >
                     </div>
                     <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                        <label class="form-label" for="RegisterForm-email">
+                        <label class="form-label" id="RegisterForm-Label" for="RegisterForm-email">
                             Email
                             <em>*</em>
                         </label>      
@@ -103,7 +103,7 @@
                         >
                     </div>
                     <div class="form-field{% if form.errors contains "password" %} form-field--error{% endif %}">
-                        <label class="form-label" for="password">
+                        <label class="form-label" id="RegisterForm-Label" for="password">
                             Password
                             <em>*</em>
                         </label>      
