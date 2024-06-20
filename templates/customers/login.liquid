@@ -58,7 +58,7 @@
                                 </div>
                             {%- endif -%}
                             <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                                <label class="form-label" for="RecoverEmail">
+                                <label class="form-label" id="#LoginForm-Label" for="RecoverEmail">
                                     {{ 'customer.login_page.email' | t }}
                                 </label>
                                 <input class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
@@ -131,7 +131,7 @@
                                 </div>
                             {%- endif -%}
                             <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                                <label class="form-label" for="CustomerEmail">
+                                <label class="form-label" id="#LoginForm-Label" for="CustomerEmail">
                                     {{ 'customer.login_page.email' | t }}
                                     <em>*</em>
                                 </label>
@@ -155,7 +155,7 @@
                             </div>
                             {%- if form.password_needed -%}
                                 <div class="form-field{% if form.errors contains "password" %} form-field--error{% endif %}">
-                                    <label class="form-label" for="CustomerPassword">
+                                    <label class="form-label" id="#LoginForm-Label" for="CustomerPassword">
                                         {{ 'customer.login_page.password' | t }}
                                         <em>*</em>
                                     </label>
