@@ -1339,7 +1339,7 @@
   }
   .addresses li,
   .account-listItem {
-    width: 25%;
+    width: 50%;
     padding: 0 15px;
   }
   .addresses li address {
