@@ -27,6 +27,21 @@
                             <div class="account-desc text-left">
                                 <p>{{ 'customer.order.date_html' | t: date: order_date }}</p>
                             </div>
+                            {%- if line_item.fulfillment -%}
+                                <div class="fulfillment">
+                                    {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
+                                    <span class="text">{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
+                                    {%- if line_item.fulfillment.tracking_url -%}
+                                        <a href="{{ line_item.fulfillment.tracking_url }}">
+                                            {{ 'customer.order.track_shipment' | t }}
+                                        </a>
+                                    {%- endif -%}
+                                    <span class="text">
+                                        {{ line_item.fulfillment.tracking_company }}
+                                        {%- if line_item.fulfillment.tracking_number -%} #{{ line_item.fulfillment.tracking_number }} {%- endif -%}
+                                    </span>
+                                </div>
+                            {%- endif -%}
                             {%- if order.cancelled -%}
                                 {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
                                 <div class="account-message">
@@ -283,6 +298,7 @@
                             </div>
                         </div>
                     </div>
+                <div>
                     <div class="account-item">
                         <h2 class="account-title text-left">
                             {{ 'customer.order.billing_address' | t }}
@@ -315,6 +331,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
