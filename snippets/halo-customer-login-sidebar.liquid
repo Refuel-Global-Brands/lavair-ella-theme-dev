@@ -3,7 +3,7 @@
 
 <customer-auth class="halo-sidebar halo-sidebar-right halo-auth-sidebar" data-auth-sidebar id="halo-auth-sidebar">
     <div class="halo-sidebar-header text-left">
-		<span class="title">{%- if customer -%}{{ 'customer.account.welcome' | t : name : customer.name }}{%- else -%}{{ 'customer.login_page.sign_in' | t }}{%- endif -%}</span>
+		<span class="title">{%- if customer -%}{{ 'customer.account.welcome' | t : name : customer.first_name }}!{%- else -%}{{ 'customer.login_page.sign_in' | t }}{%- endif -%}</span>
         <button type="button" class="halo-sidebar-close button-effect" data-close-auth-sidebar title="{{ 'general.common.close' | t }}">{% render 'icon-close' %}{{ 'general.common.close' | t }}</button>
 	</div>
     <div class="halo-sidebar-wrapper custom-scrollbar">
