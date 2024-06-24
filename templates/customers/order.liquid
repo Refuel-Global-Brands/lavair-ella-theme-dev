@@ -306,10 +306,14 @@
                         </h2>
                         <div class="account-content">
                             <div class="text-left">
-                                <p>
-                                    <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
-                                    {{ order.fulfillment_status_label }}
-                                </p>
+                                {%- if line_item.fulfillment -%}
+                                    {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
+                                    <span class="text">{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
+                                    {%- if line_item.fulfillment.tracking_url -%}
+                                        <a href="{{ line_item.fulfillment.tracking_url }}">
+                                            {{ 'customer.order.track_shipment' | t }}
+                                        </a>
+                                    {%- endif -%}
                                 <address>
                                     {{ order.shipping_address | format_address }}
                                 </address>
