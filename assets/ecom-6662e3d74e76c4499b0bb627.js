@@ -1,4 +1,4 @@
-/* Publish by EComposer at 2024-06-24 13:56:12*/
+/* Publish by EComposer at 2024-06-24 14:11:18*/
                 (function(){
                     const Func = (function() {
                         'use strict';
@@ -415,6 +415,90 @@ if(!this.$el)return;const e=this.$el,i=e.querySelector(".ecom-text_view-more-btn
                             Func.call({$el: el, id: 'ecom-q34j6q32jd', settings: {},isLive: true});
                         });
                     
+                        document.querySelectorAll('.ecom-umfglmzo7a9').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-umfglmzo7a9', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-7foh6v0qdlk').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-7foh6v0qdlk', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-urjkfv8bk98').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-urjkfv8bk98', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-2bsxhw8mfk').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-2bsxhw8mfk', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-n377vixj9b7').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-n377vixj9b7', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-9ihmx4xrs0n').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-9ihmx4xrs0n', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-3bop2xemkww').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-3bop2xemkww', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-ercll9463cu').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-ercll9463cu', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-ylf9z9d1oln').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-ylf9z9d1oln', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-2w7n8ku7j92').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-2w7n8ku7j92', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-eyugk9j54zc').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-eyugk9j54zc', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-ucqlr364vv').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-ucqlr364vv', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-i6k2zuq6tf').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-i6k2zuq6tf', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-g4t37mjpuvo').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-g4t37mjpuvo', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-zzk7ro1mfu').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-zzk7ro1mfu', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-p8h1piky72c').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-p8h1piky72c', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-9zvcye3ow0p').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-9zvcye3ow0p', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-21di0iifjkb').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-21di0iifjkb', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-v56544qtwig').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-v56544qtwig', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-3zd8iyhpbai').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-3zd8iyhpbai', settings: {},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-6ieltomksnt').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-6ieltomksnt', settings: {},isLive: true});
+                        });
+                    
 
                 })();
             
@@ -582,6 +666,22 @@ if(!this.$el)return;const e=this.$el.querySelector(".ecom-product-single__descri
                             Func.call({$el: el, id: 'ecom-xongppf6omg', settings: {"type":"full","content_type":"html"},isLive: true});
                         });
                     
+                        document.querySelectorAll('.ecom-5aaovpi02wu').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-5aaovpi02wu', settings: {"type":"full","content_type":"html"},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-kglhzgp3k0j').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-kglhzgp3k0j', settings: {"type":"full","content_type":"html"},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-p5caoeay4ks').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-p5caoeay4ks', settings: {"type":"full","content_type":"html"},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-6vbx1xyb5vx').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-6vbx1xyb5vx', settings: {"type":"full","content_type":"html"},isLive: true});
+                        });
+                    
 
                 })();
             
@@ -714,6 +814,22 @@ var g,f,b,h,m;let e=this.$el;if(!e)return;let i=this.isLive;const t=(g=this.sett
                             Func.call({$el: el, id: 'ecom-mufg1bej5hc', settings: {"disable_auto_close":false,"disable_effect":false},isLive: true});
                         });
                     
+                        document.querySelectorAll('.ecom-9c3lzp1ids').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-9c3lzp1ids', settings: {"disable_auto_close":false,"disable_effect":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-n9ra6t2xi8').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-n9ra6t2xi8', settings: {"disable_auto_close":false,"disable_effect":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-aqxn7th4v6b').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-aqxn7th4v6b', settings: {"disable_auto_close":false,"disable_effect":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-x85dxespqyg').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-x85dxespqyg', settings: {"disable_auto_close":false,"disable_effect":false},isLive: true});
+                        });
+                    
 
                 })();
             
@@ -833,6 +949,22 @@ if(!this.$el)return!1;const e=this.$el;let i=e.querySelector(".ecom-delivery-tim
                     
                         document.querySelectorAll('.ecom-98h7xjykqxn').forEach(function(el){
                             Func.call({$el: el, id: 'ecom-98h7xjykqxn', settings: {"hide_when_unavailable":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-ht1fbt7zvqt').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-ht1fbt7zvqt', settings: {"hide_when_unavailable":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-zqc3pifnxv').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-zqc3pifnxv', settings: {"hide_when_unavailable":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-cplayfxloai').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-cplayfxloai', settings: {"hide_when_unavailable":false},isLive: true});
+                        });
+                    
+                        document.querySelectorAll('.ecom-itfp7sxs16d').forEach(function(el){
+                            Func.call({$el: el, id: 'ecom-itfp7sxs16d', settings: {"hide_when_unavailable":false},isLive: true});
                         });
                     
 
