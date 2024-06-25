@@ -17,7 +17,7 @@
         "announcement_KK7Akm": {
           "type": "announcement",
           "settings": {
-            "text": "<p>SIGN UP FOR 10% OFF YOUR FIRST ORDER<\/p>",
+            "text": "<a href=\"https:\/\/lavairbrand.com\/account\/register\"><p>SIGN UP FOR 10% OFF YOUR FIRST ORDER<\/p><\/a>",
             "btn_color": "#f84248",
             "btn_border_color": "#ffffff",
             "btn_bg_color": "#ffffff",
