@@ -1,3 +1,8 @@
+.customer-login-form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .divider {
   display: block;
   height: 1px;
@@ -137,8 +142,6 @@
 
 .account-page .halo-page-content {
   padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
