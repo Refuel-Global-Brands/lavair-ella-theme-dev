@@ -119,6 +119,7 @@
                         {% comment %}
                             This form must use 'customer_login'
                         {% endcomment %}
+                    <div class="login-form-wrapper">
                         {%- form 'customer_login', class: 'customer-login-form' -%}
                             {%- if form.errors -%}
                                 {%- assign message = form.errors.messages['form'] -%}
@@ -173,6 +174,7 @@
                                         required
                                     >
                                 </div>
+                    </div>
                                 <div class="forgot-password">
                                     <span class="form-member-text"><a class="form-link-text" href="#recover">Forgot your password?</a></span>
                                 </div>
