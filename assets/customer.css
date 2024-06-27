@@ -7,7 +7,7 @@
   display: block;
   height: 1px;
   background-color: #ccc;
-  width: 400px;
+  width: 360px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -147,8 +147,6 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  padding-left: 25px;
-  padding-right: 25px; 
 }
 
 .login-row {
