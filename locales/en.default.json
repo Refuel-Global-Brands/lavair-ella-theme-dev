@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "general": {
     "breadcrumb": {
@@ -939,7 +948,8 @@
     "ecom-6662e4fef2e442ca2c0d6042-product": "",
     "ecom-6662e696d457b33ff906d282-product": "",
     "ecom-linear-gum-product": "",
-    "ecom-6662e7c8a9ca66420e0ef779-product": ""
+    "ecom-6662e7c8a9ca66420e0ef779-product": "",
+    "ecom-667d1e5ef015b3c66407743b-page": ""
   },
   "localization": {
     "country_label": "Country\/region",
