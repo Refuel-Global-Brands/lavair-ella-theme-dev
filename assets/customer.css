@@ -1,3 +1,10 @@
+.account-action-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .halo-page-wrapper {
   padding-left: 10px;
   padding-right: 10px;
