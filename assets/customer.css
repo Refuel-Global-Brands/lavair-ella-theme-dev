@@ -622,12 +622,15 @@
     }
 
     .address-new{
-        margin: 0 0 30px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
 
+    }
+
+    .address-new-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
     }
 
     .address-new > button{

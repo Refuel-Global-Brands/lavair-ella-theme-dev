@@ -31,6 +31,7 @@
                     {%- paginate customer.addresses by 5 -%}
                         <div class="account-item">
                             <div class="account-content">
+                                <div class="address-new-center">
                                 <div class="address-new" data-address>
                                     <button
                                         class="button button--primary"
@@ -122,7 +123,7 @@
                                         {%- endform -%}
                                     </div>
                                 </div>
-
+                                </div>
                                 <h2 class="address-title text-left">
                                   {{ 'customer.addresses.address_book' | t }}
                                 </h2>
