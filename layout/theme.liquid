@@ -98,7 +98,7 @@
                 function handleVisibilityChange() {
                     if (document.hidden) {
                     // Set the title to a custom message or keep the original
-                    document.title = "Your Custom Inactive Title";
+                    document.title = originalTitle;
                     } else {
                     // Restore the original title when the tab becomes active again
                     document.title = originalTitle;
