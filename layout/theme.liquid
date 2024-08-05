@@ -87,6 +87,28 @@
                 assign style_text_size_varriant = 'size_varriant_style_2'
             endif
         -%}
+
+        <!-- Remove inactive state -->
+
+        <script>
+            // Store the original document title
+            var originalTitle = document.title;
+
+                // Function to change the title when the tab is inactive
+                function handleVisibilityChange() {
+                    if (document.hidden) {
+                    // Set the title to a custom message or keep the original
+                    document.title = "Your Custom Inactive Title";
+                    } else {
+                    // Restore the original title when the tab becomes active again
+                    document.title = originalTitle;
+                    }
+                }
+
+                // Add event listener for visibility change
+                document.addEventListener("visibilitychange", handleVisibilityChange, false);
+        </script>
+
     </head>
 
     <body class="template-{{ request.page_type }} {{layout_body}} {{style_dots}} {{style_text_size_varriant}} {{style_arrows}} {{product_card_layout}} {{ banner_animation }}{% if settings.enable_button_disable_arrows %} enable_button_disable_arrows{% endif %}{% if settings.display_text_color_title %} enable_text_color_title{% endif %}{% if settings.style_text_color_varriant == '02' %} style_2_text_color_varriant{% endif %}{% if settings.hide_compare_homepage %} hide_compare_homepage{% endif %} {{ quick_shop_type }}{% if settings.show_image_loading %} show_image_loading{% endif %}{% if settings.show_effect_close %} show_effect_close{% endif %}{% if settings.enable_layout_rtl and enable_iso_rtl %} layout_rtl{% endif %}{% if request.design_mode %} shopify-design-mode{% endif %}">
