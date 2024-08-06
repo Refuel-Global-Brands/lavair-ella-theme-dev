@@ -110,7 +110,7 @@
             
                 // Function to handle visibility change
                 function handleVisibilityChange() {
-                    if (document.hidden) {
+                    if (document.hidden || document.activeElement == document.body) {
                         document.title = updatedTitle;
                     }
                 }
