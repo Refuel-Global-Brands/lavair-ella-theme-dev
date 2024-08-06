@@ -130,8 +130,8 @@
 
                 // Add event listener for visibility change
                 document.addEventListener("visibilitychange", handleVisibilityChange, false);
-                window.addEventListener("blur", handleVisibilityChange, false);
-                window.addEventListener("focus", handleVisibilityChange, false);
+                window.addEventListener("blur", handleVisibilityChange, true);
+                window.addEventListener("focus", handleVisibilityChange, true);
             });
         </script>
 
