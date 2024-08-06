@@ -133,9 +133,11 @@
 
             function updateTitleFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
-            const originalTitle = document.querySelector('title').getAttribute('data-original-title') || document.title;
-            if (!document.querySelector('title').getAttribute('data-original-title')) {
-                document.querySelector('title').setAttribute('data-original-title', originalTitle);
+            const originalTitleElement = document.querySelector('title');
+            const originalTitle = originalTitleElement.getAttribute('data-original-title') || document.title;
+
+            if (!originalTitleElement.getAttribute('data-original-title')) {
+                originalTitleElement.setAttribute('data-original-title', originalTitle);
             }
 
             let filters = [];
