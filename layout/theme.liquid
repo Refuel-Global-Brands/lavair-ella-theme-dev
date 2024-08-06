@@ -110,7 +110,7 @@
 
         <!-- Dynamically update the title based on the URL query parameters -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+                        document.addEventListener('DOMContentLoaded', function() {
             updateTitleFromURL();
 
             // Observe URL changes
@@ -122,6 +122,13 @@
                 updateTitleFromURL();
                 }
             }).observe(document, {subtree: true, childList: true});
+
+            // Handle visibility changes
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'visible') {
+                updateTitleFromURL();
+                }
+            });
             });
 
             function updateTitleFromURL() {
@@ -133,7 +140,7 @@
 
             let filters = [];
             for (let [key, value] of urlParams.entries()) {
-                if (key.includes('filter.p.m.product.colour') || key.includes('filter.v.option.size')) {
+                if (key.includes('filter.p.m.product.colour') || key.includes('filter.p.m.product.size')) {
                 filters.push(value);
                 }
             }
