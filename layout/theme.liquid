@@ -111,27 +111,40 @@
         <!-- Dynamically update the title based on the URL query parameters -->
         <script>
                         document.addEventListener('DOMContentLoaded', function() {
-            updateTitleFromURL();
-            });
+                updateTitleFromURL();
 
-            function updateTitleFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const originalTitle = document.title;
+                // Observe URL changes
+                let lastURL = window.location.href;
+                new MutationObserver(() => {
+                    const currentURL = window.location.href;
+                    if (currentURL !== lastURL) {
+                    lastURL = currentURL;
+                    updateTitleFromURL();
+                    }
+                }).observe(document, {subtree: true, childList: true});
+                });
 
-            let filters = [];
-            for (let [key, value] of urlParams.entries()) {
-                if (key.startsWith('filter.')) {
-                filters.push(value);
+                function updateTitleFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const originalTitle = document.querySelector('title').getAttribute('data-original-title') || document.title;
+                if (!document.querySelector('title').getAttribute('data-original-title')) {
+                    document.querySelector('title').setAttribute('data-original-title', originalTitle);
                 }
-            }
 
-            const filterText = filters.filter(Boolean).join(', ');
-            const newTitle = filterText ? `${filterText} - ${originalTitle}` : originalTitle;
+                let filters = [];
+                for (let [key, value] of urlParams.entries()) {
+                    if (key.startsWith('filter.')) {
+                    filters.push(value);
+                    }
+                }
 
-            document.title = newTitle;
-            }
+                const filterText = filters.filter(Boolean).join(', ');
+                const newTitle = filterText ? `${filterText} - ${originalTitle}` : originalTitle;
+
+                document.title = newTitle;
+                }
         </script>
-        
+
     </head>
 
     <body class="template-{{ request.page_type }} {{layout_body}} {{style_dots}} {{style_text_size_varriant}} {{style_arrows}} {{product_card_layout}} {{ banner_animation }}{% if settings.enable_button_disable_arrows %} enable_button_disable_arrows{% endif %}{% if settings.display_text_color_title %} enable_text_color_title{% endif %}{% if settings.style_text_color_varriant == '02' %} style_2_text_color_varriant{% endif %}{% if settings.hide_compare_homepage %} hide_compare_homepage{% endif %} {{ quick_shop_type }}{% if settings.show_image_loading %} show_image_loading{% endif %}{% if settings.show_effect_close %} show_effect_close{% endif %}{% if settings.enable_layout_rtl and enable_iso_rtl %} layout_rtl{% endif %}{% if request.design_mode %} shopify-design-mode{% endif %}">
