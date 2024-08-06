@@ -88,71 +88,52 @@
             endif
         -%}
 
-        <!-- Remove inactive state -->
         <script>
-            // Store the original document title
-            var originalTitle = document.title;
-
-                // Function to change the title when the tab is inactive
+            document.addEventListener('DOMContentLoaded', function() {
+                // Store the original document title
+                var originalTitle = document.title;
+            
+                // Function to update the title based on the URL query parameters
+                function updateTitleFromURL() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    let filters = [];
+                    for (let [key, value] of urlParams.entries()) {
+                        if (key.includes('filter.p.m.product.colour') || key.includes('filter.v.option.size')) {
+                            filters.push(value);
+                        }
+                    }
+                    const filterText = filters.filter(Boolean).join(', ');
+                    const newTitle = filterText ? `${filterText} | ${originalTitle}` : originalTitle;
+                    document.title = newTitle;
+                }
+            
+                // Function to handle visibility change
                 function handleVisibilityChange() {
                     if (document.hidden) {
-                    // Set the title to a custom message or keep the original
-                    document.title = originalTitle;
+                        document.title = originalTitle;
                     } else {
-                    // Restore the original title when the tab becomes active again
-                    document.title = originalTitle;
+                        updateTitleFromURL();
                     }
                 }
-
+            
+                // Initial title update based on URL
+                updateTitleFromURL();
+            
+                // Observe URL changes
+                let lastURL = window.location.href;
+                new MutationObserver(() => {
+                    const currentURL = window.location.href;
+                    if (currentURL !== lastURL) {
+                        lastURL = currentURL;
+                        updateTitleFromURL();
+                    }
+                }).observe(document, { subtree: true, childList: true });
+            
                 // Add event listener for visibility change
                 document.addEventListener("visibilitychange", handleVisibilityChange, false);
-        </script>
-
-        <!-- Dynamically update the title based on the URL query parameters -->
-        <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-            updateTitleFromURL();
-
-            // Observe URL changes
-            let lastURL = window.location.href;
-            new MutationObserver(() => {
-                const currentURL = window.location.href;
-                if (currentURL !== lastURL) {
-                lastURL = currentURL;
-                updateTitleFromURL();
-                }
-            }).observe(document, {subtree: true, childList: true});
-
-            // Handle visibility changes
-            document.addEventListener('visibilitychange', function() {
-                if (document.visibilityState === 'visible') {
-                updateTitleFromURL();
-                }
             });
-            });
-
-            function updateTitleFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const originalTitleElement = document.querySelector('title');
-            const originalTitle = originalTitleElement.getAttribute('data-original-title') || document.title;
-
-            if (!originalTitleElement.getAttribute('data-original-title')) {
-                originalTitleElement.setAttribute('data-original-title', originalTitle);
-            }
-
-            let filters = [];
-            for (let [key, value] of urlParams.entries()) {
-                if (key.includes('filter.p.m.product.colour') || key.includes('filter.v.option.size')) {
-                filters.push(value);
-                }
-            }
-
-            const filterText = filters.filter(Boolean).join(', ');
-            const newTitle = filterText ? `${filterText} | ${originalTitle}` : originalTitle;
-
-            document.title = newTitle;
-            }
-        </script>
+            </script>
+            
 
     </head>
 
