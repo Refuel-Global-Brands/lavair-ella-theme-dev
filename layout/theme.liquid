@@ -92,6 +92,7 @@
             document.addEventListener('DOMContentLoaded', function() {
                 // Store the original document title
                 var originalTitle = document.title;
+                var updatedTitle = originalTitle; // This will store the title with filters
             
                 // Function to update the title based on the URL query parameters
                 function updateTitleFromURL() {
@@ -103,8 +104,8 @@
                         }
                     }
                     const filterText = filters.filter(Boolean).join(', ');
-                    const newTitle = filterText ? `${filterText} | ${originalTitle}` : originalTitle;
-                    document.title = newTitle;
+                    updatedTitle = filterText ? `${filterText} - ${originalTitle}` : originalTitle;
+                    document.title = updatedTitle;
                 }
             
                 // Function to handle visibility change
@@ -112,7 +113,7 @@
                     if (document.hidden) {
                         document.title = originalTitle;
                     } else {
-                        updateTitleFromURL();
+                        document.title = updatedTitle;
                     }
                 }
             
@@ -133,6 +134,7 @@
                 document.addEventListener("visibilitychange", handleVisibilityChange, false);
             });
             </script>
+            
             
 
     </head>
