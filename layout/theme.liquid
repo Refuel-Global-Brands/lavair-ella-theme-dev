@@ -145,7 +145,7 @@
                 }
             }
 
-            const filterText = filters.filter(Boolean).join(', ');
+            const filterText = filters.filter(Boolean).join('| ');
             const newTitle = filterText ? `${filterText} - ${originalTitle}` : originalTitle;
 
             document.title = newTitle;
