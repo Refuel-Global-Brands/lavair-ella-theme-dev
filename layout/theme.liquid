@@ -93,7 +93,7 @@
                 // Store the original document title
                 var originalTitle = document.title;
                 var updatedTitle = originalTitle; // This will store the title with filters
-            
+
                 // Function to update the title based on the URL query parameters
                 function updateTitleFromURL() {
                     const urlParams = new URLSearchParams(window.location.search);
@@ -107,17 +107,17 @@
                     updatedTitle = filterText ? `${filterText} | ${originalTitle}` : originalTitle;
                     document.title = updatedTitle;
                 }
-            
+
                 // Function to handle visibility change
                 function handleVisibilityChange() {
                     if (document.hidden || document.activeElement == document.body) {
                         document.title = updatedTitle;
                     }
                 }
-            
+
                 // Initial title update based on URL
                 updateTitleFromURL();
-            
+
                 // Observe URL changes
                 let lastURL = window.location.href;
                 new MutationObserver(() => {
@@ -127,15 +127,13 @@
                         updateTitleFromURL();
                     }
                 }).observe(document, { subtree: true, childList: true });
-            
+
                 // Add event listener for visibility change
                 document.addEventListener("visibilitychange", handleVisibilityChange, false);
                 window.addEventListener("blur", handleVisibilityChange, false);
                 window.addEventListener("focus", handleVisibilityChange, false);
             });
-            </script>
-            
-            
+        </script>
 
     </head>
 
