@@ -1,33 +1,29 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "ecom_homepage_main_header_section_PADb4a": {
       "type": "ecom-homepage-main-header-section",
-      "settings": {
-      }
+      "settings": {}
     },
     "ecom_homepage_collections_section_Ha9Ewi": {
       "type": "ecom-homepage-collections-section",
-      "settings": {
-      }
+      "settings": {}
     },
     "ecom_homepage_header_2_section_Tp4Pyx": {
       "type": "ecom-homepage-header-2-section",
-      "settings": {
-      }
+      "settings": {}
     },
     "ecom_instagram_slider_section_EhDJRK": {
       "type": "ecom-instagram-slider-section",
-      "settings": {
-      }
+      "settings": {}
     },
     "product_block_AtJjjg": {
       "type": "product-block",
@@ -90,7 +86,7 @@
         "border_color_button_hover": "",
         "bg_color_button_hover": "",
         "bg_color_gradient_button_hover": "",
-        "product_block_collection": "lvr-staples",
+        "product_block_collection": "lvr-essentials",
         "product_block_limit": 8,
         "grid_gap": 5,
         "pb_style": "style1",
@@ -140,8 +136,7 @@
     },
     "ecom_homepage_header_3_v2_section_K4HYdw": {
       "type": "ecom-homepage-header-3-v2-section",
-      "settings": {
-      }
+      "settings": {}
     },
     "product_block_8HYHDh": {
       "type": "product-block",
@@ -254,8 +249,7 @@
     },
     "ecom_icons_section_section_fLiDVW": {
       "type": "ecom-icons-section-section",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
